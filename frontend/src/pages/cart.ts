@@ -13,7 +13,7 @@ import { toast } from "../ui/overlay.js";
 import { enterBlock, highlight, leave, meter, settle } from "../lib/motion.js";
 
 export function mountCart(root: HTMLElement) {
-  document.title = "Purchasing Cart · StockPulse AMD";
+  document.title = "Purchasing Cart · StockPulse";
   const focusSku = store.get().routeParams.sku || null;
   const sim: {budget: number | null, delaySupplier: string, delayDays: number} = { budget: null, delaySupplier: "", delayDays: 0 };
   let current: import("../data/types.js").Optimization | null = null;   // optimizer at the saved weekly budget

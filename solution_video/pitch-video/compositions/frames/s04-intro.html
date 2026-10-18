@@ -1,0 +1,102 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body><template>
+<style>
+#root { position: absolute; inset: 0; }
+
+#s04-intro-scene .dchip { position:absolute; top:430px; font-size:28px; padding:12px 26px; color: var(--ink); border-color: var(--line-strong); background:#fff; box-shadow: var(--shadow); white-space:nowrap; }
+#s04-intro-scene .dot-ink { width:12px; height:12px; border-radius:3px; background: var(--indigo); display:block; }
+
+#s04-intro-scene .full { position:absolute; inset:0; }
+#s04-intro-logo { position:absolute; left:690px; top:262px; width:540px; transform-origin: 0 0; }
+#s04-intro-ring { position:absolute; left:810px; top:190px; width:300px; height:300px; border-radius:50%; border:3px solid var(--indigo); opacity:0; }
+#s04-intro-promise { position:absolute; left:0; right:0; top:470px; text-align:center; }
+#s04-intro-promise .w { display:inline-block; }
+#s04-intro-sub { position:absolute; left:0; right:0; top:560px; text-align:center; font-size:30px; color: var(--ink-2); }
+
+</style>
+<div id="root" data-composition-id="s04-intro" data-width="1920" data-height="1080">
+<div class="scene" id="s04-intro-scene">
+
+<svg id="s04-intro-paths" class="full" viewBox="0 0 1920 1080" width="1920" height="1080" fill="none" stroke="#4F67E8" stroke-width="3" stroke-linecap="round" opacity="0.55">
+  <path d="M360,430 C360,330 700,360 905,340"/><path d="M960,430 L960,350"/><path d="M1560,430 C1560,330 1220,360 1015,340"/>
+</svg>
+<div id="s04-intro-chips">
+  <div class="chip dchip" id="s04-intro-k1" style="left:360px"><i class="dot-ink"></i>Sales history</div>
+  <div class="chip dchip" id="s04-intro-k2" style="left:960px"><i class="dot-ink"></i>Stock &amp; orders</div>
+  <div class="chip dchip" id="s04-intro-k3" style="left:1560px"><i class="dot-ink"></i>Supplier terms</div>
+</div>
+<div id="s04-intro-ring"></div>
+<img id="s04-intro-logo" src="../../assets/brand/logo.png" alt="StockPulse">
+<div id="s04-intro-promise" class="headline"><span class="w">Explainable,</span> <span class="w">budget-aware</span> <span class="c-indigo"><span class="w">purchasing</span> <span class="w">decisions.</span></span></div>
+<div id="s04-intro-sub">Works with your existing systems</div>
+<div class="browser" id="s04-intro-br" style="left:160px;top:130px;width:1600px;height:780px">
+  <div class="bar"><i></i><i></i><i></i><span class="url">stockpulse.app/#/overview</span></div>
+  <div class="view"><div class="cam" id="s04-intro-br-cam"><img id="s04-intro-img" src="../../capture/v2/c01-overview.png" style="width:2064.0px;opacity:1" alt=""></div></div>
+</div>
+
+</div>
+</div>
+<script>
+(() => {
+const tl = gsap.timeline({ paused: true });
+const T = {"logo": 0.9, "promise": 7.12, "without": 7.633, "push": 9.033, "move": 10.633};
+const DUR = 10;
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => Array.from(document.querySelectorAll(s));
+const fadeIn = (sel, t, d = 0.5) => tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t);
+const fadeOut = (sel, t, d = 0.4) => tl.fromTo(sel, { opacity: 1 }, { opacity: 0, duration: d, ease: "power1.in", immediateRender: false }, t);
+// force3D keeps moved elements composited for their whole life: no end-of-move re-raster or pixel snap
+const rise = (sel, t, o = {}) => tl.fromTo(sel, { opacity: 0, y: o.y ?? 18 }, { opacity: 1, y: 0, duration: o.d ?? 0.6, ease: "power3.out", stagger: o.s ?? 0, force3D: true }, t);
+const pop = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: d, ease: "back.out(1.7)", force3D: true }, t);
+const count = (el, from, to, t, d, fmt) => {
+  const o = { v: from };
+  el.textContent = fmt(from);
+  tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(o.v); } }, t);
+};
+// SVG path reveal: draws `frac` of each matching path
+const draw = (sel, t, d = 0.8, frac = 1, ease = "power2.inOut") => $$(sel).forEach((p) => {
+  const L = p.getTotalLength();
+  p.style.strokeDasharray = L + " " + L;
+  tl.fromTo(p, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t);
+  tl.fromTo(p, { strokeDashoffset: L }, { strokeDashoffset: L * (1 - frac), duration: d, ease }, t);
+});
+// the one camera move: a single scale-and-position tween, then a complete hold
+const camTo = (sel, v, t, d = 1.3) => tl.to(sel, { ...v, duration: d, ease: "power2.inOut", force3D: true }, t);
+// Scripted cursor: travel to (x, y), press at t, optional ripple.
+const click = (cur, rip, x0, y0, x, y, t) => {
+  tl.fromTo(cur, { opacity: 0, x: x0, y: y0 }, { opacity: 1, duration: 0.25 }, t - 1.2);
+  tl.to(cur, { x, y, duration: 0.9, ease: "power2.inOut" }, t - 1.0);
+  tl.to(cur, { scale: 0.86, duration: 0.08, ease: "power1.in" }, t);
+  tl.to(cur, { scale: 1, duration: 0.18, ease: "power2.out" }, t + 0.08);
+  if (rip) tl.fromTo(rip, { opacity: 0.5, scale: 0.2, x: x - 30, y: y - 30 }, { opacity: 0, scale: 1.4, duration: 0.6, ease: "power2.out" }, t);
+};
+
+
+fadeOut("#s04-intro-scene", DUR - 0.4, 0.4);
+
+gsap.set("#s04-intro-chips .dchip", { xPercent: -50, yPercent: -50 });
+// the three inputs converge into StockPulse
+draw("#s04-intro-paths path", 0.05, 0.8, 1, "power2.out");
+tl.to("#s04-intro-k1", { x: 545, duration: 0.95, ease: "power1.in" }, 0.2);
+tl.to("#s04-intro-k1", { y: -90, duration: 0.95, ease: "power2.out" }, 0.2);
+tl.to("#s04-intro-k2", { y: -80, duration: 0.95, ease: "power2.inOut" }, 0.2);
+tl.to("#s04-intro-k3", { x: -545, duration: 0.95, ease: "power1.in" }, 0.2);
+tl.to("#s04-intro-k3", { y: -90, duration: 0.95, ease: "power2.out" }, 0.2);
+tl.to("#s04-intro-chips .dchip", { opacity: 0, scale: 0.5, duration: 0.3, ease: "power1.in" }, 0.85);
+tl.to("#s04-intro-paths", { opacity: 0, duration: 0.4 }, 1.0);
+tl.fromTo("#s04-intro-logo", { opacity: 0, scale: 0.92, x: 22, y: 6 }, { opacity: 1, scale: 1, x: 0, y: 0, duration: 0.8, ease: "power3.out" }, T.logo);
+tl.fromTo("#s04-intro-ring", { opacity: 0.6, scale: 0.4 }, { opacity: 0, scale: 1.6, duration: 1.0, ease: "power2.out", immediateRender: false }, T.logo);
+rise("#s04-intro-promise .w", T.promise - 0.1, { s: 0.1, y: 20 });
+rise("#s04-intro-sub", T.without - 0.1);
+// into the real product: the logo docks, the dashboard rises wide, one camera move to the KPIs, hold
+tl.to("#s04-intro-logo", { x: -530, y: -218, scale: 0.3, duration: 0.8, ease: "power2.inOut" }, T.push);
+tl.to(["#s04-intro-promise", "#s04-intro-sub"], { opacity: 0, y: -24, duration: 0.35, ease: "power2.in" }, T.push - 0.1);
+tl.fromTo("#s04-intro-br", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, T.push + 0.3);
+gsap.set("#s04-intro-br-cam", { x: 0.00, y: 0.00, scale: 0.7752 });
+camTo("#s04-intro-br-cam", { x: -387.00, y: -113.52, scale: 1.0000 }, T.move, 1.4);
+
+window.__timelines["s04-intro"] = tl;
+})();
+</script>
+</template></body></html>

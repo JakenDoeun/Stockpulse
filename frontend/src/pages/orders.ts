@@ -9,6 +9,7 @@ import { WORKSPACE } from "../data/demo.js";
 import { emptyState, filterSelect, pageHead, sortBy, sortHeads, bindSort } from "../ui/kit.js";
 import { toast } from "../ui/overlay.js";
 import { confirmState, enterBlock, highlight } from "../lib/motion.js";
+import { sfx } from "../lib/sfx.js";
 
 export type PO = import("../data/types.js").PurchaseOrder;
 
@@ -58,7 +59,7 @@ export function mountOrders(root: HTMLElement) {
 // ---- list ---------------------------------------------------------------------------------------
 
 function mountList(root: HTMLElement) {
-  document.title = "Purchase Orders · StockPulse AMD";
+  document.title = "Purchase Orders · StockPulse";
   let pos: PO[] | null = null;
   let err = "";
   const f = { q: "", status: "active", supplier: "all" };
@@ -147,7 +148,7 @@ function mountDetail(root: HTMLElement, id: number) {
   };
 
   function render() {
-    document.title = `${po ? poNumber(po) : "Purchase order"} · StockPulse AMD`;
+    document.title = `${po ? poNumber(po) : "Purchase order"} · StockPulse`;
     if (err) { setHTML(root, html`${back()}<div class="panel">${emptyState({ title: "Purchase order not found", body: err, iconName: "file" })}</div>`); return; }
     if (!po) { setHTML(root, html`${back()}<div class="panel"><div class="panel-body" style="padding-top:20px"><div class="skeleton sk-block"></div></div></div>`); return; }
     const d = store.get().data;
@@ -239,6 +240,7 @@ function mountDetail(root: HTMLElement, id: number) {
       toast("Simulated dispatch recorded. Nothing was sent to the supplier.");
     } catch (e) {
       toast(e instanceof Error ? e.message : String(e));
+      sfx("error");
     }
     busy = "";
     render();
@@ -269,9 +271,11 @@ function mountDetail(root: HTMLElement, id: number) {
       enterBlock(root.querySelectorAll(".timeline li:first-child"));
       if (updated.status === "approved" || updated.status === "acknowledged") highlight(root.querySelectorAll(".page-sub .status")[0] || [], "green");
       toast(`${poNumber(updated)}: ${PO_STATUS[updated.status].label}`);
+      if (updated.status === "approved") sfx("success"); // the one sign-off worth hearing; other transitions stay silent
       load();
     } catch (e) {
       toast(e instanceof Error ? e.message : String(e));
+      sfx("error");
     }
     busy = "";
     render();
@@ -294,7 +298,7 @@ function mountPreview(root: HTMLElement, id: number) {
     setHTML(root, html`<div class="panel"><div class="panel-body" style="padding-top:20px"><div class="skeleton sk-block"></div></div></div>`);
     try {
       const po = await getPO(id);
-      document.title = `${poNumber(po)} preview · StockPulse AMD`;
+      document.title = `${poNumber(po)} preview · StockPulse`;
       const approved = po.events.find((e) => e.action === "approve");
       const official = ["approved", "sent", "acknowledged"].includes(po.status);
       setHTML(root, html`
@@ -305,7 +309,7 @@ function mountPreview(root: HTMLElement, id: number) {
         <article class="po-doc ${official ? "" : "is-draft"}" aria-label="Purchase order document">
           ${official ? "" : html`<div class="watermark" aria-hidden="true">${PO_STATUS[po.status]?.label.split(" ")[0].toUpperCase()}</div>`}
           <header class="po-doc-head">
-            <div><div class="po-brand"><b>${WORKSPACE.name}</b><span>Purchasing via StockPulse AMD</span></div>
+            <div><div class="po-brand"><b>${WORKSPACE.name}</b><span>Purchasing via StockPulse</span></div>
               <address>${WORKSPACE.address.map((a) => html`${a}<br>`)}</address></div>
             <div class="po-title"><h1>Purchase order</h1><dl>
               <div><dt>Number</dt><dd class="mono">${poNumber(po)}</dd></div>

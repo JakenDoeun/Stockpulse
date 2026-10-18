@@ -16,7 +16,7 @@ Their shared job: decide what to reorder, how much and from whom, before shelves
 Secondary audience (current): **AMD hackathon Track 3 judges**, who evaluate the working demo. Their criteria (from README): AMD powers part of the product, predictions are explainable rather than LLM-only, the effect is measurable, and a human approves.
 
 ## Product Purpose
-StockPulse AMD (repo name: Agentic Replenishment Copilot) turns the data a retailer already has into explained purchasing decisions:
+StockPulse (repo name: Agentic Replenishment Copilot) turns the data a retailer already has into explained purchasing decisions:
 1. sales history, stock levels and messy supplier documents go in;
 2. demand forecasts, risk flags and constraint-aware order quantities come out;
 3. an agent explains the trade-offs and prepares purchase order drafts.
@@ -41,7 +41,7 @@ The math and the AI are deliberately separated. Forecasts, risk scores and order
 - **Undecided:** currency (the UI currently shows USD), multi-store support, and the auth model beyond the approver key.
 
 ## Brand Commitments
-- Name: **StockPulse AMD**.
+- Name: **StockPulse**.
 - **Deterministic versus AI is always visible.** Forecasts, risk and quantities are code; AI is for extraction, inference and explanation. The UI labels which produced each number.
 - **Data stays private.** Pricing and margin data stays on private infrastructure (on-prem / AMD Developer Cloud).
 - **Honest numbers only.** Sample data is always labelled as sample. No invented customers, testimonials, savings or benchmarks. Backtest results always appear with their caveats.

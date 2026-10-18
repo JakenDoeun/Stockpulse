@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"></head><body><template>
+<style>
+#root { position: absolute; inset: 0; }
+
+#s07-risk-eyebrow { position:absolute; left:120px; top:96px; }
+#s07-risk-head { position:absolute; left:120px; top:132px; }
+#s07-risk-viz { position:absolute; inset:0; }
+#s07-risk-viz rect { transform-box: fill-box; transform-origin: 0 50%; }
+.l { position:absolute; left:200px; font-size:22px; }
+#s07-risk-gap { position:absolute; left:1055px; top:330px; width:345px; height:200px; background: var(--red-tint); border-left:2px solid var(--red); border-right:2px solid var(--red); }
+#s07-risk-gaplab { position:absolute; left:1424px; top:395px; width:360px; }
+#s07-risk-rule { position:absolute; left:200px; top:582px; font-family:var(--mono); font-size:22px; padding:12px 20px; border:1px solid var(--line); border-radius:10px; background:#fff; }
+#s07-risk-legend { bottom: 150px; }
+
+</style>
+<div data-hf-id="hf-c3j7" id="root" data-composition-id="s07-risk" data-width="1920" data-height="1080">
+<div data-hf-id="hf-48zl" class="scene" id="s07-risk-scene">
+
+<div data-hf-id="hf-djgb" id="s07-risk-eyebrow" class="eyebrow">Cola 330ml · with Angkor’s new terms</div>
+<div data-hf-id="hf-ueus" id="s07-risk-head" class="headline">At eight days, the stock no longer lasts.</div>
+<div data-hf-id="hf-ez86" id="s07-risk-gap"></div>
+<svg data-hf-id="hf-8d20" id="s07-risk-viz" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <g data-hf-id="hf-57xr" id="s07-risk-axis"><line data-hf-id="hf-qgg4" x1="200" y1="540" x2="200" y2="552" stroke="#98A2B3" stroke-width="1.5" /><text data-hf-id="hf-blgu" x="200" y="576" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">0d</text><line data-hf-id="hf-3kyw" x1="350" y1="540" x2="350" y2="552" stroke="#98A2B3" stroke-width="1.5" /><text data-hf-id="hf-ntvl" x="350" y="576" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">1d</text><line data-hf-id="hf-nuhi" x1="500" y1="540" x2="500" y2="552" stroke="#98A2B3" stroke-width="1.5" /><text data-hf-id="hf-61of" x="500" y="576" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">2d</text><line data-hf-id="hf-l12q" x1="650" y1="540" x2="650" y2="552" stroke="#98A2B3" stroke-width="1.5" /><text data-hf-id="hf-j1pq" x="650" y="576" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">3d</text><line data-hf-id="hf-ekks" x1="800" y1="540" x2="800" y2="552" stroke="#98A2B3" stroke-width="1.5" /><text data-hf-id="hf-gwwo" x="800" y="576" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">4d</text><line data-hf-id="hf-rk04" x1="950" y1="540" x2="950" y2="552" stroke="#98A2B3" stroke-width="1.5" /><text data-hf-id="hf-j4ob" x="950" y="576" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">5d</text><line data-hf-id="hf-wt7i" x1="1100" y1="540" x2="1100" y2="552" stroke="#98A2B3" stroke-width="1.5" /><text data-hf-id="hf-s5zs" x="1100" y="576" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">6d</text><line data-hf-id="hf-o2ym" x1="1250" y1="540" x2="1250" y2="552" stroke="#98A2B3" stroke-width="1.5" /><text data-hf-id="hf-axax" x="1250" y="576" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">7d</text><line data-hf-id="hf-bqhe" x1="1400" y1="540" x2="1400" y2="552" stroke="#98A2B3" stroke-width="1.5" /><text data-hf-id="hf-ywh3" x="1400" y="576" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">8d</text><line data-hf-id="hf-uvf6" x1="1550" y1="540" x2="1550" y2="552" stroke="#98A2B3" stroke-width="1.5" /><text data-hf-id="hf-mkes" x="1550" y="576" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">9d</text><line data-hf-id="hf-i4ku" x1="1700" y1="540" x2="1700" y2="552" stroke="#98A2B3" stroke-width="1.5" /><text data-hf-id="hf-4rz7" x="1700" y="576" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">10d</text><line data-hf-id="hf-2jw3" x1="200" y1="540" x2="1700" y2="540" stroke="#CDD5E0" stroke-width="1.5" /></g>
+  <rect data-hf-id="hf-mu3p" id="s07-risk-supply" x="200" y="370" width="855" height="34" rx="6" fill="#3478F6" />
+  <rect data-hf-id="hf-prk0" id="s07-risk-lead" x="200" y="470" width="1200" height="34" rx="6" fill="#202A3B" />
+  <g data-hf-id="hf-tx6z" id="s07-risk-was"><line data-hf-id="hf-z886" x1="950" y1="462" x2="950" y2="512" stroke="#F7F9FC" stroke-width="3" /><text data-hf-id="hf-u7mr" x="960" y="458" font-family="Geist Mono" font-size="17" fill="#667085">was 5 d</text></g>
+</svg>
+<div data-hf-id="hf-bguv" class="l" id="s07-risk-l1" style="top:330px"><b data-hf-id="hf-l84y" class="c-blue">5.7 days of supply</b> <span data-hf-id="hf-qw6d" style="color:var(--ink-2)">· 110 on hand + 240 on order ÷ 61.3 a day</span></div>
+<div data-hf-id="hf-rg3f" class="l" id="s07-risk-l2" style="top:430px"><b data-hf-id="hf-3f2n">Lead time 8 days</b></div>
+<div data-hf-id="hf-8h23" id="s07-risk-gaplab"><div data-hf-id="hf-vc8v" class="title c-red">2.3 days</div><div data-hf-id="hf-y8ae" class="body" style="color:var(--ink-2);font-size:24px">shelf empty before the next delivery</div></div>
+<div data-hf-id="hf-s07o" id="s07-risk-rule">stock + on order  &lt;  daily demand × lead time   →   <b data-hf-id="hf-d4rn" class="c-red">stockout risk</b></div>
+<div data-hf-id="hf-exnn" class="browser" id="s07-risk-br" style="left:200px;top:660px;width:1520px;height:196px">
+  <div data-hf-id="hf-ufsv" class="bar"><i data-hf-id="hf-wt6k"></i><i data-hf-id="hf-zeb8"></i><i data-hf-id="hf-y7e5"></i><span data-hf-id="hf-qwi2" class="url">stockpulse.app/#/risk</span></div>
+  <div data-hf-id="hf-z18r" class="view"><div data-hf-id="hf-3262" class="cam" id="s07-risk-br-cam"><img data-hf-id="hf-tp7u" id="s07-risk-img" src="../../capture/prod/c04-risk.png" style="width:2009.9px;left:-397.8px;top:-492.0px;opacity:1" alt=""><div data-hf-id="hf-ml03" id="s07-risk-ring" class="ring red" style="left:19px;top:31px;width:96px;height:31px"></div></div></div>
+</div>
+<div data-hf-id="hf-3ail" class="legend" id="s07-risk-legend"><span data-hf-studio-original-inline-translate="" style="translate: 14.32px 25.061px" data-hf-id="hf-ildr" class="l-calc">Calculated</span><span data-hf-id="hf-jgx8" class="l-ai">AI</span></div>
+
+</div>
+</div>
+<script>
+(() => {
+const tl = gsap.timeline({ paused: true });
+const T = {"head": 0.3, "eight": 1.99, "stock": 3.63, "lasts": 5.85, "rules": 7.34, "critical": 8.82, "sfx_alert": 5.85};
+const DUR = 18;
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => Array.from(document.querySelectorAll(s));
+const fadeIn = (sel, t, d = 0.5) => tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t);
+const fadeOut = (sel, t, d = 0.4) => tl.fromTo(sel, { opacity: 1 }, { opacity: 0, duration: d, ease: "power1.in", immediateRender: false }, t);
+const rise = (sel, t, o = {}) => tl.fromTo(sel, { opacity: 0, y: o.y ?? 18 }, { opacity: 1, y: 0, duration: o.d ?? 0.6, ease: "power3.out", stagger: o.s ?? 0 }, t);
+const count = (el, from, to, t, d, fmt) => {
+  const o = { v: from };
+  el.textContent = fmt(from);
+  tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(o.v); } }, t);
+};
+// Scripted cursor: travel to (x, y), press at t, optional ripple.
+const click = (cur, rip, x0, y0, x, y, t) => {
+  tl.fromTo(cur, { opacity: 0, x: x0, y: y0 }, { opacity: 1, duration: 0.25 }, t - 1.2);
+  tl.to(cur, { x, y, duration: 0.9, ease: "power2.inOut" }, t - 1.0);
+  tl.to(cur, { scale: 0.86, duration: 0.08, ease: "power1.in" }, t);
+  tl.to(cur, { scale: 1, duration: 0.18, ease: "power2.out" }, t + 0.08);
+  if (rip) tl.fromTo(rip, { opacity: 0.5, scale: 0.2, x: x - 30, y: y - 30 }, { opacity: 0, scale: 1.4, duration: 0.6, ease: "power2.out" }, t);
+};
+
+fadeIn("#s07-risk-scene", 0, 0.5);
+fadeOut("#s07-risk-scene", DUR - 0.4, 0.4);
+
+fadeIn("#s07-risk-eyebrow", 0.2);
+rise("#s07-risk-head", T.head);
+fadeIn("#s07-risk-axis", 0.8);
+fadeIn("#s07-risk-l2", 0.9);
+tl.fromTo("#s07-risk-lead", { scaleX: 0 }, { scaleX: 5 / 8, duration: 0.8, ease: "power2.out" }, 1.0);
+fadeIn("#s07-risk-was", T.eight);
+tl.to("#s07-risk-lead", { scaleX: 1, duration: 1.0, ease: "power2.inOut" }, T.eight + 0.1);
+fadeIn("#s07-risk-l1", T.stock - 0.2);
+tl.fromTo("#s07-risk-supply", { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: "power2.out" }, T.stock);
+tl.fromTo("#s07-risk-gap", { opacity: 0, scaleY: 0.6 }, { opacity: 1, scaleY: 1, duration: 0.5, ease: "power2.out" }, T.lasts);
+rise("#s07-risk-gaplab", T.lasts + 0.2);
+rise("#s07-risk-rule", T.rules - 0.1);
+rise("#s07-risk-br", T.critical - 0.6, { y: 30 });
+tl.fromTo("#s07-risk-ring", { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.4 }, T.critical + 0.2);
+
+window.__timelines["s07-risk"] = tl;
+})();
+</script>
+</template></body></html>

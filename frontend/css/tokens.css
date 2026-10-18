@@ -1,4 +1,4 @@
-/* StockPulse AMD design tokens. Every other stylesheet references these; no raw values downstream.
+/* StockPulse design tokens. Every other stylesheet references these; no raw values downstream.
    Colour meaning is fixed: blue = deterministic calculation, ember = AI extraction / inference,
    indigo = interaction, green / amber / red = healthy / warning / critical. */
 :root {

@@ -1,0 +1,67 @@
+{
+ "output": "/home/k4k/Documents/AMD/agentic-replenish/solution_video/pitch-video/build/stockpulse_pitch_FINAL.mp4",
+ "mode": "FINAL",
+ "ui_sfx_stem": "/home/k4k/Documents/AMD/agentic-replenish/solution_video/pitch-video/build/ui_sfx_stem.wav",
+ "ui_cues": [
+  [
+   24.13,
+   "select"
+  ],
+  [
+   52.84,
+   "select"
+  ],
+  [
+   60.35,
+   "review"
+  ],
+  [
+   65.54,
+   "tap"
+  ],
+  [
+   66.04,
+   "success"
+  ],
+  [
+   100.1,
+   "review"
+  ],
+  [
+   119.27,
+   "tap"
+  ],
+  [
+   140.9,
+   "tap"
+  ],
+  [
+   142.35,
+   "success"
+  ]
+ ],
+ "missing_voiceover": [],
+ "captions": 52,
+ "video": {
+  "codec_name": "h264",
+  "width": 1920,
+  "height": 1080,
+  "r_frame_rate": "60/1",
+  "avg_frame_rate": "60/1",
+  "nb_frames": "12180"
+ },
+ "audio": {
+  "codec_name": "aac",
+  "sample_rate": "48000",
+  "channels": 2,
+  "r_frame_rate": "0/0",
+  "avg_frame_rate": "0/0",
+  "nb_frames": "9517"
+ },
+ "duration": 203.0,
+ "loudness": {
+  "integrated_lufs": "-16.02",
+  "true_peak_dbtp": "-1.31",
+  "lra": "4.70"
+ }
+}

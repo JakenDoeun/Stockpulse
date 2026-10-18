@@ -1,0 +1,129 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body><template>
+<style>
+#root { position: absolute; inset: 0; }
+
+#s05-intake-scene .paper { position:absolute; width:400px; padding:26px 30px; }
+#s05-intake-scene .paper::after { content:""; position:absolute; right:-1px; top:-1px; width:34px; height:34px; background: linear-gradient(225deg, var(--bg) 50%, #E3E8EF 50%); border-bottom-left-radius:6px; }
+#s05-intake-scene .paper .eyebrow { font-size:15px; }
+#s05-intake-scene .paper .t { font-size:28px; font-weight:600; margin:10px 0 14px; }
+#s05-intake-scene .paper .q { font-size:21px; line-height:1.45; }
+#s05-intake-scene .paper table { width:100%; font-family: var(--mono); font-size:18px; border-collapse:collapse; margin-top:18px; }
+#s05-intake-scene .paper td { padding:9px 0; border-top:1px solid var(--line); vertical-align:top; } #s05-intake-scene .paper td.r { text-align:right; }
+#s05-intake-scene .paper .mini { font-size:15px; color: var(--ink-2); margin-top:3px; }
+#s05-intake-scene .paper .hl { padding:0 4px; border-radius:4px; }
+
+#s05-intake-pdf { left:120px; top:150px; }
+#s05-intake-calls { position:absolute; left:120px; top:640px; width:440px; height:120px; }
+#s05-intake-calls .cl { position:absolute; left:0; top:0; display:flex; align-items:center; gap:14px; font-size:34px; font-weight:600; line-height:1.15; letter-spacing:-0.01em; }
+#s05-intake-calls .cl i { width:14px; height:14px; border-radius:4px; display:block; flex:none; }
+#s05-intake-calls .ember { background: var(--ember); } #s05-intake-calls .ink { background: var(--ink); } #s05-intake-calls .blue { background: var(--blue); }
+#s05-intake-scene .fld { position:absolute; font-size:21px; padding:8px 16px; background:#fff; box-shadow: var(--shadow); white-space:nowrap; }
+#s05-intake-scene .fld .conf { opacity:.75; font-size:18px; }
+#s05-intake-scene .ember-ring { border-color: var(--ember); }
+#s05-intake-blank { position:absolute; left:601px; top:151px; width:1198px; height:718px; background:#F7F9FC; opacity:0; border-radius:0 0 15px 15px; }
+
+</style>
+<div id="root" data-composition-id="s05-intake" data-width="1920" data-height="1080">
+<div class="scene" id="s05-intake-scene">
+
+<div id="s05-intake-pdf" class="card paper "><div class="eyebrow">PDF · Angkor Beverage Co</div><div class="t">Revised terms</div>
+  <div class="q">“Standard delivery is <span class="hl" id="s05-intake-hl1">8 days</span> from order.”</div>
+  <table><tr><td>Mineral Water 1.5L</td><td class="r">$0.57</td></tr>
+  <tr id="s05-intake-row"><td>Cola 330ml, tray of 24<div class="mini">MOQ 48</div></td><td class="r"><span class="hl" id="s05-intake-hl2">$1.36</span></td></tr>
+  <tr><td>Green Tea 500ml</td><td class="r">$0.92</td></tr></table></div>
+<div id="s05-intake-calls">
+  <div class="cl" id="s05-intake-q1"><i class="ember"></i>AI reads the document</div>
+  <div class="cl" id="s05-intake-q2"><i class="ink"></i>Nothing changes until confirmed</div>
+  <div class="cl" id="s05-intake-q3"><i class="blue"></i>Confirmed: trusted data updated</div>
+</div>
+<div class="browser" id="s05-intake-br" style="left:600px;top:110px;width:1200px;height:760px">
+  <div class="bar"><i></i><i></i><i></i><span class="url">stockpulse.app/#/inbox</span></div>
+  <div class="view"><div class="cam" id="s05-intake-br-cam"><img id="s05-intake-i1" src="../../capture/v2/c02b-review-full.png" style="width:1792.0px;opacity:1" alt=""><img id="s05-intake-i2" src="../../capture/v2/c02d-review-ready-full.png" style="width:1792.0px;opacity:0" alt=""><img id="s05-intake-i3" src="../../capture/v2/c02e-verified-full.png" style="width:1792.0px;opacity:0" alt=""><div class="ring ember-ring" id="s05-intake-r0" style="left:801px;top:399px;width:219px;height:45px"></div><div class="ring ember-ring" id="s05-intake-r1" style="left:801px;top:536px;width:219px;height:46px"></div><div class="ring ember-ring" id="s05-intake-r2" style="left:1025px;top:536px;width:219px;height:46px"></div><div class="ring ember-ring" id="s05-intake-r3" style="left:1249px;top:536px;width:217px;height:46px"></div><div class="ring" id="s05-intake-rc" style="left:1524px;top:1223px;width:169px;height:48px"></div><div class="ring" id="s05-intake-rv" style="left:365px;top:315px;width:360px;height:85px"></div></div></div>
+</div>
+<div id="s05-intake-blank"></div>
+<div class="chip ember fld" data-layout-allow-overlap id="s05-intake-f0" style="left:1164px;top:331px"><span>lead time</span><b class="mono">8</b><span class="conf">90%</span></div><div class="chip ember fld" data-layout-allow-overlap id="s05-intake-f1" style="left:1164px;top:468px"><span>unit cost</span><b class="mono">1.36</b><span class="conf">97%</span></div><div class="chip ember fld" data-layout-allow-overlap id="s05-intake-f2" style="left:1388px;top:468px"><span>MOQ</span><b class="mono">48</b><span class="conf">95%</span></div><div class="chip ember fld" data-layout-allow-overlap id="s05-intake-f3" style="left:1611px;top:468px"><span>case pack</span><b class="mono">24</b><span class="conf">99%</span></div>
+<div class="legend" id="s05-intake-legend"><span class="l-calc">Calculated</span><span class="l-ai">AI</span></div>
+<div id="s05-intake-rip" class="ripple"></div><svg id="s05-intake-cur" class="cursor" width="30" height="36" viewBox="0 0 30 36"><path d="M2 2 L2 28 L9 22 L14 33 L19 31 L14 20 L24 20 Z" fill="#202A3B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/></svg>
+
+</div>
+</div>
+<script>
+(() => {
+const tl = gsap.timeline({ paused: true });
+const T = {"pdf": 2.539, "eight": 5.572, "cola": 7.771, "fields": 9.4, "nothing": 12.408, "confirm": 15.541, "pan": 12.208, "verified": 15.841000000000001, "sfx_select": 2.839, "sfx_review": 10.35, "sfx_tap": 15.541, "sfx_success": 16.041};
+const DUR = 19;
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => Array.from(document.querySelectorAll(s));
+const fadeIn = (sel, t, d = 0.5) => tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t);
+const fadeOut = (sel, t, d = 0.4) => tl.fromTo(sel, { opacity: 1 }, { opacity: 0, duration: d, ease: "power1.in", immediateRender: false }, t);
+// force3D keeps moved elements composited for their whole life: no end-of-move re-raster or pixel snap
+const rise = (sel, t, o = {}) => tl.fromTo(sel, { opacity: 0, y: o.y ?? 18 }, { opacity: 1, y: 0, duration: o.d ?? 0.6, ease: "power3.out", stagger: o.s ?? 0, force3D: true }, t);
+const pop = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: d, ease: "back.out(1.7)", force3D: true }, t);
+const count = (el, from, to, t, d, fmt) => {
+  const o = { v: from };
+  el.textContent = fmt(from);
+  tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(o.v); } }, t);
+};
+// SVG path reveal: draws `frac` of each matching path
+const draw = (sel, t, d = 0.8, frac = 1, ease = "power2.inOut") => $$(sel).forEach((p) => {
+  const L = p.getTotalLength();
+  p.style.strokeDasharray = L + " " + L;
+  tl.fromTo(p, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t);
+  tl.fromTo(p, { strokeDashoffset: L }, { strokeDashoffset: L * (1 - frac), duration: d, ease }, t);
+});
+// the one camera move: a single scale-and-position tween, then a complete hold
+const camTo = (sel, v, t, d = 1.3) => tl.to(sel, { ...v, duration: d, ease: "power2.inOut", force3D: true }, t);
+// Scripted cursor: travel to (x, y), press at t, optional ripple.
+const click = (cur, rip, x0, y0, x, y, t) => {
+  tl.fromTo(cur, { opacity: 0, x: x0, y: y0 }, { opacity: 1, duration: 0.25 }, t - 1.2);
+  tl.to(cur, { x, y, duration: 0.9, ease: "power2.inOut" }, t - 1.0);
+  tl.to(cur, { scale: 0.86, duration: 0.08, ease: "power1.in" }, t);
+  tl.to(cur, { scale: 1, duration: 0.18, ease: "power2.out" }, t + 0.08);
+  if (rip) tl.fromTo(rip, { opacity: 0.5, scale: 0.2, x: x - 30, y: y - 30 }, { opacity: 0, scale: 1.4, duration: 0.6, ease: "power2.out" }, t);
+};
+
+fadeIn("#s05-intake-scene", 0, 0.5);
+fadeOut("#s05-intake-scene", DUR - 0.4, 0.4);
+
+rise("#s05-intake-pdf", T.pdf, { y: 30 });
+tl.fromTo("#s05-intake-br", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, T.pdf + 0.3);
+gsap.set("#s05-intake-br-cam", { x: -347.20, y: -240.80, scale: 1.0000 });
+tl.fromTo("#s05-intake-hl1", { backgroundColor: "rgba(253,240,236,0)", boxShadow: "inset 0 -2px 0 rgba(232,106,74,0)" }, { backgroundColor: "rgba(253,240,236,1)", boxShadow: "inset 0 -2px 0 rgba(232,106,74,1)", duration: 0.4 }, T.eight);
+tl.fromTo("#s05-intake-hl2", { backgroundColor: "rgba(253,240,236,0)", boxShadow: "inset 0 -2px 0 rgba(232,106,74,0)" }, { backgroundColor: "rgba(253,240,236,1)", boxShadow: "inset 0 -2px 0 rgba(232,106,74,1)", duration: 0.4 }, T.cola);
+// AI extraction: each value lifts off the PDF and lands on the real field it fills
+rise("#s05-intake-q1", T.fields - 0.3);
+[[-834, -13], [-694, -38], [-1088, -13], [-1221, -68]].forEach(([dx, dy], i) => {
+  const t = T.fields + i * 0.22, s = "#s05-intake-f" + i;
+  gsap.set(s, { xPercent: -50, yPercent: -50 });
+  tl.fromTo(s, { opacity: 0, x: dx, y: dy, scale: 0.9 }, { opacity: 1, duration: 0.2 }, t);
+  tl.to(s, { x: 0, y: 0, scale: 1, duration: 0.9, ease: "power3.inOut" }, t);
+  tl.to(s, { opacity: 0, scale: 0.85, duration: 0.3, ease: "power1.in" }, t + 1.0);
+  tl.fromTo("#s05-intake-r" + i, { opacity: 0 }, { opacity: 1, duration: 0.25 }, t + 0.95);
+});
+// the person reviews: guardrail lines excluded, one pan down to Confirm, the click
+tl.to("#s05-intake-q1", { opacity: 0, duration: 0.3 }, T.nothing - 0.5);
+rise("#s05-intake-q2", T.nothing - 0.2);
+tl.fromTo("#s05-intake-i2", { opacity: 0 }, { opacity: 1, duration: 0.3 }, T.pan - 0.2);
+tl.to("#s05-intake-scene .ember-ring", { opacity: 0, duration: 0.3 }, T.pan - 0.2);
+camTo("#s05-intake-br-cam", { x: -492.80, y: -716.80, scale: 1.0000 }, T.pan, 1.2);
+tl.fromTo("#s05-intake-rc", { opacity: 0 }, { opacity: 1, duration: 0.3 }, T.pan + 1.2);
+click("#s05-intake-cur", "#s05-intake-rip", 1500, 900, 1716, 680, T.confirm);
+tl.to("#s05-intake-cur", { opacity: 0, duration: 0.25 }, T.confirm + 0.3);
+tl.to("#s05-intake-rc", { opacity: 0, duration: 0.2 }, T.confirm + 0.2);
+// the page changes to its verified state (a navigation, so a quick dip rather than a camera move)
+tl.to("#s05-intake-blank", { opacity: 1, duration: 0.15 }, T.verified);
+tl.set("#s05-intake-br-cam", { x: -347.20, y: -67.20, scale: 1.0000 }, T.verified + 0.16);
+tl.set("#s05-intake-i3", { opacity: 1 }, T.verified + 0.16);
+tl.set(["#s05-intake-i1", "#s05-intake-i2"], { opacity: 0 }, T.verified + 0.16);
+tl.to("#s05-intake-blank", { opacity: 0, duration: 0.3 }, T.verified + 0.2);
+tl.fromTo("#s05-intake-rv", { opacity: 0 }, { opacity: 1, duration: 0.35 }, T.verified + 0.6);
+tl.to("#s05-intake-q2", { opacity: 0, duration: 0.3 }, T.verified);
+rise("#s05-intake-q3", T.verified + 0.3);
+fadeIn("#s05-intake-legend", 0.6);
+
+window.__timelines["s05-intake"] = tl;
+})();
+</script>
+</template></body></html>

@@ -1,0 +1,71 @@
+{
+  "purchase_orders": [
+    {
+      "id": 1,
+      "po_number": "PO-20261018-001",
+      "supplier": "FreshCo Beverages",
+      "supplier_email": "orders@freshco-bev.example",
+      "status": "draft",
+      "total": 2797.8,
+      "lines": [
+        {
+          "sku_id": "SKU-101",
+          "name": "Cola 330ml Can",
+          "recommended_qty": 2400,
+          "unit_cost": 0.4,
+          "line_cost": 960.0,
+          "pack_size": 24,
+          "reason": "Stockout in 2.5 days vs 6-day lead time; order 2400 units (100 x pack of 24); pre-buying at $0.40 before the +10% price increase to $0.44; scaled back from 2411 units to fit budget."
+        },
+        {
+          "sku_id": "SKU-103",
+          "name": "Energy Drink 250ml",
+          "recommended_qty": 960,
+          "unit_cost": 1.0,
+          "line_cost": 960.0,
+          "pack_size": 24,
+          "reason": "Stockout in 2.7 days vs 6-day lead time; order 960 units (40 x pack of 24); pre-buying at $1.00 before the +10% price increase to $1.10; scaled back from 978 units to fit budget."
+        },
+        {
+          "sku_id": "SKU-102",
+          "name": "Sparkling Orange 500ml",
+          "recommended_qty": 1596,
+          "unit_cost": 0.55,
+          "line_cost": 877.8,
+          "pack_size": 12,
+          "reason": "Stockout in 2.6 days vs 6-day lead time; order 1596 units (133 x pack of 12); pre-buying at $0.55 before the +10% price increase to $0.60; scaled back from 1781 units to fit budget."
+        }
+      ],
+      "pdf_url": "/api/po/1/pdf",
+      "dispatch_channel": "",
+      "dispatch_detail": "",
+      "created_at": "2026-10-18T07:15:01.633506",
+      "approved_at": null
+    },
+    {
+      "id": 2,
+      "po_number": "PO-20261018-002",
+      "supplier": "SnackWorld Wholesale",
+      "supplier_email": "sales@snackworld.example",
+      "status": "draft",
+      "total": 201.6,
+      "lines": [
+        {
+          "sku_id": "SKU-107",
+          "name": "Instant Noodle Cup",
+          "recommended_qty": 336,
+          "unit_cost": 0.6,
+          "line_cost": 201.6,
+          "pack_size": 24,
+          "reason": "Stockout in 2.7 days vs 3-day lead time; order 336 units (14 x pack of 24); scaled back from 352 units to fit budget."
+        }
+      ],
+      "pdf_url": "/api/po/2/pdf",
+      "dispatch_channel": "",
+      "dispatch_detail": "",
+      "created_at": "2026-10-18T07:15:01.687676",
+      "approved_at": null
+    }
+  ],
+  "briefing": "Good morning. 5 items need attention today. Supplier notice: +10% price & 6-day lead time & MOQ 48 on SKU-101. Stockout risk: Cola 330ml Can runs out in ~2.5 days (lead time 6d); Sparkling Orange 500ml runs out in ~2.6 days (lead time 6d); Energy Drink 250ml runs out in ~2.7 days (lead time 6d). Margin squeeze: Sparkling Orange 500ml margin 50.0% -> 45.0%; Energy Drink 250ml margin 54.5% -> 50.0%. Recommended cart: 4 lines, $2,999 of your $3,000 budget (100%); unconstrained need was $3,303. Pre-buying before the price increase: Cola 330ml Can (2400 units), Energy Drink 250ml (960 units). Scaled back / cut for budget: Laundry Detergent 1kg. Cash trap: Seasonal Mooncake Box has not sold in 45 days ($360 locked) - not reordered. Forecast check: model MAPE 14.6% vs 15.3% for the 14-day moving-average baseline. Review the cart and approve to send the purchase order."
+}

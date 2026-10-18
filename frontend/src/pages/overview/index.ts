@@ -16,7 +16,7 @@ const FMT = { int, money };
 
 /** @returns unmount */
 export function mountOverview(root: HTMLElement): () => void {
-  document.title = "Overview · StockPulse AMD";
+  document.title = "Overview · StockPulse";
   let cleanups: (() => void)[] = [];
   let prevMetrics: string[] | null = null;
   let prevMeter = 0;

@@ -29,7 +29,7 @@ pytest -q                              # 8 tests
 ```
 With no `LLM_*` variables the app runs in **offline mode** (same tools, templated explanation) so nothing breaks.
 
-## Frontend: StockPulse AMD
+## Frontend: StockPulse
 `/` serves the app from the `frontend/` folder. It is written in **TypeScript** (strict mode): sources in `frontend/src/`, compiled by `tsc` into `frontend/dist/` (`npm run build`, `npm run dev` to watch, `npm run typecheck`). There is no bundler; the browser loads the compiled ES modules directly, and an import map points `animejs` at `frontend/vendor/`. The original console stays at `/console`.
 
 | Page | What it does | Data source |
@@ -41,11 +41,22 @@ With no `LLM_*` variables the app runs in **offline mode** (same tools, template
 | Supplier Inbox | Intake, review and confirmation of supplier documents | sample fixtures (simulated extraction); confirmed values via `POST /api/supplier-updates` |
 | Purchasing Cart | Editable lines, pack/MOQ/budget/supplier-minimum validation, what-if simulator, PO drafts | `POST /api/optimize`, `POST /api/pos/drafts` |
 | Purchase Orders | List, detail, approval history, printable preview | `/api/pos`, `/api/pos/{id}/{submit,approve,reject,mark_sent,acknowledge,cancel}` |
-| Settings | Budget, engine policy, data import/reset, confirmed updates, integration status | `/api/data/*`, `/api/health` |
+| Settings | Budget, engine policy, data import/reset, sound on/off and volume, confirmed updates, integration status | `/api/data/*`, `/api/health` |
 
 Tests: `pytest -q` (engine and API) and `npm test` (type-check, then Playwright: the frontend's calculations plus the full Phase 2 demo journey in Chromium against a real engine on a throwaway database).
 
 Purchase orders: draft → submit → approve, or **return for revision** with a required note. Approval is blocked until the pre-approval checks pass (whole cases, MOQs, totals add up, supplier minimum; changed trusted prices are flagged). Dispatch through email, webhook or Evolus is **simulated only** and recorded as such; it never marks an order sent. "Record that I sent it" is for orders you sent yourself.
+
+UI sound (`src/lib/sfx.ts`): four short cues synthesized with the Web Audio API, no audio files. They play only after an outcome has happened, and every outcome is also shown on screen.
+
+| Cue | When |
+|---|---|
+| select (two soft rising notes) | CSVs picked in Import data; supplier documents received |
+| success (gentle three-note chime) | import finished; supplier changes applied; purchase order approved |
+| review (two even notes) | a document has values to review; picked files can't be imported as they are |
+| error (two falling notes) | import or confirmation failed; an approval action failed; every dropped file was refused |
+
+Everything else is silent on purpose: clicks, navigation, duplicate CSVs replacing an earlier pick, rejections, reverts and simulated dispatch (a chime there would suggest something reached the supplier). Audio starts only after the first click or key press (browser autoplay rules). The same cue never repeats within 1.5 s, and cues never stack: a more important one (error > review > success > select) may cut in. Settings → Sound has a master on/off and a volume slider, saved in this browser. Tests: `tests/e2e/sfx.spec.ts` records the oscillators the page starts.
 
 Honesty rules built into the UI: the budget optimizer (`app/tools/budget.py`) is a stated greedy heuristic, not a MILP solver. Document extraction is simulated on sample fixtures; your own files are reviewed by hand. The assistant (`POST /api/assistant`) answers deterministically, lists the functions it ran, and lets an LLM only rephrase when one is configured (rewording that introduces new numbers is rejected). "Sent" and "acknowledged" are recorded by a person; nothing is transmitted.
 Code layout (`frontend/`): `css/tokens.css` → `components.css` → `shell.css` / `overview.css` / `pages.css`; `src/data/*` (API, types, calculations, demo fixtures), `src/state.ts` (store + actions), `src/ui/*` (shell, chart, drawers, dialog, assistant), `src/lib/*` (helpers, `motion.ts` on Anime.js), `src/pages/*`. Docker compiles the frontend in a Node build stage.

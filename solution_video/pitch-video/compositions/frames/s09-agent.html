@@ -1,0 +1,109 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body><template>
+<style>
+#root { position: absolute; inset: 0; }
+
+#s09-agent-a, #s09-agent-b { position:absolute; inset:0; }
+#s09-agent-brief { position:absolute; left:120px; top:120px; width:820px; padding:34px 38px; border:1.5px solid var(--ember); }
+#s09-agent-brief .h { display:flex; align-items:center; gap:12px; font-size:22px; font-weight:600; color: var(--ember-ink); margin-bottom:22px; }
+#s09-agent-brief .h i { width:12px; height:12px; border-radius:3px; background: var(--ember); display:block; }
+#s09-agent-brief p { font-size:30px; line-height:1.55; }
+#s09-agent-brief .w { display:inline-block; }
+#s09-agent-lock { position:absolute; left:120px; top:640px; display:flex; align-items:center; gap:18px; }
+#s09-agent-lock .btn { font-size:22px; font-weight:500; padding:12px 26px; border-radius:10px; background:#EEF0F4; color:#98A2B3; display:flex; gap:10px; align-items:center; }
+#s09-agent-po { position:absolute; left:1010px; top:120px; width:790px; padding:34px 38px; }
+#s09-agent-po .top { display:flex; justify-content:space-between; align-items:baseline; }
+#s09-agent-po table { width:100%; border-collapse:collapse; margin-top:26px; font-size:22px; }
+#s09-agent-po th { text-align:left; font-weight:500; color: var(--ink-2); font-size:18px; padding:10px 0; border-bottom:1px solid var(--line); }
+#s09-agent-po td { padding:16px 0; border-bottom:1px solid var(--line); }
+#s09-agent-po .r { text-align:right; }
+#s09-agent-scene .pill { font-size:18px; font-weight:500; padding:5px 14px; border-radius:999px; background:#EEF0F4; color: var(--ink-2); }
+#s09-agent-ok { position:absolute; left:231px; top:772px; }
+
+</style>
+<div id="root" data-composition-id="s09-agent" data-width="1920" data-height="1080">
+<div class="scene" id="s09-agent-scene">
+
+<div id="s09-agent-a">
+  <div id="s09-agent-brief" class="card"><div class="h"><i></i>Procurement agent · briefing</div><p><span class="w">Cola</span> <span class="w">330ml</span> <span class="w">will</span> <span class="w">run</span> <span class="w">out</span> <span class="w"><span class='tok'>2.3 days</span></span> <span class="w">before</span> <span class="w">Angkor’s</span> <span class="w">new</span> <span class="w"><span class='tok'>8-day</span></span> <span class="w">delivery.</span> <span class="w">Order</span> <span class="w"><span class='tok'>744</span></span> <span class="w">cans</span> <span class="w">at</span> <span class="w">the</span> <span class="w">new</span> <span class="w"><span class='tok'>$1.36</span></span> <span class="w">cost.</span> <span class="w">Within</span> <span class="w">the</span> <span class="w"><span class='tok'>$8,400</span></span> <span class="w">budget,</span> <span class="w">Dish</span> <span class="w">Soap</span> <span class="w">and</span> <span class="w">Body</span> <span class="w">Lotion</span> <span class="w">give</span> <span class="w">up</span> <span class="w">safety</span> <span class="w">stock</span> <span class="w">first.</span></p></div>
+  <div id="s09-agent-lock"><div class="btn"><svg width="18" height="20" viewBox="0 0 18 20" fill="none" stroke="#98A2B3" stroke-width="2"><rect x="2" y="9" width="14" height="10" rx="2"/><path d="M5 9V6a4 4 0 0 1 8 0v3"/></svg>Approve</div><div class="label" style="color:var(--ink-2)">The agent drafts. Only a person approves.</div></div>
+  <div id="s09-agent-po" class="card">
+    <div class="top" id="s09-agent-p1"><div><div class="eyebrow">Purchase order</div><div class="title" style="margin-top:6px">PO-00001 · Angkor Beverage Co</div></div><span class="pill">Draft</span></div>
+    <table><tr id="s09-agent-p2"><th>Product</th><th class="r">Qty</th><th class="r">Unit</th><th class="r">Total</th></tr>
+    <tr id="s09-agent-p3"><td>Cola 330ml <span class="mono" style="color:var(--ink-2);font-size:17px">SKU008</span></td><td class="r c-blue">744</td><td class="r c-blue">$1.36</td><td class="r c-blue">$1,011.84</td></tr>
+    <tr id="s09-agent-p4"><td colspan="3" style="text-align:right;font-weight:600;border:0">Total order value</td><td class="r" style="font-weight:600;border:0">$1,011.84</td></tr></table>
+  </div>
+</div>
+<div id="s09-agent-b">
+  <div class="browser" id="s09-agent-br" style="left:231px;top:130px;width:1458px;height:616px">
+  <div class="bar"><i></i><i></i><i></i><span class="url">stockpulse.app/#/orders/PO-00001</span></div>
+  <div class="view"><div class="cam" id="s09-agent-br-cam"><img id="s09-agent-i1" src="../../capture/v2/c07d-po-key.png" style="width:1920.0px;opacity:1" alt=""><img id="s09-agent-i2" src="../../capture/v2/c07e-approve-dialog.png" style="width:1920.0px;opacity:0" alt=""><img id="s09-agent-i3" src="../../capture/v2/c07f-po-approved.png" style="width:1920.0px;opacity:0" alt=""></div></div>
+</div>
+  <div id="s09-agent-ok" class="chip green">✓ Approved by a person · approver key required</div>
+  <div id="s09-agent-rip" class="ripple"></div><svg id="s09-agent-cur" class="cursor" width="30" height="36" viewBox="0 0 30 36"><path d="M2 2 L2 28 L9 22 L14 33 L19 31 L14 20 L24 20 Z" fill="#202A3B" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/></svg>
+</div>
+
+</div>
+</div>
+<script>
+(() => {
+const tl = gsap.timeline({ paused: true });
+const T = {"brief": 2.976, "po": 4.764, "numbers": 6.634, "cant": 9.027, "person": 10.897, "b": 10.297, "c1": 11.897, "c2": 13.197000000000001, "sfx_tap": 11.897, "sfx_success": 13.347000000000001};
+const DUR = 17;
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => Array.from(document.querySelectorAll(s));
+const fadeIn = (sel, t, d = 0.5) => tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t);
+const fadeOut = (sel, t, d = 0.4) => tl.fromTo(sel, { opacity: 1 }, { opacity: 0, duration: d, ease: "power1.in", immediateRender: false }, t);
+// force3D keeps moved elements composited for their whole life: no end-of-move re-raster or pixel snap
+const rise = (sel, t, o = {}) => tl.fromTo(sel, { opacity: 0, y: o.y ?? 18 }, { opacity: 1, y: 0, duration: o.d ?? 0.6, ease: "power3.out", stagger: o.s ?? 0, force3D: true }, t);
+const pop = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: d, ease: "back.out(1.7)", force3D: true }, t);
+const count = (el, from, to, t, d, fmt) => {
+  const o = { v: from };
+  el.textContent = fmt(from);
+  tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(o.v); } }, t);
+};
+// SVG path reveal: draws `frac` of each matching path
+const draw = (sel, t, d = 0.8, frac = 1, ease = "power2.inOut") => $$(sel).forEach((p) => {
+  const L = p.getTotalLength();
+  p.style.strokeDasharray = L + " " + L;
+  tl.fromTo(p, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t);
+  tl.fromTo(p, { strokeDashoffset: L }, { strokeDashoffset: L * (1 - frac), duration: d, ease }, t);
+});
+// the one camera move: a single scale-and-position tween, then a complete hold
+const camTo = (sel, v, t, d = 1.3) => tl.to(sel, { ...v, duration: d, ease: "power2.inOut", force3D: true }, t);
+// Scripted cursor: travel to (x, y), press at t, optional ripple.
+const click = (cur, rip, x0, y0, x, y, t) => {
+  tl.fromTo(cur, { opacity: 0, x: x0, y: y0 }, { opacity: 1, duration: 0.25 }, t - 1.2);
+  tl.to(cur, { x, y, duration: 0.9, ease: "power2.inOut" }, t - 1.0);
+  tl.to(cur, { scale: 0.86, duration: 0.08, ease: "power1.in" }, t);
+  tl.to(cur, { scale: 1, duration: 0.18, ease: "power2.out" }, t + 0.08);
+  if (rip) tl.fromTo(rip, { opacity: 0.5, scale: 0.2, x: x - 30, y: y - 30 }, { opacity: 0, scale: 1.4, duration: 0.6, ease: "power2.out" }, t);
+};
+
+fadeIn("#s09-agent-scene", 0, 0.5);
+fadeOut("#s09-agent-scene", DUR - 0.4, 0.4);
+
+rise("#s09-agent-brief", T.brief - 0.3, { y: 24 });
+tl.fromTo("#s09-agent-brief .w", { opacity: 0 }, { opacity: 1, duration: 0.15, stagger: 0.07 }, T.brief + 0.2);
+rise("#s09-agent-po", T.po - 0.2, { y: 24 });
+rise(["#s09-agent-p1", "#s09-agent-p2", "#s09-agent-p3", "#s09-agent-p4"], T.po, { y: 12, s: 0.25 });
+tl.fromTo("#s09-agent-brief .tok", { boxShadow: "0 0 0 0px rgba(52,120,246,0)" }, { boxShadow: "0 0 0 3px rgba(52,120,246,.45)", duration: 0.3, stagger: 0.12, yoyo: true, repeat: 1 }, T.numbers);
+rise("#s09-agent-lock", T.cant - 0.2);
+// part B: the human approval in the real app, one fixed framing for every state
+gsap.set("#s09-agent-br-cam", { x: -374.40, y: -72.00, scale: 1.0000 });
+tl.fromTo("#s09-agent-b", { opacity: 0 }, { opacity: 1, duration: 0.5 }, T.b);
+tl.to("#s09-agent-a", { opacity: 0, duration: 0.4 }, T.b);
+click("#s09-agent-cur", "#s09-agent-rip", 1250, 860, 1473, 597, T.c1);
+tl.fromTo("#s09-agent-i2", { opacity: 0 }, { opacity: 1, duration: 0.2 }, T.c1 + 0.15);
+tl.to("#s09-agent-cur", { x: 1341, y: 666, duration: 0.7, ease: "power2.inOut" }, T.c2 - 0.8);
+tl.to("#s09-agent-cur", { scale: 0.86, duration: 0.08 }, T.c2);
+tl.to("#s09-agent-cur", { scale: 1, duration: 0.18 }, T.c2 + 0.08);
+tl.fromTo("#s09-agent-i3", { opacity: 0 }, { opacity: 1, duration: 0.2 }, T.c2 + 0.15);
+tl.to("#s09-agent-cur", { opacity: 0, duration: 0.25 }, T.c2 + 0.3);
+rise("#s09-agent-ok", T.c2 + 0.4);
+
+window.__timelines["s09-agent"] = tl;
+})();
+</script>
+</template></body></html>

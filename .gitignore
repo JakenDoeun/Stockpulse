@@ -16,3 +16,13 @@ __pycache__/
 .venv/
 .taste-skill/
 frontend/dist/
+# pitch video: keep sources + final cut, skip deps, previews, stems, old renders
+solution_video/**/node_modules/
+solution_video/pitch-video/versions/
+solution_video/pitch-video/renders/
+solution_video/pitch-video/.thumbnails/
+solution_video/pitch-video/build/*.mp4
+solution_video/pitch-video/build/*.wav
+!solution_video/pitch-video/build/stockpulse_pitch_FINAL.mp4
+# backend (Phase 1): local SQLite database and generated files
+backend/data/

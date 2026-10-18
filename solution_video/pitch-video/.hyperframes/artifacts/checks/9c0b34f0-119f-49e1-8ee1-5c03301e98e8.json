@@ -1,0 +1,140 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 13
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 1,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 27.218,
+        "selector": "#s02-problem-plus",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 943.38,
+          "top": 639.78,
+          "right": 1040.7,
+          "bottom": 674.22,
+          "width": 97.32,
+          "height": 34.44
+        },
+        "containerSelector": "#s02-problem-token",
+        "text": "+3 days",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/s02-problem.html",
+        "bbox": {
+          "x": 943.38,
+          "y": 639.78,
+          "width": 97.32,
+          "height": 34.44
+        },
+        "firstSeen": 27.218,
+        "lastSeen": 27.218,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          27.218
+        ]
+      }
+    ],
+    "duration": 203,
+    "samples": [
+      11.278,
+      33.833,
+      56.389,
+      78.944,
+      101.5,
+      124.056,
+      146.611,
+      169.167,
+      191.722
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 1,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 4.2:1; WCAG AA requires 4.5:1.",
+        "text": "● Cola 330ml",
+        "fg": "rgb(79,103,232)",
+        "bg": "rgb(238,241,253)",
+        "ratio": 4.2,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(75,98,221)",
+        "large": false,
+        "selector": "#s10-features-thread",
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/s10-features.html",
+        "bbox": {
+          "x": 162.609375,
+          "y": 432,
+          "width": 164.78125,
+          "height": 40
+        },
+        "time": 146.611,
+        "times": [
+          146.611
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      11.278,
+      56.389,
+      101.5,
+      146.611,
+      191.722
+    ],
+    "checked": 54,
+    "passed": 53
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

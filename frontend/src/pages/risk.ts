@@ -12,7 +12,7 @@ import { emptyState, filterSelect, pageHead, severityChip } from "../ui/kit.js";
 export let lastRisks: import("../data/risk.js").RiskItem[] = [];
 
 export function mountRisk(root: HTMLElement) {
-  document.title = "Risk Radar · StockPulse AMD";
+  document.title = "Risk Radar · StockPulse";
   const params = store.get().routeParams;
   const f = { severity: "all", type: params.type || "all", supplier: params.supplier || "all", category: "all", q: params.sku || "" };
   let opt: import("../data/types.js").Optimization | null = null;

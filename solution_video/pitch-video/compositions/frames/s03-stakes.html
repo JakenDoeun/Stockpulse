@@ -1,0 +1,163 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body><template>
+<style>
+#root { position: absolute; inset: 0; }
+
+#s03-stakes-scene .full { position:absolute; inset:0; }
+#s03-stakes-scene .co-l { position:absolute; left:186px; top:120px; }
+#s03-stakes-scene .co-r { position:absolute; right:186px; top:120px; text-align:right; }
+#s03-stakes-scene .callout { font-size:56px; }
+#s03-stakes-scene .sub { font-size:28px; color: var(--ink-2); margin-top:6px; }
+#s03-stakes-scene .slip { position:absolute; left:790px; top:104px; width:340px; height:136px; padding:20px 26px; }
+#s03-stakes-scene .slip .eyebrow { font-size:16px; }
+#s03-stakes-scene .slip .track { position:relative; margin-top:26px; height:6px; border-radius:3px; background: var(--line); }
+#s03-stakes-scene .slip .knob { position:absolute; left:130px; top:-11px; width:28px; height:28px; border-radius:50%; background: var(--ink); border:4px solid #fff; box-shadow: 0 2px 6px rgba(32,42,59,.3); }
+#s03-stakes-scene .slip .ends { display:flex; justify-content:space-between; margin-top:16px; font-size:20px; font-weight:500; }
+#s03-stakes-scene .pill { position:absolute; display:flex; align-items:center; gap:12px; border-radius:999px; font-size:26px; font-weight:600; padding:10px 22px; box-shadow: var(--shadow); }
+#s03-stakes-scene .red-pill { left:420px; top:500px; background:#fff; color: var(--red-ink); border:2px solid var(--red); }
+#s03-stakes-scene .red-pill i { width:12px; height:12px; border-radius:50%; background: var(--red); display:block; }
+#s03-stakes-scene .cash-pill { left:1250px; top:500px; background:#2B3A99; color:#fff; }
+#s03-stakes-scene .cash-pill b { width:34px; height:34px; border-radius:50%; background:#fff; color:#2B3A99; display:grid; place-items:center; font-size:22px; }
+
+#s03-stakes-scene .tlab { position:absolute; top:796px; width:240px; text-align:center; font-size:24px; font-weight:600; }
+#s03-stakes-scene .tlab span { position:absolute; left:0; right:0; }
+#s03-stakes-scene .plus3 { position:absolute; top:640px; font-size:26px; font-weight:600; color: var(--red-ink); }
+
+#s03-stakes-scene .dchip { position:absolute; top:430px; font-size:28px; padding:12px 26px; color: var(--ink); border-color: var(--line-strong); background:#fff; box-shadow: var(--shadow); white-space:nowrap; }
+#s03-stakes-scene .dot-ink { width:12px; height:12px; border-radius:3px; background: var(--indigo); display:block; }
+
+#s03-stakes-head { position:absolute; left:120px; top:96px; }
+#s03-stakes-sample { position:absolute; right:120px; top:104px; font-size:18px; color: var(--ink-2); border-color: var(--line-strong); background:#fff; }
+#s03-stakes-scene .col { position:absolute; top:262px; width:480px; }
+#s03-stakes-scene .col .fig { font-size:64px; font-weight:600; letter-spacing:-0.02em; margin-top:336px; font-variant-numeric: tabular-nums; }
+#s03-stakes-scene .col .desc { font-size:26px; color: var(--ink-2); margin-top:8px; line-height:1.35; }
+#s03-stakes-v3 { position:absolute; left:1320px; top:330px; width:440px; }
+#s03-stakes-v3 .price { display:flex; align-items:baseline; gap:16px; padding:14px 20px; background:#fff; border:1px solid var(--line); border-radius:12px; box-shadow: var(--shadow); width:max-content; }
+#s03-stakes-v3 .price .k { font-size:22px; color: var(--ink-2); }
+#s03-stakes-v3 .price .v { position:relative; display:inline-block; width:100px; height:40px; font-family: var(--mono); font-size:34px; font-weight:500; }
+#s03-stakes-v3 .price .v span { position:absolute; left:0; top:0; }
+#s03-stakes-v3 .price .up { font-size:20px; font-weight:600; color: var(--red-ink); }
+#s03-stakes-v3 .mbar { display:flex; margin-top:44px; height:40px; border-radius:8px; overflow:hidden; background: var(--line); }
+#s03-stakes-v3 .mbar i { display:block; height:100%; }
+#s03-stakes-cost { background: var(--ink); } #s03-stakes-marg { background: var(--blue); }
+#s03-stakes-v3 .mlab { display:flex; gap:18px; margin-top:10px; font-size:20px; color: var(--ink-2); } #s03-stakes-v3 .mlab .r { margin-left:auto; }
+
+</style>
+<div id="root" data-composition-id="s03-stakes" data-width="1920" data-height="1080">
+<div class="scene" id="s03-stakes-scene">
+
+<svg id="s03-stakes-tl" class="full" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <rect id="s03-stakes-tint" x="930" y="626" width="330" height="114" fill="#FCEDEF"/>
+  <rect id="s03-stakes-redseg" x="930" y="736" width="330" height="8" fill="#D94F61"/>
+  <path id="s03-stakes-axis" d="M380,740 L1480,740" stroke="#CDD5E0" stroke-width="3" fill="none"/>
+  <g id="s03-stakes-ticks"><line x1="380" y1="740" x2="380" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="380" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">0d</text><line x1="490" y1="740" x2="490" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="490" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">1d</text><line x1="600" y1="740" x2="600" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="600" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">2d</text><line x1="710" y1="740" x2="710" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="710" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">3d</text><line x1="820" y1="740" x2="820" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="820" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">4d</text><line x1="930" y1="740" x2="930" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="930" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">5d</text><line x1="1040" y1="740" x2="1040" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="1040" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">6d</text><line x1="1150" y1="740" x2="1150" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="1150" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">7d</text><line x1="1260" y1="740" x2="1260" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="1260" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">8d</text><line x1="1370" y1="740" x2="1370" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="1370" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">9d</text><line x1="1480" y1="740" x2="1480" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="1480" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">10d</text></g>
+  <g id="s03-stakes-truck" transform="translate(1260,734) scale(1.25)"><rect x="-40" y="-40" width="54" height="34" rx="3" fill="#4F67E8"/><rect x="12" y="-32" width="26" height="26" rx="5" fill="#202A3B"/><rect x="20" y="-28" width="12" height="9" rx="2" fill="#CFE0FD"/><circle cx="-26" cy="-5" r="7" fill="#202A3B"/><circle cx="-26" cy="-5" r="2.5" fill="#F7F9FC"/><circle cx="26" cy="-5" r="7" fill="#202A3B"/><circle cx="26" cy="-5" r="2.5" fill="#F7F9FC"/></g>
+</svg>
+<div class="eyebrow" id="s03-stakes-tleb" style="position:absolute;left:380px;top:600px">Supplier delivery</div>
+<div id="s03-stakes-tlab" class="tlab" style="left:1140px"><span id="s03-stakes-tl5">Delivery · day 5</span><span id="s03-stakes-tl8">Delivery · day 8</span></div>
+<div id="s03-stakes-plus" class="plus3" style="left:944px">+3 days</div>
+
+<div id="s03-stakes-head" class="headline">That gap is costly.</div>
+<div id="s03-stakes-sample" class="chip">Sample store data</div>
+<svg id="s03-stakes-art" class="full" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <g id="s03-stakes-v1">
+    <rect id="s03-stakes-gap" x="391" y="422" width="101" height="98" fill="#FCEDEF" stroke="#D94F61" stroke-width="2"/>
+    <rect id="s03-stakes-cov" x="140" y="446" width="251" height="34" rx="6" fill="#3478F6"/>
+    <text id="s03-stakes-covt" x="154" y="470" font-family="Geist" font-size="18" font-weight="600" fill="#fff">stock lasts 5.7 d</text>
+    <path d="M140,520 L580,520" stroke="#CDD5E0" stroke-width="3"/><line x1="140" y1="520" x2="140" y2="530" stroke="#98A2B3" stroke-width="2"/><text x="140" y="554" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">0d</text><line x1="228" y1="520" x2="228" y2="530" stroke="#98A2B3" stroke-width="2"/><text x="228" y="554" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">2d</text><line x1="316" y1="520" x2="316" y2="530" stroke="#98A2B3" stroke-width="2"/><text x="316" y="554" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">4d</text><line x1="404" y1="520" x2="404" y2="530" stroke="#98A2B3" stroke-width="2"/><text x="404" y="554" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">6d</text><line x1="492" y1="520" x2="492" y2="530" stroke="#98A2B3" stroke-width="2"/><text x="492" y="554" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">8d</text><line x1="580" y1="520" x2="580" y2="530" stroke="#98A2B3" stroke-width="2"/><text x="580" y="554" font-family="Geist Mono" font-size="17" fill="#667085" text-anchor="middle">10d</text>
+  </g>
+  <g id="s03-stakes-v2" transform="translate(760,230) scale(0.75)"><g class="ct"><rect x="40" y="368" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="40,368 54,354 178,354 164,368" fill="#EEF1FD"/><polygon points="164,368 178,354 178,442 164,456" fill="#AFBAEC"/><rect x="94" y="369" width="16" height="30" fill="#B9C3F0"/><rect x="52" y="426" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g class="ct"><rect x="182" y="368" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="182,368 196,354 320,354 306,368" fill="#EEF1FD"/><polygon points="306,368 320,354 320,442 306,456" fill="#AFBAEC"/><rect x="236" y="369" width="16" height="30" fill="#B9C3F0"/><rect x="194" y="426" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g class="ct"><rect x="324" y="368" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="324,368 338,354 462,354 448,368" fill="#EEF1FD"/><polygon points="448,368 462,354 462,442 448,456" fill="#AFBAEC"/><rect x="378" y="369" width="16" height="30" fill="#B9C3F0"/><rect x="336" y="426" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g class="ct"><rect x="40" y="280" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="40,280 54,266 178,266 164,280" fill="#EEF1FD"/><polygon points="164,280 178,266 178,354 164,368" fill="#AFBAEC"/><rect x="94" y="281" width="16" height="30" fill="#B9C3F0"/><rect x="52" y="338" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g class="ct"><rect x="182" y="280" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="182,280 196,266 320,266 306,280" fill="#EEF1FD"/><polygon points="306,280 320,266 320,354 306,368" fill="#AFBAEC"/><rect x="236" y="281" width="16" height="30" fill="#B9C3F0"/><rect x="194" y="338" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g class="ct"><rect x="324" y="280" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="324,280 338,266 462,266 448,280" fill="#EEF1FD"/><polygon points="448,280 462,266 462,354 448,368" fill="#AFBAEC"/><rect x="378" y="281" width="16" height="30" fill="#B9C3F0"/><rect x="336" y="338" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g class="ct"><rect x="40" y="192" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="40,192 54,178 178,178 164,192" fill="#EEF1FD"/><polygon points="164,192 178,178 178,266 164,280" fill="#AFBAEC"/><rect x="94" y="193" width="16" height="30" fill="#B9C3F0"/><rect x="52" y="250" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g class="ct"><rect x="182" y="192" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="182,192 196,178 320,178 306,192" fill="#EEF1FD"/><polygon points="306,192 320,178 320,266 306,280" fill="#AFBAEC"/><rect x="236" y="193" width="16" height="30" fill="#B9C3F0"/><rect x="194" y="250" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g class="ct"><rect x="324" y="192" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="324,192 338,178 462,178 448,192" fill="#EEF1FD"/><polygon points="448,192 462,178 462,266 448,280" fill="#AFBAEC"/><rect x="378" y="193" width="16" height="30" fill="#B9C3F0"/><rect x="336" y="250" width="30" height="16" rx="2" fill="#FFFFFF"/></g></g>
+</svg>
+<div class="col" id="s03-stakes-c1" style="left:120px"><div class="eyebrow">Stockout</div><div class="fig c-red">2.3 days</div><div class="desc">Cola sells out before the delayed truck arrives</div></div>
+<div class="col" id="s03-stakes-c2" style="left:720px"><div class="eyebrow">Trapped capital</div><div class="fig c-blue" id="s03-stakes-n2">$42,775</div><div class="desc">in stock beyond 90 days of cover</div></div>
+<div class="col" id="s03-stakes-c3" style="left:1320px"><div class="eyebrow">Margin erosion</div><div class="fig c-blue">$1.22 → <span id="s03-stakes-n3">$1.14</span></div><div class="desc">margin per can of Cola</div></div>
+<div id="s03-stakes-lock" class="pill cash-pill" style="left:830px;top:380px"><b>$</b>Cash tied up</div>
+<div id="s03-stakes-v3">
+  <div class="price"><span class="k">Unit cost</span><span class="v" data-layout-allow-overlap><span id="s03-stakes-c128">$1.28</span><span id="s03-stakes-c136">$1.36</span></span><span id="s03-stakes-up" class="up">+6.3%</span></div>
+  <div class="mbar"><i id="s03-stakes-cost" style="width:225.3px"></i><i id="s03-stakes-marg" style="width:214.7px"></i></div>
+  <div class="mlab"><span>cost</span><span>margin</span><span class="r">shelf price $2.50</span></div>
+</div>
+<div id="s03-stakes-chips">
+  <div class="chip dchip" id="s03-stakes-k1" style="left:360px"><i class="dot-ink"></i>Sales history</div>
+  <div class="chip dchip" id="s03-stakes-k2" style="left:960px"><i class="dot-ink"></i>Stock &amp; orders</div>
+  <div class="chip dchip" id="s03-stakes-k3" style="left:1560px"><i class="dot-ink"></i>Supplier terms</div>
+</div>
+
+</div>
+</div>
+<script>
+(() => {
+const tl = gsap.timeline({ paused: true });
+const T = {"head": 0.35, "stock": 0.3, "over": 2.566, "price": 6.353, "erodes": 9.16, "out": 10.2};
+const DUR = 11;
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => Array.from(document.querySelectorAll(s));
+const fadeIn = (sel, t, d = 0.5) => tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t);
+const fadeOut = (sel, t, d = 0.4) => tl.fromTo(sel, { opacity: 1 }, { opacity: 0, duration: d, ease: "power1.in", immediateRender: false }, t);
+// force3D keeps moved elements composited for their whole life: no end-of-move re-raster or pixel snap
+const rise = (sel, t, o = {}) => tl.fromTo(sel, { opacity: 0, y: o.y ?? 18 }, { opacity: 1, y: 0, duration: o.d ?? 0.6, ease: "power3.out", stagger: o.s ?? 0, force3D: true }, t);
+const pop = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: d, ease: "back.out(1.7)", force3D: true }, t);
+const count = (el, from, to, t, d, fmt) => {
+  const o = { v: from };
+  el.textContent = fmt(from);
+  tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(o.v); } }, t);
+};
+// SVG path reveal: draws `frac` of each matching path
+const draw = (sel, t, d = 0.8, frac = 1, ease = "power2.inOut") => $$(sel).forEach((p) => {
+  const L = p.getTotalLength();
+  p.style.strokeDasharray = L + " " + L;
+  tl.fromTo(p, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t);
+  tl.fromTo(p, { strokeDashoffset: L }, { strokeDashoffset: L * (1 - frac), duration: d, ease }, t);
+});
+// the one camera move: a single scale-and-position tween, then a complete hold
+const camTo = (sel, v, t, d = 1.3) => tl.to(sel, { ...v, duration: d, ease: "power2.inOut", force3D: true }, t);
+// Scripted cursor: travel to (x, y), press at t, optional ripple.
+const click = (cur, rip, x0, y0, x, y, t) => {
+  tl.fromTo(cur, { opacity: 0, x: x0, y: y0 }, { opacity: 1, duration: 0.25 }, t - 1.2);
+  tl.to(cur, { x, y, duration: 0.9, ease: "power2.inOut" }, t - 1.0);
+  tl.to(cur, { scale: 0.86, duration: 0.08, ease: "power1.in" }, t);
+  tl.to(cur, { scale: 1, duration: 0.18, ease: "power2.out" }, t + 0.08);
+  if (rip) tl.fromTo(rip, { opacity: 0.5, scale: 0.2, x: x - 30, y: y - 30 }, { opacity: 0, scale: 1.4, duration: 0.6, ease: "power2.out" }, t);
+};
+
+
+
+
+// S02's timeline clears; its truck travels into the stockout panel
+tl.to(["#s03-stakes-tint", "#s03-stakes-redseg", "#s03-stakes-axis", "#s03-stakes-ticks", "#s03-stakes-tleb", "#s03-stakes-tlab", "#s03-stakes-plus"], { opacity: 0, duration: 0.4 }, 0);
+tl.fromTo("#s03-stakes-truck", { x: 1260, y: 734, scale: 1.25 }, { x: 492, y: 514, scale: 1, duration: 1.0, ease: "power2.inOut" }, 0.15);
+rise("#s03-stakes-head", T.head);
+fadeIn("#s03-stakes-sample", 0.8);
+// panel 1: coverage runs out before the truck
+fadeIn(["#s03-stakes-c1 .eyebrow", "#s03-stakes-c2 .eyebrow", "#s03-stakes-c3 .eyebrow"], 0.5, 0.4);
+fadeIn(["#s03-stakes-v1 path", "#s03-stakes-v1 line", "#s03-stakes-v1 text:not(#s03-stakes-covt)"], 0.7, 0.5);
+tl.fromTo("#s03-stakes-cov", { scaleX: 0, svgOrigin: "140 463" }, { scaleX: 1, duration: 0.8, ease: "power2.out", svgOrigin: "140 463" }, T.stock - 0.3);
+fadeIn("#s03-stakes-covt", T.stock + 0.3, 0.3);
+tl.fromTo("#s03-stakes-gap", { opacity: 0, scaleX: 0, svgOrigin: "391 470" }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power2.out", svgOrigin: "391 470" }, T.stock + 0.4);
+rise(["#s03-stakes-c1 .fig", "#s03-stakes-c1 .desc"], T.stock + 0.5, { s: 0.1 });
+// panel 2: cartons stack up and lock the cash
+tl.fromTo("#s03-stakes-v2 .ct", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.3, stagger: 0.05, ease: "power2.out" }, T.over - 0.4);
+pop("#s03-stakes-lock", T.over + 0.3);
+rise(["#s03-stakes-c2 .fig", "#s03-stakes-c2 .desc"], T.over + 0.3, { s: 0.1 });
+count($("#s03-stakes-n2"), 0, 42775, T.over + 0.3, 1.0, (v) => "$" + Math.round(v).toLocaleString("en-US"));
+// panel 3: the cost tag moves and the margin bar pays for it
+rise("#s03-stakes-v3", T.price - 0.4);
+gsap.set("#s03-stakes-c136", { opacity: 0, y: 14 });
+gsap.set("#s03-stakes-up", { opacity: 0 });
+tl.to("#s03-stakes-c128", { opacity: 0, y: -14, duration: 0.3 }, T.price + 0.5);
+tl.to("#s03-stakes-c136", { opacity: 1, y: 0, duration: 0.3 }, T.price + 0.6);
+tl.to("#s03-stakes-up", { opacity: 1, duration: 0.3 }, T.price + 0.8);
+tl.to("#s03-stakes-cost", { width: 239.4, duration: 0.8, ease: "power2.inOut" }, T.price + 0.7);
+tl.to("#s03-stakes-marg", { width: 200.6, duration: 0.8, ease: "power2.inOut" }, T.price + 0.7);
+rise(["#s03-stakes-c3 .fig", "#s03-stakes-c3 .desc"], T.price + 0.6, { s: 0.1 });
+count($("#s03-stakes-n3"), 1.22, 1.14, T.erodes, 0.8, (v) => "$" + v.toFixed(2));
+// collapse into the three data inputs StockPulse reads (S04 picks them up)
+tl.to(["#s03-stakes-head", "#s03-stakes-sample", "#s03-stakes-art", "#s03-stakes-truck", "#s03-stakes-c1", "#s03-stakes-c2", "#s03-stakes-c3", "#s03-stakes-lock", "#s03-stakes-v3"], { opacity: 0, duration: 0.4, ease: "power1.in" }, T.out);
+tl.fromTo("#s03-stakes-chips .dchip", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)", stagger: 0.06 }, T.out + 0.2);
+gsap.set("#s03-stakes-chips .dchip", { xPercent: -50, yPercent: -50 });
+
+window.__timelines["s03-stakes"] = tl;
+})();
+</script>
+</template></body></html>

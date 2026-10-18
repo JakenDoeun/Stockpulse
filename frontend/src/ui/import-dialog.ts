@@ -10,6 +10,7 @@ import { checkData, importData } from "../data/api.js";
 import { go, load } from "../state.js";
 import { toast } from "./overlay.js";
 import { surfaceIn } from "../lib/motion.js";
+import { sfx } from "../lib/sfx.js";
 
 let dlg: HTMLDialogElement | null = null;
 const MAX_BYTES = 20_000_000;
@@ -71,21 +72,23 @@ export function openImport() {
 
   const handle = async (list: FileList | null) => {
     if (!list?.length) return;
+    let recognised = 0; // the cue describes this pick, not files picked earlier
     for (const file of Array.from(list)) {
       if (!/\.csv$/i.test(file.name)) { picked.push({ name: file.name, table: null, rows: 0, msg: "Not a CSV. Supplier documents go to the Supplier Inbox." }); continue; }
       if (file.size > MAX_BYTES) { picked.push({ name: file.name, table: null, rows: 0, msg: "Larger than 20 MB." }); continue; }
       const text = await file.text();
       const table = detect(text);
-      if (table) files[table] = text;
+      if (table) { files[table] = text; recognised++; }
       for (let i = picked.length - 1; i >= 0; i--) if (picked[i].table && picked[i].table === table) picked.splice(i, 1);
       picked.push({ name: file.name, table, rows: Math.max(0, text.split(/\r?\n/).filter((l) => l.trim()).length - 1) });
     }
     check = null;
     paint();
-    if (Object.keys(files).length) {
-      try { check = await checkData(files); } catch (e) { check = { ok: false, errors: [e instanceof Error ? e.message : String(e)], tables: {} }; }
-      paint();
-    }
+    sfx(recognised ? "select" : "review"); // nothing recognisable: the file list says why
+    if (!Object.keys(files).length) return;
+    try { check = await checkData(files); } catch (e) { check = { ok: false, errors: [e instanceof Error ? e.message : String(e)], tables: {} }; }
+    paint();
+    if (recognised && !check.ok) sfx("review");
   };
 
   d.onclick = async (e) => {
@@ -99,10 +102,12 @@ export function openImport() {
         d.close();
         await load();
         toast(`Imported. Engine now uses ${res.status.skus} SKUs and ${res.status.history_days} days of sales.`, { label: "View inventory", run: () => go("inventory") });
+        sfx("success");
       } catch (err) {
         check = { ok: false, errors: [err instanceof Error ? err.message : String(err)], tables: check?.tables || {} };
         busy = false;
         paint();
+        sfx("error");
       }
     }
   };

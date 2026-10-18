@@ -17,7 +17,7 @@ export const velocity = (p: import("../data/types.js").Product, n: number) => { 
 export const grossMargin = (p: import("../data/types.js").Product) => (p.unit_price - p.unit_cost) / p.unit_price;
 
 export function mountInventory(root: HTMLElement) {
-  document.title = "Inventory · StockPulse AMD";
+  document.title = "Inventory · StockPulse";
   const params = store.get().routeParams;
   const f = { q: params.q || "", category: params.category || "all", supplier: params.supplier || "all", status: params.status || "all" };
   let sort = (({ key: "status", dir: 1 }) as {key: string, dir: 1 | -1});

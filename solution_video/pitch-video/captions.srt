@@ -1,0 +1,235 @@
+1
+00:00:00,300 --> 00:00:03,078
+Every retailer faces the same balancing act.
+
+2
+00:00:03,128 --> 00:00:06,411
+Order too little, and customers find empty
+shelves.
+
+3
+00:00:06,461 --> 00:00:11,442
+Order too much, and cash gets trapped in stock
+that may never sell.
+
+4
+00:00:14,300 --> 00:00:15,456
+The problem?
+
+5
+00:00:15,506 --> 00:00:19,453
+The information needed to make better
+decisions is scattered.
+
+6
+00:00:19,503 --> 00:00:24,182
+Sales sit in the POS, while supplier updates
+arrive through spreadsheets,
+
+7
+00:00:24,232 --> 00:00:25,959
+PDFs, and emails.
+
+8
+00:00:26,009 --> 00:00:28,600
+Critical changes can easily go unnoticed.
+
+9
+00:00:29,300 --> 00:00:34,537
+A delayed delivery or an overlooked price
+increase can change what a retailer should
+
+10
+00:00:34,587 --> 00:00:36,977
+order. Without connecting these signals,
+
+11
+00:00:37,027 --> 00:00:39,515
+purchasing becomes a costly guessing game.
+
+12
+00:00:40,300 --> 00:00:43,036
+StockPulse turns scattered supplier updates,
+
+13
+00:00:43,086 --> 00:00:47,070
+demand forecasts, and stock risks into
+precise,
+
+14
+00:00:47,120 --> 00:00:48,746
+budget-aware purchasing decisions.
+
+15
+00:00:50,300 --> 00:00:52,689
+Let's follow one purchasing scenario.
+
+16
+00:00:52,739 --> 00:00:57,316
+A supplier changes Cola's delivery time from
+five days to eight,
+
+17
+00:00:57,366 --> 00:00:59,350
+while increasing its price.
+
+18
+00:00:59,400 --> 00:01:02,358
+StockPulse extracts these changes into
+structured data,
+
+19
+00:01:02,408 --> 00:01:06,246
+ready for human review before they affect
+purchasing decisions.
+
+20
+00:01:09,300 --> 00:01:12,618
+Next, dedicated time-series models forecast
+future demand.
+
+21
+00:01:12,668 --> 00:01:15,577
+StockPulse compares their predictions with a
+baseline,
+
+22
+00:01:15,627 --> 00:01:20,366
+helping retailers understand what they may
+need in the coming weeks.
+
+23
+00:01:20,416 --> 00:01:24,599
+The goal is to act before a shortage becomes
+urgent.
+
+24
+00:01:28,300 --> 00:01:31,304
+But demand is only half the picture.
+
+25
+00:01:31,354 --> 00:01:37,186
+With delivery taking longer, current stock may
+run out before the next shipment arrives.
+
+26
+00:01:37,236 --> 00:01:41,371
+StockPulse combines inventory and lead-time
+information to flag products that need
+
+27
+00:01:41,421 --> 00:01:42,021
+attention.
+
+28
+00:01:46,300 --> 00:01:48,452
+Now comes the key decision:
+
+29
+00:01:48,502 --> 00:01:50,894
+what should the retailer order?
+
+30
+00:01:50,944 --> 00:01:53,501
+StockPulse calculates replenishment using
+expected demand,
+
+31
+00:01:53,551 --> 00:01:57,104
+lead time, safety stock, and incoming orders.
+
+32
+00:01:57,154 --> 00:02:02,723
+When the budget is limited, it prioritizes
+critical products and explains the trade-offs,
+
+33
+00:02:02,773 --> 00:02:06,210
+so every recommendation has a reason behind
+it.
+
+34
+00:02:09,300 --> 00:02:14,458
+The procurement agent turns those calculations
+into a clear explanation and a purchase order
+
+35
+00:02:14,508 --> 00:02:15,212
+draft.
+
+36
+00:02:15,262 --> 00:02:19,847
+The logic remains auditable, and the agent
+cannot approve the order.
+
+37
+00:02:19,897 --> 00:02:22,357
+The retailer makes the final decision.
+
+38
+00:02:26,300 --> 00:02:28,621
+From supplier documents to forecasts,
+
+39
+00:02:28,671 --> 00:02:30,744
+risk detection, and replenishment,
+
+40
+00:02:30,794 --> 00:02:33,811
+StockPulse brings the purchasing workflow
+together.
+
+41
+00:02:33,861 --> 00:02:36,619
+It is designed for independent retailers,
+
+42
+00:02:36,669 --> 00:02:41,822
+specialty grocers, and small wholesalers
+working with POS data and spreadsheets.
+
+43
+00:02:46,300 --> 00:02:50,439
+Our approach combines AI with dependable
+business logic.
+
+44
+00:02:50,489 --> 00:02:53,888
+Language models interpret documents and
+explain recommendations,
+
+45
+00:02:53,938 --> 00:02:58,077
+while deterministic code calculates risk and
+order quantities.
+
+46
+00:02:58,127 --> 00:03:00,334
+AMD infrastructure, Instinct GPUs,
+
+47
+00:03:00,384 --> 00:03:03,319
+and ROCm support our AI workload,
+
+48
+00:03:03,369 --> 00:03:07,681
+with privacy and access controls built into
+the deployment.
+
+49
+00:03:09,300 --> 00:03:11,015
+Fewer empty shelves.
+
+50
+00:03:11,065 --> 00:03:14,534
+Less cash tied up in excess stock.
+
+51
+00:03:14,584 --> 00:03:18,243
+Smarter purchasing, with decisions retailers
+can understand.
+
+52
+00:03:18,293 --> 00:03:19,769
+This is StockPulse.
+

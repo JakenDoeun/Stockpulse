@@ -15,7 +15,7 @@ const HORIZONS = [7, 14, 28];
 const HISTORY = [28, 56, 90, 180];
 
 export function mountForecasts(root: HTMLElement) {
-  document.title = "Demand Forecasts · StockPulse AMD";
+  document.title = "Demand Forecasts · StockPulse";
   const s0 = store.get();
   const st = { sku: s0.routeParams.sku || s0.chartSku || "", horizon: (s0.period as number), history: 56 };
   let fd: import("../data/types.js").ForecastDetail | null = null;

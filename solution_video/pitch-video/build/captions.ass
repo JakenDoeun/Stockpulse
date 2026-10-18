@@ -1,0 +1,64 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Geist Medium,40,&H003B2A20,&H003B2A20,&H10FFFFFF,&H10FFFFFF,0,0,0,0,100,100,0,0,4,14,0,2,200,200,46,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.30,0:00:03.08,Cap,,0,0,0,,Every retailer faces the same balancing act.
+Dialogue: 0,0:00:03.13,0:00:06.41,Cap,,0,0,0,,Order too little, and customers find empty\Nshelves.
+Dialogue: 0,0:00:06.46,0:00:11.44,Cap,,0,0,0,,Order too much, and cash gets trapped in stock\Nthat may never sell.
+Dialogue: 0,0:00:14.30,0:00:15.46,Cap,,0,0,0,,The problem?
+Dialogue: 0,0:00:15.51,0:00:19.45,Cap,,0,0,0,,The information needed to make better\Ndecisions is scattered.
+Dialogue: 0,0:00:19.50,0:00:24.18,Cap,,0,0,0,,Sales sit in the POS, while supplier updates\Narrive through spreadsheets,
+Dialogue: 0,0:00:24.23,0:00:25.96,Cap,,0,0,0,,PDFs, and emails.
+Dialogue: 0,0:00:26.01,0:00:28.60,Cap,,0,0,0,,Critical changes can easily go unnoticed.
+Dialogue: 0,0:00:29.30,0:00:34.54,Cap,,0,0,0,,A delayed delivery or an overlooked price\Nincrease can change what a retailer should
+Dialogue: 0,0:00:34.59,0:00:36.98,Cap,,0,0,0,,order. Without connecting these signals,
+Dialogue: 0,0:00:37.03,0:00:39.52,Cap,,0,0,0,,purchasing becomes a costly guessing game.
+Dialogue: 0,0:00:40.30,0:00:43.04,Cap,,0,0,0,,StockPulse turns scattered supplier updates,
+Dialogue: 0,0:00:43.09,0:00:47.07,Cap,,0,0,0,,demand forecasts, and stock risks into\Nprecise,
+Dialogue: 0,0:00:47.12,0:00:48.75,Cap,,0,0,0,,budget-aware purchasing decisions.
+Dialogue: 0,0:00:50.30,0:00:52.69,Cap,,0,0,0,,Let's follow one purchasing scenario.
+Dialogue: 0,0:00:52.74,0:00:57.32,Cap,,0,0,0,,A supplier changes Cola's delivery time from\Nfive days to eight,
+Dialogue: 0,0:00:57.37,0:00:59.35,Cap,,0,0,0,,while increasing its price.
+Dialogue: 0,0:00:59.40,0:01:02.36,Cap,,0,0,0,,StockPulse extracts these changes into\Nstructured data,
+Dialogue: 0,0:01:02.41,0:01:06.25,Cap,,0,0,0,,ready for human review before they affect\Npurchasing decisions.
+Dialogue: 0,0:01:09.30,0:01:12.62,Cap,,0,0,0,,Next, dedicated time-series models forecast\Nfuture demand.
+Dialogue: 0,0:01:12.67,0:01:15.58,Cap,,0,0,0,,StockPulse compares their predictions with a\Nbaseline,
+Dialogue: 0,0:01:15.63,0:01:20.37,Cap,,0,0,0,,helping retailers understand what they may\Nneed in the coming weeks.
+Dialogue: 0,0:01:20.42,0:01:24.60,Cap,,0,0,0,,The goal is to act before a shortage becomes\Nurgent.
+Dialogue: 0,0:01:28.30,0:01:31.30,Cap,,0,0,0,,But demand is only half the picture.
+Dialogue: 0,0:01:31.35,0:01:37.19,Cap,,0,0,0,,With delivery taking longer, current stock may\Nrun out before the next shipment arrives.
+Dialogue: 0,0:01:37.24,0:01:41.37,Cap,,0,0,0,,StockPulse combines inventory and lead-time\Ninformation to flag products that need
+Dialogue: 0,0:01:41.42,0:01:42.02,Cap,,0,0,0,,attention.
+Dialogue: 0,0:01:46.30,0:01:48.45,Cap,,0,0,0,,Now comes the key decision:
+Dialogue: 0,0:01:48.50,0:01:50.89,Cap,,0,0,0,,what should the retailer order?
+Dialogue: 0,0:01:50.94,0:01:53.50,Cap,,0,0,0,,StockPulse calculates replenishment using\Nexpected demand,
+Dialogue: 0,0:01:53.55,0:01:57.10,Cap,,0,0,0,,lead time, safety stock, and incoming orders.
+Dialogue: 0,0:01:57.15,0:02:02.72,Cap,,0,0,0,,When the budget is limited, it prioritizes\Ncritical products and explains the trade-offs,
+Dialogue: 0,0:02:02.77,0:02:06.21,Cap,,0,0,0,,so every recommendation has a reason behind\Nit.
+Dialogue: 0,0:02:09.30,0:02:14.46,Cap,,0,0,0,,The procurement agent turns those calculations\Ninto a clear explanation and a purchase order
+Dialogue: 0,0:02:14.51,0:02:15.21,Cap,,0,0,0,,draft.
+Dialogue: 0,0:02:15.26,0:02:19.85,Cap,,0,0,0,,The logic remains auditable, and the agent\Ncannot approve the order.
+Dialogue: 0,0:02:19.90,0:02:22.36,Cap,,0,0,0,,The retailer makes the final decision.
+Dialogue: 0,0:02:26.30,0:02:28.62,Cap,,0,0,0,,From supplier documents to forecasts,
+Dialogue: 0,0:02:28.67,0:02:30.74,Cap,,0,0,0,,risk detection, and replenishment,
+Dialogue: 0,0:02:30.79,0:02:33.81,Cap,,0,0,0,,StockPulse brings the purchasing workflow\Ntogether.
+Dialogue: 0,0:02:33.86,0:02:36.62,Cap,,0,0,0,,It is designed for independent retailers,
+Dialogue: 0,0:02:36.67,0:02:41.82,Cap,,0,0,0,,specialty grocers, and small wholesalers\Nworking with POS data and spreadsheets.
+Dialogue: 0,0:02:46.30,0:02:50.44,Cap,,0,0,0,,Our approach combines AI with dependable\Nbusiness logic.
+Dialogue: 0,0:02:50.49,0:02:53.89,Cap,,0,0,0,,Language models interpret documents and\Nexplain recommendations,
+Dialogue: 0,0:02:53.94,0:02:58.08,Cap,,0,0,0,,while deterministic code calculates risk and\Norder quantities.
+Dialogue: 0,0:02:58.13,0:03:00.33,Cap,,0,0,0,,AMD infrastructure, Instinct GPUs,
+Dialogue: 0,0:03:00.38,0:03:03.32,Cap,,0,0,0,,and ROCm support our AI workload,
+Dialogue: 0,0:03:03.37,0:03:07.68,Cap,,0,0,0,,with privacy and access controls built into\Nthe deployment.
+Dialogue: 0,0:03:09.30,0:03:11.01,Cap,,0,0,0,,Fewer empty shelves.
+Dialogue: 0,0:03:11.06,0:03:14.53,Cap,,0,0,0,,Less cash tied up in excess stock.
+Dialogue: 0,0:03:14.58,0:03:18.24,Cap,,0,0,0,,Smarter purchasing, with decisions retailers\Ncan understand.
+Dialogue: 0,0:03:18.29,0:03:19.77,Cap,,0,0,0,,This is StockPulse.

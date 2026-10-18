@@ -1,0 +1,1400 @@
+{
+  "generated_at": "2026-10-18T07:15:01.527548+00:00",
+  "as_of": "2026-10-18",
+  "budget_cap": 2500.0,
+  "horizon_days": 14,
+  "scenario": {
+    "lead_time_delta_days": 0,
+    "lead_time_overrides": {},
+    "demand_multiplier": 1.0
+  },
+  "kpis": {
+    "skus_tracked": 10,
+    "high_risk_count": 5,
+    "imminent_stockouts": 4,
+    "revenue_at_risk": 1216.21,
+    "capital_locked_dead_stock": 360.0,
+    "avg_model_mape": 14.6,
+    "avg_baseline_mape": 15.3,
+    "avg_improvement_pct": 18.9,
+    "cart_total": 2497.8,
+    "budget_utilization": 0.999
+  },
+  "supplier_constraints": [
+    {
+      "sku_id": "SKU-101",
+      "name": "Cola 330ml Can",
+      "old_cost": 0.4,
+      "new_cost": 0.44,
+      "lead_time_days": 6,
+      "moq": 48,
+      "effective_date": "2026-10-21",
+      "source_doc": "freshco_notice.pdf",
+      "extraction_method": "rules",
+      "headline": "Detected: +10% price & 6-day lead time & MOQ 48 on SKU-101"
+    },
+    {
+      "sku_id": "SKU-102",
+      "name": "Sparkling Orange 500ml",
+      "old_cost": 0.55,
+      "new_cost": 0.605,
+      "lead_time_days": 6,
+      "moq": 24,
+      "effective_date": "2026-10-21",
+      "source_doc": "freshco_notice.pdf",
+      "extraction_method": "rules",
+      "headline": "Detected: +10% price & 6-day lead time & MOQ 24 on SKU-102"
+    },
+    {
+      "sku_id": "SKU-103",
+      "name": "Energy Drink 250ml",
+      "old_cost": 1.0,
+      "new_cost": 1.1,
+      "lead_time_days": 6,
+      "moq": 48,
+      "effective_date": "2026-10-21",
+      "source_doc": "freshco_notice.pdf",
+      "extraction_method": "rules",
+      "headline": "Detected: +10% price & 6-day lead time & MOQ 48 on SKU-103"
+    }
+  ],
+  "forecasts": [
+    {
+      "sku_id": "SKU-101",
+      "name": "Cola 330ml Can",
+      "daily_mean": 134.365,
+      "daily_std": 13.049,
+      "interval": "90%",
+      "forecast": [
+        {
+          "date": "2026-10-18",
+          "mean": 142.65,
+          "lower": 121.19,
+          "upper": 164.12
+        },
+        {
+          "date": "2026-10-19",
+          "mean": 111.82,
+          "lower": 90.35,
+          "upper": 133.28
+        },
+        {
+          "date": "2026-10-20",
+          "mean": 121.59,
+          "lower": 100.12,
+          "upper": 143.05
+        },
+        {
+          "date": "2026-10-21",
+          "mean": 123.78,
+          "lower": 102.31,
+          "upper": 145.25
+        },
+        {
+          "date": "2026-10-22",
+          "mean": 126.48,
+          "lower": 105.01,
+          "upper": 147.94
+        },
+        {
+          "date": "2026-10-23",
+          "mean": 142.3,
+          "lower": 120.84,
+          "upper": 163.77
+        },
+        {
+          "date": "2026-10-24",
+          "mean": 171.94,
+          "lower": 150.47,
+          "upper": 193.4
+        },
+        {
+          "date": "2026-10-25",
+          "mean": 143.69,
+          "lower": 122.22,
+          "upper": 165.15
+        },
+        {
+          "date": "2026-10-26",
+          "mean": 112.55,
+          "lower": 91.08,
+          "upper": 134.01
+        },
+        {
+          "date": "2026-10-27",
+          "mean": 122.3,
+          "lower": 100.83,
+          "upper": 143.77
+        },
+        {
+          "date": "2026-10-28",
+          "mean": 124.43,
+          "lower": 102.97,
+          "upper": 145.9
+        },
+        {
+          "date": "2026-10-29",
+          "mean": 127.08,
+          "lower": 105.61,
+          "upper": 148.54
+        },
+        {
+          "date": "2026-10-30",
+          "mean": 142.91,
+          "lower": 121.44,
+          "upper": 164.38
+        },
+        {
+          "date": "2026-10-31",
+          "mean": 172.59,
+          "lower": 151.13,
+          "upper": 194.06
+        }
+      ],
+      "metrics": {
+        "model_mape": 6.9,
+        "baseline_mape": 14.1,
+        "model_rmse": 12.42,
+        "baseline_rmse": 23.13,
+        "improvement_pct": 46.3,
+        "holdout_days": 14,
+        "model": "SeasonalDampedHolt",
+        "baseline": "SMA14"
+      },
+      "method_note": "Weekday-seasonal damped Holt on censored-demand-normalised sales; benchmarked on a 14-day holdout against a 14-day SMA baseline. No LLM is used for numbers."
+    },
+    {
+      "sku_id": "SKU-102",
+      "name": "Sparkling Orange 500ml",
+      "daily_mean": 100.444,
+      "daily_std": 7.804,
+      "interval": "90%",
+      "forecast": [
+        {
+          "date": "2026-10-18",
+          "mean": 106.22,
+          "lower": 93.38,
+          "upper": 119.05
+        },
+        {
+          "date": "2026-10-19",
+          "mean": 91.37,
+          "lower": 78.53,
+          "upper": 104.2
+        },
+        {
+          "date": "2026-10-20",
+          "mean": 82.59,
+          "lower": 69.76,
+          "upper": 95.43
+        },
+        {
+          "date": "2026-10-21",
+          "mean": 93.2,
+          "lower": 80.36,
+          "upper": 106.03
+        },
+        {
+          "date": "2026-10-22",
+          "mean": 92.74,
+          "lower": 79.9,
+          "upper": 105.57
+        },
+        {
+          "date": "2026-10-23",
+          "mean": 108.98,
+          "lower": 96.15,
+          "upper": 121.82
+        },
+        {
+          "date": "2026-10-24",
+          "mean": 128.01,
+          "lower": 115.18,
+          "upper": 140.85
+        },
+        {
+          "date": "2026-10-25",
+          "mean": 106.71,
+          "lower": 93.87,
+          "upper": 119.55
+        },
+        {
+          "date": "2026-10-26",
+          "mean": 91.75,
+          "lower": 78.91,
+          "upper": 104.59
+        },
+        {
+          "date": "2026-10-27",
+          "mean": 82.91,
+          "lower": 70.07,
+          "upper": 95.74
+        },
+        {
+          "date": "2026-10-28",
+          "mean": 93.51,
+          "lower": 80.68,
+          "upper": 106.35
+        },
+        {
+          "date": "2026-10-29",
+          "mean": 93.02,
+          "lower": 80.18,
+          "upper": 105.86
+        },
+        {
+          "date": "2026-10-30",
+          "mean": 109.28,
+          "lower": 96.44,
+          "upper": 122.12
+        },
+        {
+          "date": "2026-10-31",
+          "mean": 128.33,
+          "lower": 115.49,
+          "upper": 141.17
+        }
+      ],
+      "metrics": {
+        "model_mape": 8.5,
+        "baseline_mape": 11.7,
+        "model_rmse": 10.3,
+        "baseline_rmse": 13.85,
+        "improvement_pct": 25.6,
+        "holdout_days": 14,
+        "model": "SeasonalDampedHolt",
+        "baseline": "SMA14"
+      },
+      "method_note": "Weekday-seasonal damped Holt on censored-demand-normalised sales; benchmarked on a 14-day holdout against a 14-day SMA baseline. No LLM is used for numbers."
+    },
+    {
+      "sku_id": "SKU-103",
+      "name": "Energy Drink 250ml",
+      "daily_mean": 54.599,
+      "daily_std": 8.793,
+      "interval": "90%",
+      "forecast": [
+        {
+          "date": "2026-10-18",
+          "mean": 53.87,
+          "lower": 39.4,
+          "upper": 68.33
+        },
+        {
+          "date": "2026-10-19",
+          "mean": 48.45,
+          "lower": 33.98,
+          "upper": 62.91
+        },
+        {
+          "date": "2026-10-20",
+          "mean": 51.12,
+          "lower": 36.65,
+          "upper": 65.58
+        },
+        {
+          "date": "2026-10-21",
+          "mean": 48.01,
+          "lower": 33.54,
+          "upper": 62.47
+        },
+        {
+          "date": "2026-10-22",
+          "mean": 51.94,
+          "lower": 37.48,
+          "upper": 66.41
+        },
+        {
+          "date": "2026-10-23",
+          "mean": 61.01,
+          "lower": 46.54,
+          "upper": 75.47
+        },
+        {
+          "date": "2026-10-24",
+          "mean": 67.81,
+          "lower": 53.34,
+          "upper": 82.27
+        },
+        {
+          "date": "2026-10-25",
+          "mean": 53.23,
+          "lower": 38.77,
+          "upper": 67.7
+        },
+        {
+          "date": "2026-10-26",
+          "mean": 47.93,
+          "lower": 33.47,
+          "upper": 62.39
+        },
+        {
+          "date": "2026-10-27",
+          "mean": 50.63,
+          "lower": 36.16,
+          "upper": 65.09
+        },
+        {
+          "date": "2026-10-28",
+          "mean": 47.59,
+          "lower": 33.13,
+          "upper": 62.06
+        },
+        {
+          "date": "2026-10-29",
+          "mean": 51.54,
+          "lower": 37.07,
+          "upper": 66.0
+        },
+        {
+          "date": "2026-10-30",
+          "mean": 60.58,
+          "lower": 46.12,
+          "upper": 75.04
+        },
+        {
+          "date": "2026-10-31",
+          "mean": 67.38,
+          "lower": 52.91,
+          "upper": 81.84
+        }
+      ],
+      "metrics": {
+        "model_mape": 18.0,
+        "baseline_mape": 15.3,
+        "model_rmse": 10.75,
+        "baseline_rmse": 10.56,
+        "improvement_pct": -1.9,
+        "holdout_days": 14,
+        "model": "SeasonalDampedHolt",
+        "baseline": "SMA14"
+      },
+      "method_note": "Weekday-seasonal damped Holt on censored-demand-normalised sales; benchmarked on a 14-day holdout against a 14-day SMA baseline. No LLM is used for numbers."
+    },
+    {
+      "sku_id": "SKU-104",
+      "name": "Bottled Water 1.5L",
+      "daily_mean": 153.511,
+      "daily_std": 14.987,
+      "interval": "90%",
+      "forecast": [
+        {
+          "date": "2026-10-18",
+          "mean": 167.06,
+          "lower": 142.4,
+          "upper": 191.71
+        },
+        {
+          "date": "2026-10-19",
+          "mean": 130.64,
+          "lower": 105.99,
+          "upper": 155.3
+        },
+        {
+          "date": "2026-10-20",
+          "mean": 122.81,
+          "lower": 98.16,
+          "upper": 147.47
+        },
+        {
+          "date": "2026-10-21",
+          "mean": 132.32,
+          "lower": 107.67,
+          "upper": 156.98
+        },
+        {
+          "date": "2026-10-22",
+          "mean": 150.43,
+          "lower": 125.77,
+          "upper": 175.08
+        },
+        {
+          "date": "2026-10-23",
+          "mean": 167.78,
+          "lower": 143.13,
+          "upper": 192.44
+        },
+        {
+          "date": "2026-10-24",
+          "mean": 203.53,
+          "lower": 178.88,
+          "upper": 228.19
+        },
+        {
+          "date": "2026-10-25",
+          "mean": 166.42,
+          "lower": 141.76,
+          "upper": 191.07
+        },
+        {
+          "date": "2026-10-26",
+          "mean": 130.19,
+          "lower": 105.54,
+          "upper": 154.85
+        },
+        {
+          "date": "2026-10-27",
+          "mean": 122.43,
+          "lower": 97.78,
+          "upper": 147.08
+        },
+        {
+          "date": "2026-10-28",
+          "mean": 131.95,
+          "lower": 107.3,
+          "upper": 156.61
+        },
+        {
+          "date": "2026-10-29",
+          "mean": 150.05,
+          "lower": 125.39,
+          "upper": 174.7
+        },
+        {
+          "date": "2026-10-30",
+          "mean": 167.4,
+          "lower": 142.75,
+          "upper": 192.05
+        },
+        {
+          "date": "2026-10-31",
+          "mean": 203.12,
+          "lower": 178.46,
+          "upper": 227.77
+        }
+      ],
+      "metrics": {
+        "model_mape": 8.7,
+        "baseline_mape": 19.9,
+        "model_rmse": 17.64,
+        "baseline_rmse": 36.41,
+        "improvement_pct": 51.5,
+        "holdout_days": 14,
+        "model": "SeasonalDampedHolt",
+        "baseline": "SMA14"
+      },
+      "method_note": "Weekday-seasonal damped Holt on censored-demand-normalised sales; benchmarked on a 14-day holdout against a 14-day SMA baseline. No LLM is used for numbers."
+    },
+    {
+      "sku_id": "SKU-105",
+      "name": "Potato Chips 150g",
+      "daily_mean": 72.956,
+      "daily_std": 7.733,
+      "interval": "90%",
+      "forecast": [
+        {
+          "date": "2026-10-18",
+          "mean": 79.63,
+          "lower": 66.91,
+          "upper": 92.35
+        },
+        {
+          "date": "2026-10-19",
+          "mean": 61.19,
+          "lower": 48.47,
+          "upper": 73.91
+        },
+        {
+          "date": "2026-10-20",
+          "mean": 59.44,
+          "lower": 46.72,
+          "upper": 72.16
+        },
+        {
+          "date": "2026-10-21",
+          "mean": 69.41,
+          "lower": 56.69,
+          "upper": 82.13
+        },
+        {
+          "date": "2026-10-22",
+          "mean": 69.3,
+          "lower": 56.58,
+          "upper": 82.02
+        },
+        {
+          "date": "2026-10-23",
+          "mean": 80.01,
+          "lower": 67.29,
+          "upper": 92.73
+        },
+        {
+          "date": "2026-10-24",
+          "mean": 91.71,
+          "lower": 78.99,
+          "upper": 104.43
+        },
+        {
+          "date": "2026-10-25",
+          "mean": 81.0,
+          "lower": 68.28,
+          "upper": 93.72
+        },
+        {
+          "date": "2026-10-26",
+          "mean": 62.13,
+          "lower": 49.41,
+          "upper": 74.85
+        },
+        {
+          "date": "2026-10-27",
+          "mean": 60.26,
+          "lower": 47.54,
+          "upper": 72.98
+        },
+        {
+          "date": "2026-10-28",
+          "mean": 70.28,
+          "lower": 57.56,
+          "upper": 83.0
+        },
+        {
+          "date": "2026-10-29",
+          "mean": 70.08,
+          "lower": 57.36,
+          "upper": 82.8
+        },
+        {
+          "date": "2026-10-30",
+          "mean": 80.81,
+          "lower": 68.09,
+          "upper": 93.53
+        },
+        {
+          "date": "2026-10-31",
+          "mean": 92.54,
+          "lower": 79.82,
+          "upper": 105.26
+        }
+      ],
+      "metrics": {
+        "model_mape": 13.0,
+        "baseline_mape": 15.4,
+        "model_rmse": 11.86,
+        "baseline_rmse": 13.58,
+        "improvement_pct": 12.7,
+        "holdout_days": 14,
+        "model": "SeasonalDampedHolt",
+        "baseline": "SMA14"
+      },
+      "method_note": "Weekday-seasonal damped Holt on censored-demand-normalised sales; benchmarked on a 14-day holdout against a 14-day SMA baseline. No LLM is used for numbers."
+    },
+    {
+      "sku_id": "SKU-106",
+      "name": "Chocolate Bar 50g",
+      "daily_mean": 75.706,
+      "daily_std": 7.882,
+      "interval": "90%",
+      "forecast": [
+        {
+          "date": "2026-10-18",
+          "mean": 80.48,
+          "lower": 67.52,
+          "upper": 93.45
+        },
+        {
+          "date": "2026-10-19",
+          "mean": 65.95,
+          "lower": 52.98,
+          "upper": 78.92
+        },
+        {
+          "date": "2026-10-20",
+          "mean": 63.36,
+          "lower": 50.39,
+          "upper": 76.32
+        },
+        {
+          "date": "2026-10-21",
+          "mean": 68.61,
+          "lower": 55.64,
+          "upper": 81.58
+        },
+        {
+          "date": "2026-10-22",
+          "mean": 72.14,
+          "lower": 59.17,
+          "upper": 85.1
+        },
+        {
+          "date": "2026-10-23",
+          "mean": 77.93,
+          "lower": 64.96,
+          "upper": 90.89
+        },
+        {
+          "date": "2026-10-24",
+          "mean": 101.48,
+          "lower": 88.52,
+          "upper": 114.45
+        },
+        {
+          "date": "2026-10-25",
+          "mean": 80.97,
+          "lower": 68.0,
+          "upper": 93.93
+        },
+        {
+          "date": "2026-10-26",
+          "mean": 66.31,
+          "lower": 53.34,
+          "upper": 79.27
+        },
+        {
+          "date": "2026-10-27",
+          "mean": 63.67,
+          "lower": 50.7,
+          "upper": 76.63
+        },
+        {
+          "date": "2026-10-28",
+          "mean": 68.91,
+          "lower": 55.95,
+          "upper": 81.88
+        },
+        {
+          "date": "2026-10-29",
+          "mean": 72.42,
+          "lower": 59.45,
+          "upper": 85.39
+        },
+        {
+          "date": "2026-10-30",
+          "mean": 78.2,
+          "lower": 65.24,
+          "upper": 91.17
+        },
+        {
+          "date": "2026-10-31",
+          "mean": 101.81,
+          "lower": 88.84,
+          "upper": 114.77
+        }
+      ],
+      "metrics": {
+        "model_mape": 11.5,
+        "baseline_mape": 13.3,
+        "model_rmse": 10.84,
+        "baseline_rmse": 12.97,
+        "improvement_pct": 16.4,
+        "holdout_days": 14,
+        "model": "SeasonalDampedHolt",
+        "baseline": "SMA14"
+      },
+      "method_note": "Weekday-seasonal damped Holt on censored-demand-normalised sales; benchmarked on a 14-day holdout against a 14-day SMA baseline. No LLM is used for numbers."
+    },
+    {
+      "sku_id": "SKU-107",
+      "name": "Instant Noodle Cup",
+      "daily_mean": 45.129,
+      "daily_std": 6.933,
+      "interval": "90%",
+      "forecast": [
+        {
+          "date": "2026-10-18",
+          "mean": 47.33,
+          "lower": 35.92,
+          "upper": 58.73
+        },
+        {
+          "date": "2026-10-19",
+          "mean": 38.8,
+          "lower": 27.4,
+          "upper": 50.21
+        },
+        {
+          "date": "2026-10-20",
+          "mean": 38.48,
+          "lower": 27.08,
+          "upper": 49.89
+        },
+        {
+          "date": "2026-10-21",
+          "mean": 40.56,
+          "lower": 29.16,
+          "upper": 51.97
+        },
+        {
+          "date": "2026-10-22",
+          "mean": 42.88,
+          "lower": 31.48,
+          "upper": 54.29
+        },
+        {
+          "date": "2026-10-23",
+          "mean": 51.64,
+          "lower": 40.23,
+          "upper": 63.04
+        },
+        {
+          "date": "2026-10-24",
+          "mean": 56.21,
+          "lower": 44.81,
+          "upper": 67.61
+        },
+        {
+          "date": "2026-10-25",
+          "mean": 46.74,
+          "lower": 35.34,
+          "upper": 58.15
+        },
+        {
+          "date": "2026-10-26",
+          "mean": 38.37,
+          "lower": 26.97,
+          "upper": 49.78
+        },
+        {
+          "date": "2026-10-27",
+          "mean": 38.1,
+          "lower": 26.69,
+          "upper": 49.5
+        },
+        {
+          "date": "2026-10-28",
+          "mean": 40.19,
+          "lower": 28.79,
+          "upper": 51.6
+        },
+        {
+          "date": "2026-10-29",
+          "mean": 42.53,
+          "lower": 31.13,
+          "upper": 53.94
+        },
+        {
+          "date": "2026-10-30",
+          "mean": 51.26,
+          "lower": 39.85,
+          "upper": 62.66
+        },
+        {
+          "date": "2026-10-31",
+          "mean": 55.84,
+          "lower": 44.43,
+          "upper": 67.24
+        }
+      ],
+      "metrics": {
+        "model_mape": 16.9,
+        "baseline_mape": 12.8,
+        "model_rmse": 8.59,
+        "baseline_rmse": 7.14,
+        "improvement_pct": -20.3,
+        "holdout_days": 14,
+        "model": "SeasonalDampedHolt",
+        "baseline": "SMA14"
+      },
+      "method_note": "Weekday-seasonal damped Holt on censored-demand-normalised sales; benchmarked on a 14-day holdout against a 14-day SMA baseline. No LLM is used for numbers."
+    },
+    {
+      "sku_id": "SKU-108",
+      "name": "Shampoo 400ml",
+      "daily_mean": 8.431,
+      "daily_std": 2.788,
+      "interval": "90%",
+      "forecast": [
+        {
+          "date": "2026-10-18",
+          "mean": 9.86,
+          "lower": 5.27,
+          "upper": 14.45
+        },
+        {
+          "date": "2026-10-19",
+          "mean": 7.46,
+          "lower": 2.87,
+          "upper": 12.05
+        },
+        {
+          "date": "2026-10-20",
+          "mean": 8.93,
+          "lower": 4.34,
+          "upper": 13.51
+        },
+        {
+          "date": "2026-10-21",
+          "mean": 7.51,
+          "lower": 2.92,
+          "upper": 12.1
+        },
+        {
+          "date": "2026-10-22",
+          "mean": 7.68,
+          "lower": 3.09,
+          "upper": 12.26
+        },
+        {
+          "date": "2026-10-23",
+          "mean": 8.86,
+          "lower": 4.27,
+          "upper": 13.44
+        },
+        {
+          "date": "2026-10-24",
+          "mean": 8.73,
+          "lower": 4.14,
+          "upper": 13.32
+        },
+        {
+          "date": "2026-10-25",
+          "mean": 10.06,
+          "lower": 5.48,
+          "upper": 14.65
+        },
+        {
+          "date": "2026-10-26",
+          "mean": 7.6,
+          "lower": 3.01,
+          "upper": 12.18
+        },
+        {
+          "date": "2026-10-27",
+          "mean": 9.07,
+          "lower": 4.49,
+          "upper": 13.66
+        },
+        {
+          "date": "2026-10-28",
+          "mean": 7.62,
+          "lower": 3.03,
+          "upper": 12.21
+        },
+        {
+          "date": "2026-10-29",
+          "mean": 7.78,
+          "lower": 3.19,
+          "upper": 12.36
+        },
+        {
+          "date": "2026-10-30",
+          "mean": 8.96,
+          "lower": 4.38,
+          "upper": 13.55
+        },
+        {
+          "date": "2026-10-31",
+          "mean": 8.83,
+          "lower": 4.24,
+          "upper": 13.41
+        }
+      ],
+      "metrics": {
+        "model_mape": 25.6,
+        "baseline_mape": 17.6,
+        "model_rmse": 2.8,
+        "baseline_rmse": 2.13,
+        "improvement_pct": -31.3,
+        "holdout_days": 14,
+        "model": "SeasonalDampedHolt",
+        "baseline": "SMA14"
+      },
+      "method_note": "Weekday-seasonal damped Holt on censored-demand-normalised sales; benchmarked on a 14-day holdout against a 14-day SMA baseline. No LLM is used for numbers."
+    },
+    {
+      "sku_id": "SKU-109",
+      "name": "Seasonal Mooncake Box",
+      "daily_mean": 0.0,
+      "daily_std": 1.708,
+      "interval": "90%",
+      "forecast": [
+        {
+          "date": "2026-10-18",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        },
+        {
+          "date": "2026-10-19",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        },
+        {
+          "date": "2026-10-20",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        },
+        {
+          "date": "2026-10-21",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        },
+        {
+          "date": "2026-10-22",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        },
+        {
+          "date": "2026-10-23",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        },
+        {
+          "date": "2026-10-24",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        },
+        {
+          "date": "2026-10-25",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        },
+        {
+          "date": "2026-10-26",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        },
+        {
+          "date": "2026-10-27",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        },
+        {
+          "date": "2026-10-28",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        },
+        {
+          "date": "2026-10-29",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        },
+        {
+          "date": "2026-10-30",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        },
+        {
+          "date": "2026-10-31",
+          "mean": 0.0,
+          "lower": 0.0,
+          "upper": 2.81
+        }
+      ],
+      "metrics": {
+        "model_mape": null,
+        "baseline_mape": null,
+        "model_rmse": 0.09,
+        "baseline_rmse": 2.95,
+        "improvement_pct": 97.0,
+        "holdout_days": 14,
+        "model": "SeasonalDampedHolt",
+        "baseline": "SMA14"
+      },
+      "method_note": "Weekday-seasonal damped Holt on censored-demand-normalised sales; benchmarked on a 14-day holdout against a 14-day SMA baseline. No LLM is used for numbers."
+    },
+    {
+      "sku_id": "SKU-110",
+      "name": "Laundry Detergent 1kg",
+      "daily_mean": 9.772,
+      "daily_std": 2.722,
+      "interval": "90%",
+      "forecast": [
+        {
+          "date": "2026-10-18",
+          "mean": 10.75,
+          "lower": 6.27,
+          "upper": 15.22
+        },
+        {
+          "date": "2026-10-19",
+          "mean": 8.12,
+          "lower": 3.65,
+          "upper": 12.6
+        },
+        {
+          "date": "2026-10-20",
+          "mean": 8.0,
+          "lower": 3.52,
+          "upper": 12.48
+        },
+        {
+          "date": "2026-10-21",
+          "mean": 9.25,
+          "lower": 4.78,
+          "upper": 13.73
+        },
+        {
+          "date": "2026-10-22",
+          "mean": 9.63,
+          "lower": 5.15,
+          "upper": 14.11
+        },
+        {
+          "date": "2026-10-23",
+          "mean": 9.63,
+          "lower": 5.15,
+          "upper": 14.11
+        },
+        {
+          "date": "2026-10-24",
+          "mean": 13.01,
+          "lower": 8.53,
+          "upper": 17.49
+        },
+        {
+          "date": "2026-10-25",
+          "mean": 10.76,
+          "lower": 6.28,
+          "upper": 15.24
+        },
+        {
+          "date": "2026-10-26",
+          "mean": 8.13,
+          "lower": 3.66,
+          "upper": 12.61
+        },
+        {
+          "date": "2026-10-27",
+          "mean": 8.01,
+          "lower": 3.53,
+          "upper": 12.49
+        },
+        {
+          "date": "2026-10-28",
+          "mean": 9.26,
+          "lower": 4.79,
+          "upper": 13.74
+        },
+        {
+          "date": "2026-10-29",
+          "mean": 9.64,
+          "lower": 5.16,
+          "upper": 14.12
+        },
+        {
+          "date": "2026-10-30",
+          "mean": 9.64,
+          "lower": 5.16,
+          "upper": 14.12
+        },
+        {
+          "date": "2026-10-31",
+          "mean": 13.02,
+          "lower": 8.54,
+          "upper": 17.5
+        }
+      ],
+      "metrics": {
+        "model_mape": 21.9,
+        "baseline_mape": 17.5,
+        "model_rmse": 2.36,
+        "baseline_rmse": 2.21,
+        "improvement_pct": -6.8,
+        "holdout_days": 14,
+        "model": "SeasonalDampedHolt",
+        "baseline": "SMA14"
+      },
+      "method_note": "Weekday-seasonal damped Holt on censored-demand-normalised sales; benchmarked on a 14-day holdout against a 14-day SMA baseline. No LLM is used for numbers."
+    }
+  ],
+  "risks": [
+    {
+      "sku_id": "SKU-101",
+      "name": "Cola 330ml Can",
+      "type": "stockout",
+      "severity": "high",
+      "score": 87.7,
+      "days_of_supply": 2.5,
+      "lead_time_days": 6,
+      "stockout_date": "2026-10-20",
+      "daily_demand": 134.37,
+      "message": "Cola 330ml Can runs out in ~2.5 days; supplier lead time is 6 days - it will be empty before a new delivery can arrive.",
+      "revenue_at_risk": 428.57
+    },
+    {
+      "sku_id": "SKU-102",
+      "name": "Sparkling Orange 500ml",
+      "type": "stockout",
+      "severity": "high",
+      "score": 87.1,
+      "days_of_supply": 2.6,
+      "lead_time_days": 6,
+      "stockout_date": "2026-10-20",
+      "daily_demand": 100.44,
+      "message": "Sparkling Orange 500ml runs out in ~2.6 days; supplier lead time is 6 days - it will be empty before a new delivery can arrive.",
+      "revenue_at_risk": 376.93
+    },
+    {
+      "sku_id": "SKU-103",
+      "name": "Energy Drink 250ml",
+      "type": "stockout",
+      "severity": "high",
+      "score": 86.3,
+      "days_of_supply": 2.7,
+      "lead_time_days": 6,
+      "stockout_date": "2026-10-20",
+      "daily_demand": 54.6,
+      "message": "Energy Drink 250ml runs out in ~2.7 days; supplier lead time is 6 days - it will be empty before a new delivery can arrive.",
+      "revenue_at_risk": 390.71
+    },
+    {
+      "sku_id": "SKU-107",
+      "name": "Instant Noodle Cup",
+      "type": "stockout",
+      "severity": "high",
+      "score": 73.4,
+      "days_of_supply": 2.7,
+      "lead_time_days": 3,
+      "stockout_date": "2026-10-20",
+      "daily_demand": 45.13,
+      "message": "Instant Noodle Cup runs out in ~2.7 days; supplier lead time is 3 days - it will be empty before a new delivery can arrive.",
+      "revenue_at_risk": 20.0
+    },
+    {
+      "sku_id": "SKU-109",
+      "name": "Seasonal Mooncake Box",
+      "type": "dead_stock",
+      "severity": "high",
+      "score": 56.0,
+      "days_since_last_sale": 45,
+      "capital_locked": 360.0,
+      "message": "Seasonal Mooncake Box: no sales for 45 days with 90 units on hand ($360 of cash locked). Mark down or liquidate; do not reorder."
+    },
+    {
+      "sku_id": "SKU-102",
+      "name": "Sparkling Orange 500ml",
+      "type": "margin_erosion",
+      "severity": "medium",
+      "score": 50.0,
+      "margin_before_pct": 50.0,
+      "margin_after_pct": 45.0,
+      "old_cost": 0.55,
+      "new_cost": 0.605,
+      "suggested_retail_price": 1.21,
+      "message": "Sparkling Orange 500ml: supplier cost 0.55 -> 0.60; margin falls from 50.0% to 45.0% unless retail price rises to ~1.21."
+    },
+    {
+      "sku_id": "SKU-103",
+      "name": "Energy Drink 250ml",
+      "type": "margin_erosion",
+      "severity": "medium",
+      "score": 48.2,
+      "margin_before_pct": 54.5,
+      "margin_after_pct": 50.0,
+      "old_cost": 1.0,
+      "new_cost": 1.1,
+      "suggested_retail_price": 2.42,
+      "message": "Energy Drink 250ml: supplier cost 1.00 -> 1.10; margin falls from 54.5% to 50.0% unless retail price rises to ~2.42."
+    },
+    {
+      "sku_id": "SKU-101",
+      "name": "Cola 330ml Can",
+      "type": "margin_erosion",
+      "severity": "medium",
+      "score": 47.8,
+      "margin_before_pct": 55.6,
+      "margin_after_pct": 51.1,
+      "old_cost": 0.4,
+      "new_cost": 0.44,
+      "suggested_retail_price": 0.99,
+      "message": "Cola 330ml Can: supplier cost 0.40 -> 0.44; margin falls from 55.6% to 51.1% unless retail price rises to ~0.99."
+    },
+    {
+      "sku_id": "SKU-105",
+      "name": "Potato Chips 150g",
+      "type": "stockout",
+      "severity": "medium",
+      "score": 40.0,
+      "days_of_supply": 4.7,
+      "lead_time_days": 3,
+      "stockout_date": "2026-10-22",
+      "daily_demand": 72.96,
+      "message": "Potato Chips 150g runs out in ~4.7 days; supplier lead time is 3 days - reorder now to stay ahead of the lead time.",
+      "revenue_at_risk": 0.0
+    },
+    {
+      "sku_id": "SKU-106",
+      "name": "Chocolate Bar 50g",
+      "type": "stockout",
+      "severity": "medium",
+      "score": 40.0,
+      "days_of_supply": 7.9,
+      "lead_time_days": 3,
+      "stockout_date": "2026-10-25",
+      "daily_demand": 75.71,
+      "message": "Chocolate Bar 50g runs out in ~7.9 days; supplier lead time is 3 days - reorder now to stay ahead of the lead time.",
+      "revenue_at_risk": 0.0
+    },
+    {
+      "sku_id": "SKU-108",
+      "name": "Shampoo 400ml",
+      "type": "stockout",
+      "severity": "medium",
+      "score": 40.0,
+      "days_of_supply": 7.1,
+      "lead_time_days": 4,
+      "stockout_date": "2026-10-25",
+      "daily_demand": 8.43,
+      "message": "Shampoo 400ml runs out in ~7.1 days; supplier lead time is 4 days - reorder now to stay ahead of the lead time.",
+      "revenue_at_risk": 0.0
+    },
+    {
+      "sku_id": "SKU-110",
+      "name": "Laundry Detergent 1kg",
+      "type": "stockout",
+      "severity": "medium",
+      "score": 40.0,
+      "days_of_supply": 4.1,
+      "lead_time_days": 4,
+      "stockout_date": "2026-10-22",
+      "daily_demand": 9.77,
+      "message": "Laundry Detergent 1kg runs out in ~4.1 days; supplier lead time is 4 days - reorder now to stay ahead of the lead time.",
+      "revenue_at_risk": 0.0
+    }
+  ],
+  "cart": {
+    "budget_cap": 2500.0,
+    "total_cost": 2497.8,
+    "budget_utilization": 0.999,
+    "unconstrained_cost": 3302.55,
+    "solver_status": "Optimal",
+    "avg_service_level": 1.0,
+    "items": [
+      {
+        "sku_id": "SKU-101",
+        "name": "Cola 330ml Can",
+        "supplier_id": 1,
+        "supplier_name": "FreshCo Beverages",
+        "unit_cost": 0.4,
+        "pack_size": 24,
+        "moq": 48,
+        "reorder_point": 858.9,
+        "safety_stock": 52.7,
+        "units_needed": 2411,
+        "current_stock": 330,
+        "daily_demand": 134.37,
+        "lead_time_days": 6,
+        "risk": "stockout",
+        "risk_severity": "high",
+        "recommended_qty": 2400,
+        "line_cost": 960.0,
+        "packs": 100,
+        "expected_service_level": 1.0,
+        "days_of_cover_after": 20.3,
+        "reason": "Stockout in 2.5 days vs 6-day lead time; order 2400 units (100 x pack of 24); pre-buying at $0.40 before the +10% price increase to $0.44; scaled back from 2411 units to fit budget."
+      },
+      {
+        "sku_id": "SKU-103",
+        "name": "Energy Drink 250ml",
+        "supplier_id": 1,
+        "supplier_name": "FreshCo Beverages",
+        "unit_cost": 1.0,
+        "pack_size": 24,
+        "moq": 48,
+        "reorder_point": 363.1,
+        "safety_stock": 35.5,
+        "units_needed": 978,
+        "current_stock": 150,
+        "daily_demand": 54.6,
+        "lead_time_days": 6,
+        "risk": "stockout",
+        "risk_severity": "high",
+        "recommended_qty": 960,
+        "line_cost": 960.0,
+        "packs": 40,
+        "expected_service_level": 1.0,
+        "days_of_cover_after": 20.3,
+        "reason": "Stockout in 2.7 days vs 6-day lead time; order 960 units (40 x pack of 24); pre-buying at $1.00 before the +10% price increase to $1.10; scaled back from 978 units to fit budget."
+      },
+      {
+        "sku_id": "SKU-102",
+        "name": "Sparkling Orange 500ml",
+        "supplier_id": 1,
+        "supplier_name": "FreshCo Beverages",
+        "unit_cost": 0.55,
+        "pack_size": 12,
+        "moq": 24,
+        "reorder_point": 634.2,
+        "safety_stock": 31.5,
+        "units_needed": 1781,
+        "current_stock": 260,
+        "daily_demand": 100.44,
+        "lead_time_days": 6,
+        "risk": "stockout",
+        "risk_severity": "high",
+        "recommended_qty": 684,
+        "line_cost": 376.2,
+        "packs": 57,
+        "expected_service_level": 1.0,
+        "days_of_cover_after": 9.4,
+        "reason": "Stockout in 2.6 days vs 6-day lead time; order 684 units (57 x pack of 12); pre-buying at $0.55 before the +10% price increase to $0.60; scaled back from 1781 units to fit budget."
+      },
+      {
+        "sku_id": "SKU-107",
+        "name": "Instant Noodle Cup",
+        "supplier_id": 2,
+        "supplier_name": "SnackWorld Wholesale",
+        "unit_cost": 0.6,
+        "pack_size": 24,
+        "moq": 24,
+        "reorder_point": 155.2,
+        "safety_stock": 19.8,
+        "units_needed": 352,
+        "current_stock": 120,
+        "daily_demand": 45.13,
+        "lead_time_days": 3,
+        "risk": "stockout",
+        "risk_severity": "high",
+        "recommended_qty": 336,
+        "line_cost": 201.6,
+        "packs": 14,
+        "expected_service_level": 1.0,
+        "days_of_cover_after": 10.1,
+        "reason": "Stockout in 2.7 days vs 3-day lead time; order 336 units (14 x pack of 24); scaled back from 352 units to fit budget."
+      }
+    ],
+    "unbought": [
+      {
+        "sku_id": "SKU-110",
+        "name": "Laundry Detergent 1kg",
+        "supplier_id": 3,
+        "supplier_name": "HomeGoods Distribution",
+        "unit_cost": 2.2,
+        "pack_size": 8,
+        "moq": 8,
+        "reorder_point": 48.1,
+        "safety_stock": 9.0,
+        "units_needed": 77,
+        "current_stock": 40,
+        "daily_demand": 9.77,
+        "lead_time_days": 4,
+        "risk": "stockout",
+        "risk_severity": "medium",
+        "recommended_qty": 0,
+        "line_cost": 0.0,
+        "reason": "Needed 77 units but cut by the $2,500 budget (lower margin/urgency than funded items) or supplier minimum (8)."
+      }
+    ]
+  },
+  "telemetry": {
+    "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "endpoint_configured": false,
+    "endpoint_host": null,
+    "hardware": "AMD Instinct GPU / ROCm / vLLM",
+    "calls": 0,
+    "last_latency_s": null,
+    "last_tokens_per_sec": null,
+    "total_completion_tokens": 0,
+    "last_error": null,
+    "engine_source": "reference",
+    "pipeline_compute_ms": 155,
+    "baseline_accuracy": {
+      "model_mape": 14.6,
+      "baseline_mape": 15.3
+    }
+  },
+  "briefing": ""
+}

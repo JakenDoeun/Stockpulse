@@ -1,0 +1,88 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body><template>
+<style>
+#root { position: absolute; inset: 0; }
+
+#s10-features-head { position:absolute; left:120px; top:96px; }
+#s10-features-line { position:absolute; left:245px; width:1430px; top:452px; height:3px; background: var(--line-strong); transform-origin:0 50%; }
+#s10-features-scene .nd { position:absolute; top:206px; width:250px; height:214px; background:#fff; border:2px solid var(--line); border-radius:16px; box-shadow: var(--shadow); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; }
+#s10-features-scene .nd .nl { font-size:28px; font-weight:600; text-align:center; }
+#s10-features-thread { position:absolute; left:0; top:432px; color:var(--indigo); border-color:var(--indigo); background:var(--indigo-tint); font-size:20px; padding:6px 16px; white-space:nowrap; }
+#s10-features-users { position:absolute; left:120px; right:120px; top:540px; display:grid; grid-template-columns: repeat(3, 1fr); gap:32px; }
+#s10-features-users .card { padding:30px 34px; }
+#s10-features-foot { position:absolute; left:120px; top:730px; font-size:28px; color: var(--ink-2); }
+
+</style>
+<div id="root" data-composition-id="s10-features" data-width="1920" data-height="1080">
+<div class="scene" id="s10-features-scene">
+
+<div id="s10-features-head" class="headline">One connected workflow.</div>
+<div id="s10-features-line"></div>
+<div class="nd" id="s10-features-n0" style="left:120px;--c:#E86A4A"><svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="#E86A4A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h26l12 12v44H18z"/><path d="M44 8v12h12"/><path d="M26 34h22M26 43h22M26 52h14"/></svg><div class="nl">Intake</div></div><div class="nd" id="s10-features-n1" style="left:406px;--c:#3478F6"><svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="#3478F6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 60h52"/><path d="M14 50l12-14 10 8 12-18 12 6"/></svg><div class="nl">Forecast</div></div><div class="nd" id="s10-features-n2" style="left:692px;--c:#3478F6"><svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="#3478F6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M36 10l28 50H8z"/><path d="M36 28v14"/><circle cx="36" cy="50" r="1.5"/></svg><div class="nl">Risk</div></div><div class="nd" id="s10-features-n3" style="left:978px;--c:#3478F6"><svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="#3478F6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14h9l7 32h30l6-22H20"/><circle cx="28" cy="56" r="4"/><circle cx="50" cy="56" r="4"/></svg><div class="nl">Replenish</div></div><div class="nd" id="s10-features-n4" style="left:1264px;--c:#E86A4A"><svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="#E86A4A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14h52v32H32l-12 10V46H10z"/><path d="M20 26h32M20 34h22"/></svg><div class="nl">Explain &amp; draft</div></div><div class="nd" id="s10-features-n5" style="left:1550px;--c:#289879"><svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="#289879" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="36" cy="36" r="26"/><path d="M24 37l8 8 16-17"/></svg><div class="nl">Approve</div></div>
+<div id="s10-features-thread" class="chip">● Cola 330ml</div>
+<div id="s10-features-users"><div class="card" id="s10-features-u0"><div class="title">Independent retailers &amp; mini-marts</div></div><div class="card" id="s10-features-u1"><div class="title">Specialty grocers</div></div><div class="card" id="s10-features-u2"><div class="title">Small wholesale distributors</div></div></div>
+<div id="s10-features-foot">100 to 10,000+ SKUs · already on a POS or spreadsheet · no ERP migration</div>
+
+</div>
+</div>
+<script>
+(() => {
+const tl = gsap.timeline({ paused: true });
+const T = {"head": 0.3, "n0": 0.736, "n1": 2.046, "n2": 2.671, "n3": 4.169, "n4": 5.231, "built": 7.861, "u0": 9.607, "u1": 10.669, "u2": 12.167, "foot": 13.04};
+const DUR = 20;
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => Array.from(document.querySelectorAll(s));
+const fadeIn = (sel, t, d = 0.5) => tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t);
+const fadeOut = (sel, t, d = 0.4) => tl.fromTo(sel, { opacity: 1 }, { opacity: 0, duration: d, ease: "power1.in", immediateRender: false }, t);
+// force3D keeps moved elements composited for their whole life: no end-of-move re-raster or pixel snap
+const rise = (sel, t, o = {}) => tl.fromTo(sel, { opacity: 0, y: o.y ?? 18 }, { opacity: 1, y: 0, duration: o.d ?? 0.6, ease: "power3.out", stagger: o.s ?? 0, force3D: true }, t);
+const pop = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: d, ease: "back.out(1.7)", force3D: true }, t);
+const count = (el, from, to, t, d, fmt) => {
+  const o = { v: from };
+  el.textContent = fmt(from);
+  tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(o.v); } }, t);
+};
+// SVG path reveal: draws `frac` of each matching path
+const draw = (sel, t, d = 0.8, frac = 1, ease = "power2.inOut") => $$(sel).forEach((p) => {
+  const L = p.getTotalLength();
+  p.style.strokeDasharray = L + " " + L;
+  tl.fromTo(p, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t);
+  tl.fromTo(p, { strokeDashoffset: L }, { strokeDashoffset: L * (1 - frac), duration: d, ease }, t);
+});
+// the one camera move: a single scale-and-position tween, then a complete hold
+const camTo = (sel, v, t, d = 1.3) => tl.to(sel, { ...v, duration: d, ease: "power2.inOut", force3D: true }, t);
+// Scripted cursor: travel to (x, y), press at t, optional ripple.
+const click = (cur, rip, x0, y0, x, y, t) => {
+  tl.fromTo(cur, { opacity: 0, x: x0, y: y0 }, { opacity: 1, duration: 0.25 }, t - 1.2);
+  tl.to(cur, { x, y, duration: 0.9, ease: "power2.inOut" }, t - 1.0);
+  tl.to(cur, { scale: 0.86, duration: 0.08, ease: "power1.in" }, t);
+  tl.to(cur, { scale: 1, duration: 0.18, ease: "power2.out" }, t + 0.08);
+  if (rip) tl.fromTo(rip, { opacity: 0.5, scale: 0.2, x: x - 30, y: y - 30 }, { opacity: 0, scale: 1.4, duration: 0.6, ease: "power2.out" }, t);
+};
+
+fadeIn("#s10-features-scene", 0, 0.5);
+fadeOut("#s10-features-scene", DUR - 0.4, 0.4);
+
+rise("#s10-features-head", T.head);
+tl.fromTo("#s10-features-line", { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: "power2.inOut" }, 0.5);
+const xs = [245, 531, 817, 1103, 1389, 1675];
+const nt = [T.n0, T.n1, T.n2, T.n3, T.n4, T.n4 + 1.2];
+const cols = ["#E86A4A", "#3478F6", "#3478F6", "#3478F6", "#E86A4A", "#289879"];
+gsap.set("#s10-features-thread", { xPercent: -50 });
+tl.fromTo("#s10-features-thread", { opacity: 0, x: xs[0] }, { opacity: 1, duration: 0.3 }, T.n0 - 0.4);
+nt.forEach((t, i) => {
+  rise("#s10-features-n" + i, t - 0.25, { y: 20 });
+  tl.to("#s10-features-n" + i, { borderColor: cols[i], duration: 0.3 }, t + 0.2);
+  if (i) tl.to("#s10-features-thread", { x: xs[i], duration: Math.max(0.4, t - nt[i - 1] - 0.1), ease: "power1.inOut" }, nt[i - 1] + 0.1);
+});
+tl.to("#s10-features-thread", { opacity: 0, duration: 0.4 }, T.built);
+rise("#s10-features-u0", T.u0 - 0.2, { y: 24 });
+rise("#s10-features-u1", T.u1 - 0.2, { y: 24 });
+rise("#s10-features-u2", T.u2 - 0.2, { y: 24 });
+rise("#s10-features-foot", T.foot, { y: 12 });
+
+window.__timelines["s10-features"] = tl;
+})();
+</script>
+</template></body></html>

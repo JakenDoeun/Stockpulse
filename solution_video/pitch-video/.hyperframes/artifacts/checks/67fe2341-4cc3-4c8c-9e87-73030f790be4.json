@@ -1,0 +1,114 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 13
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 1,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "info",
+        "time": 26.084,
+        "selector": "#s02-problem-plus",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 943.61,
+          "top": 639.86,
+          "right": 1040.47,
+          "bottom": 674.14,
+          "width": 96.86,
+          "height": 34.28
+        },
+        "containerSelector": "#s02-problem-token",
+        "text": "+3 days",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply.",
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/s02-problem.html",
+        "bbox": {
+          "x": 943.61,
+          "y": 639.86,
+          "width": 96.86,
+          "height": 34.28
+        },
+        "firstSeen": 26.084,
+        "lastSeen": 26.084,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          26.084
+        ]
+      }
+    ],
+    "duration": 203,
+    "samples": [
+      11.278,
+      33.833,
+      56.389,
+      78.944,
+      101.5,
+      124.056,
+      146.611,
+      169.167,
+      191.722
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 1,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      11.278,
+      56.389,
+      101.5,
+      146.611,
+      191.722
+    ],
+    "checked": 54,
+    "passed": 54
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

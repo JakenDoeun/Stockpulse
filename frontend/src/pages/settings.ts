@@ -1,4 +1,4 @@
-/** Settings & Integrations: budget, engine policy (read-only), data source, confirmed updates, connections. */
+/** Settings & Integrations: budget, engine policy (read-only), data source, sound, confirmed updates, connections. */
 import { html, on, setHTML } from "../lib/dom.js";
 import { icon } from "../lib/icons.js";
 import { cents, int, money, pct, shortDate } from "../lib/format.js";
@@ -7,9 +7,10 @@ import { WEEKLY_BUDGET } from "../data/demo.js";
 import { load, store } from "../state.js";
 import { pageHead } from "../ui/kit.js";
 import { toast } from "../ui/overlay.js";
+import { setSfxPrefs, sfx, sfxPrefs } from "../lib/sfx.js";
 
 export function mountSettings(root: HTMLElement) {
-  document.title = "Settings & Integrations · StockPulse AMD";
+  document.title = "Settings & Integrations · StockPulse";
   let updates: import("../data/types.js").ConfirmedUpdate[] | null = null;
   let ds: import("../data/types.js").DataStatus | null = null;
 
@@ -22,6 +23,7 @@ export function mountSettings(root: HTMLElement) {
     const s = store.get();
     const d = s.data;
     const h = s.health;
+    const snd = sfxPrefs();
     const name = (u: import("../data/types.js").ConfirmedUpdate) => (u.sku ? d?.products.find((p) => p.sku === u.sku)?.name || u.sku : d?.suppliers.find((x) => x.supplier_id === u.supplier_id)?.name || u.supplier_id);
     setHTML(root, html`
       ${pageHead({ title: "Settings & Integrations", sub: "What the calculations use, where the data comes from, and what is connected." })}
@@ -53,6 +55,16 @@ export function mountSettings(root: HTMLElement) {
               <button class="btn btn-secondary" type="button" data-action="import">${icon("upload", "icon-sm")}Import CSVs</button>
               ${ds?.source === "imported" ? html`<button class="btn btn-ghost" type="button" data-reset-data>Switch back to sample data</button>` : ""}
             </div>
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="snd-title">
+          <div class="panel-head"><div><h2 class="panel-title" id="snd-title">Sound</h2><p class="panel-sub">Short cues when an import finishes or fails, a document needs review, changes are applied or an order is approved. Every outcome is also shown on screen.</p></div></div>
+          <div class="panel-body form-grid">
+            <label style="display:flex;align-items:center;gap:10px"><input type="checkbox" class="checkbox" id="set-sfx" ${snd.muted ? "" : "checked"}> Sound effects</label>
+            <div class="field"><label for="set-sfx-vol">Volume</label>
+              <input id="set-sfx-vol" type="range" min="0" max="100" step="5" value="${Math.round(snd.volume * 100)}" style="accent-color:var(--indigo);width:100%" ${snd.muted ? "disabled" : ""}></div>
+            <div><button class="btn btn-sm btn-secondary" type="button" data-sfx-test ${snd.muted ? "disabled" : ""}>Play a sample</button></div>
           </div>
         </section>
 
@@ -93,6 +105,9 @@ export function mountSettings(root: HTMLElement) {
     store.set({ settings: { ...store.get().settings, budget: v } });
     toast(`Weekly budget set to ${money(v)}`);
   });
+  on(root, "change", "#set-sfx", (_e, t) => { setSfxPrefs({ muted: !(t as HTMLInputElement).checked }); render(); });
+  on(root, "change", "#set-sfx-vol", (_e, t) => { setSfxPrefs({ volume: Number((t as HTMLInputElement).value) / 100 }); sfx("select"); });
+  on(root, "click", "[data-sfx-test]", () => sfx("success"));
   on(root, "click", "[data-revert]", async (_e, t) => {
     try { await revertUpdate(Number(t.dataset.revert)); await load(); toast("Reverted"); fetchAll(); } catch (e) { toast(e instanceof Error ? e.message : String(e)); }
   });

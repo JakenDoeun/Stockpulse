@@ -1,0 +1,60 @@
+/* Shared design system for the StockPulse pitch film (see frame.md). Loaded once by index.html. */
+@font-face { font-family: "Geist"; src: url("fonts/Geist-Variable.woff2") format("woff2"); font-weight: 100 900; }
+@font-face { font-family: "Geist Mono"; src: url("fonts/GeistMono-Variable.woff2") format("woff2"); font-weight: 100 900; }
+
+:root {
+  --bg: #F7F9FC; --surface: #FFFFFF; --ink: #202A3B; --ink-2: #667085; --line: #E3E8EF; --line-strong: #CDD5E0;
+  --indigo: #4F67E8; --indigo-tint: #EEF1FD;
+  --blue: #3478F6; --blue-ink: #1F5FD6; --blue-tint: #EAF2FE;
+  --ember: #E86A4A; --ember-ink: #B4462A; --ember-tint: #FDF0EC;
+  --green: #289879; --green-ink: #1C755C; --green-tint: #E7F5F0;
+  --red: #D94F61; --red-ink: #B3344A; --red-tint: #FCEDEF;
+  --amber-ink: #8C5E0B;
+  --shadow: 0 18px 48px rgba(32, 42, 59, .08), 0 2px 6px rgba(32, 42, 59, .04);
+  --font: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, monospace;
+}
+
+.scene { position: absolute; inset: 0; background: var(--bg); color: var(--ink); font-family: var(--font); overflow: hidden; }
+.mono { font-family: var(--mono); }
+.eyebrow { font-family: var(--mono); font-size: 20px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.display { font-size: 72px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.05; }
+.headline { font-size: 56px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+.title { font-size: 40px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.2; }
+.body { font-size: 28px; line-height: 1.45; color: var(--ink); }
+.label { font-size: 22px; font-weight: 500; }
+.foot { font-size: 18px; color: var(--ink-2); }
+.c-blue { color: var(--blue); } .c-ember { color: var(--ember); } .c-green { color: var(--green); } .c-indigo { color: var(--indigo); } .c-red { color: var(--red-ink); }
+.callout { font-size: 44px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+
+/* browser frame around real app stills: 1440x810 by default */
+.browser { position: absolute; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 30px 80px rgba(32,42,59,.12); overflow: hidden; }
+.browser .bar { height: 40px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 8px; padding: 0 16px; background: #FBFCFE; }
+.browser .bar i { width: 11px; height: 11px; border-radius: 50%; background: var(--line-strong); display: block; }
+.browser .bar .url { margin-left: 18px; font-family: var(--mono); font-size: 15px; color: var(--ink-2); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 4px 16px; }
+.browser .view { position: absolute; top: 40px; left: 0; right: 0; bottom: 0; overflow: hidden; }
+
+/* chips / tokens */
+.chip { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 8px 18px; font-size: 22px; font-weight: 500; border: 1.5px solid; }
+.chip.blue { color: var(--blue-ink); border-color: var(--blue); background: var(--blue-tint); }
+.chip.ember { color: var(--ember-ink); border-color: var(--ember); background: var(--ember-tint); }
+.chip.green { color: var(--green-ink); border-color: var(--green); background: var(--green-tint); }
+.tok { display: inline-block; padding: 0 8px; border-radius: 6px; background: var(--blue-tint); color: var(--blue-ink); font-weight: 600; }
+
+/* legend: top-right, clear of the subtitle band */
+.legend { position: absolute; right: 120px; top: 52px; display: flex; gap: 28px; font-size: 20px; color: var(--ink-2); }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 10px; vertical-align: 1px; }
+.legend .l-calc::before { background: var(--blue); } .legend .l-ai::before { background: var(--ember); }
+
+/* camera: the one moving parent inside a browser view (x/y/scale from GSAP, origin top-left).
+   Composited for its whole life so a move never ends in a re-raster or a pixel snap. */
+.browser .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; will-change: transform; }
+.browser .cam img { position: absolute; left: 0; top: 0; }
+/* highlight ring drawn over a real UI element */
+.ring { position: absolute; border: 2.5px solid var(--blue); border-radius: 10px; opacity: 0; }
+.ring.red { border-color: var(--red); }
+/* scripted cursor + click ripple, positioned by GSAP x/y in scene pixels */
+.cursor { position: absolute; left: 0; top: 0; opacity: 0; transform-origin: 3px 3px; filter: drop-shadow(0 2px 4px rgba(32,42,59,.25)); }
+.ripple { position: absolute; left: 0; top: 0; width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--indigo); opacity: 0; }

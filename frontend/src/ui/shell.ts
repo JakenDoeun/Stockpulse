@@ -15,7 +15,7 @@ export function mountShell(root: HTMLElement) {
     <a class="skip-link" href="#content">Skip to content</a>
     <div class="app" id="app">
       <aside class="sidebar" id="sidebar" aria-label="Primary">
-        <a class="brand" href="#/overview" aria-label="StockPulse AMD, Overview">${brandMark()}<span class="brand-name">StockPulse<span>AMD</span></span></a>
+        <a class="brand" href="#/overview" aria-label="StockPulse, Overview">${brandMark()}<span class="brand-name">StockPulse</span></a>
         <nav class="nav" aria-label="Main">
           ${groups.map((g, i) => html`
             ${i ? html`<div class="nav-group">${g}</div>` : ""}

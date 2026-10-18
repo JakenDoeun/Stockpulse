@@ -1,0 +1,189 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body><template>
+<style>
+#root { position: absolute; inset: 0; }
+
+#s02-problem-scene .full { position:absolute; inset:0; }
+#s02-problem-scene .co-l { position:absolute; left:186px; top:120px; }
+#s02-problem-scene .co-r { position:absolute; right:186px; top:120px; text-align:right; }
+#s02-problem-scene .callout { font-size:56px; }
+#s02-problem-scene .sub { font-size:28px; color: var(--ink-2); margin-top:6px; }
+#s02-problem-scene .slip { position:absolute; left:790px; top:104px; width:340px; height:136px; padding:20px 26px; }
+#s02-problem-scene .slip .eyebrow { font-size:16px; }
+#s02-problem-scene .slip .track { position:relative; margin-top:26px; height:6px; border-radius:3px; background: var(--line); }
+#s02-problem-scene .slip .knob { position:absolute; left:130px; top:-11px; width:28px; height:28px; border-radius:50%; background: var(--ink); border:4px solid #fff; box-shadow: 0 2px 6px rgba(32,42,59,.3); }
+#s02-problem-scene .slip .ends { display:flex; justify-content:space-between; margin-top:16px; font-size:20px; font-weight:500; }
+#s02-problem-scene .pill { position:absolute; display:flex; align-items:center; gap:12px; border-radius:999px; font-size:26px; font-weight:600; padding:10px 22px; box-shadow: var(--shadow); }
+#s02-problem-scene .red-pill { left:420px; top:500px; background:#fff; color: var(--red-ink); border:2px solid var(--red); }
+#s02-problem-scene .red-pill i { width:12px; height:12px; border-radius:50%; background: var(--red); display:block; }
+#s02-problem-scene .cash-pill { left:1250px; top:500px; background:#2B3A99; color:#fff; }
+#s02-problem-scene .cash-pill b { width:34px; height:34px; border-radius:50%; background:#fff; color:#2B3A99; display:grid; place-items:center; font-size:22px; }
+
+#s02-problem-scene .tlab { position:absolute; top:796px; width:240px; text-align:center; font-size:24px; font-weight:600; }
+#s02-problem-scene .tlab span { position:absolute; left:0; right:0; }
+#s02-problem-scene .plus3 { position:absolute; top:640px; font-size:26px; font-weight:600; color: var(--red-ink); }
+
+#s02-problem-scene .paper { position:absolute; width:400px; padding:26px 30px; }
+#s02-problem-scene .paper::after { content:""; position:absolute; right:-1px; top:-1px; width:34px; height:34px; background: linear-gradient(225deg, var(--bg) 50%, #E3E8EF 50%); border-bottom-left-radius:6px; }
+#s02-problem-scene .paper .eyebrow { font-size:15px; }
+#s02-problem-scene .paper .t { font-size:28px; font-weight:600; margin:10px 0 14px; }
+#s02-problem-scene .paper .q { font-size:21px; line-height:1.45; }
+#s02-problem-scene .paper table { width:100%; font-family: var(--mono); font-size:18px; border-collapse:collapse; margin-top:18px; }
+#s02-problem-scene .paper td { padding:9px 0; border-top:1px solid var(--line); vertical-align:top; } #s02-problem-scene .paper td.r { text-align:right; }
+#s02-problem-scene .paper .mini { font-size:15px; color: var(--ink-2); margin-top:3px; }
+#s02-problem-scene .paper .hl { padding:0 4px; border-radius:4px; }
+
+#s02-problem-scene .lab { position:absolute; font-size:26px; font-weight:500; color: var(--ink-2); }
+#s02-problem-sheet { position:absolute; left:760px; top:150px; width:400px; padding:26px 30px; }
+#s02-problem-sheet .t { font-size:32px; font-weight:600; margin:8px 0 12px; }
+#s02-problem-sheet .row { display:flex; justify-content:space-between; font-size:28px; padding:12px 8px; border-top:1px solid var(--line); border-radius:8px; }
+#s02-problem-sheet .row b { font-family: var(--mono); font-weight:500; }
+#s02-problem-sheet .stale { position:absolute; right:22px; top:22px; font-size:18px; font-weight:600; color: var(--red-ink); background: var(--red-tint); border-radius:999px; padding:4px 12px; }
+#s02-problem-pdf { left:1380px; top:110px; }
+#s02-problem-mail { position:absolute; left:1340px; top:476px; width:380px; padding:18px 24px; }
+#s02-problem-mail .from { font-size:20px; font-weight:600; } #s02-problem-mail .subj { font-size:19px; color: var(--ink-2); margin-top:6px; }
+#s02-problem-scene .new { position:absolute; font-size:17px; font-weight:600; color:#fff; background: var(--indigo); border-radius:999px; padding:3px 12px; }
+#s02-problem-token { position:absolute; left:944px; top:640px; font-size:26px; font-weight:600; color: var(--red-ink); }
+
+</style>
+<div id="root" data-composition-id="s02-problem" data-width="1920" data-height="1080">
+<div class="scene" id="s02-problem-scene">
+
+<svg id="s02-problem-art" class="full" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <path id="s02-problem-floor" d="M140,786 L1780,786" stroke="#CDD5E0" stroke-width="3" fill="none"/>
+  <g id="s02-problem-shelfw"><g transform="translate(200,300)"><rect x="0" y="0" width="640" height="486" rx="6" fill="#E8ECF6"/><rect x="0" y="138" width="640" height="12" fill="#DCE1EF"/><rect x="0" y="298" width="640" height="12" fill="#DCE1EF"/><rect x="0" y="458" width="640" height="12" fill="#DCE1EF"/><rect id="s02-problem-g0" x="11" y="46" width="58" height="98" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g1" x="91" y="46" width="58" height="98" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="0"/><rect id="s02-problem-g2" x="171" y="46" width="58" height="98" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g3" x="251" y="46" width="58" height="98" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g4" x="331" y="46" width="58" height="98" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="0"/><rect id="s02-problem-g5" x="411" y="46" width="58" height="98" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g6" x="491" y="46" width="58" height="98" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="0"/><rect id="s02-problem-g7" x="571" y="46" width="58" height="98" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g8" x="11" y="180" width="58" height="124" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="0"/><rect id="s02-problem-g9" x="91" y="180" width="58" height="124" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g10" x="171" y="180" width="58" height="124" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g11" x="251" y="180" width="58" height="124" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g12" x="331" y="180" width="58" height="124" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="0"/><rect id="s02-problem-g13" x="411" y="180" width="58" height="124" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g14" x="491" y="180" width="58" height="124" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g15" x="571" y="180" width="58" height="124" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="0"/><rect id="s02-problem-g16" x="11" y="354" width="58" height="110" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g17" x="91" y="354" width="58" height="110" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="0"/><rect id="s02-problem-g18" x="171" y="354" width="58" height="110" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g19" x="251" y="354" width="58" height="110" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="0"/><rect id="s02-problem-g20" x="331" y="354" width="58" height="110" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g21" x="411" y="354" width="58" height="110" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="0"/><rect id="s02-problem-g22" x="491" y="354" width="58" height="110" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><rect id="s02-problem-g23" x="571" y="354" width="58" height="110" rx="6" fill="none" stroke="#B4BDCF" stroke-width="2" stroke-dasharray="6 6" opacity="1"/><g class="it" id="s02-problem-p0" opacity="0"><rect x="15" y="54" width="50" height="96" rx="7" fill="#4F67E8"/><rect x="15" y="84" width="50" height="30" fill="#C9D2FA"/><rect x="19" y="49" width="42" height="7" rx="3" fill="#3B4FC4"/></g><g class="it" id="s02-problem-p1" opacity="1"><rect x="95" y="54" width="50" height="96" rx="7" fill="#4F67E8"/><rect x="95" y="84" width="50" height="30" fill="#C9D2FA"/><rect x="99" y="49" width="42" height="7" rx="3" fill="#3B4FC4"/></g><g class="it" id="s02-problem-p2" opacity="0"><rect x="175" y="54" width="50" height="96" rx="7" fill="#4F67E8"/><rect x="175" y="84" width="50" height="30" fill="#C9D2FA"/><rect x="179" y="49" width="42" height="7" rx="3" fill="#3B4FC4"/></g><g class="it" id="s02-problem-p3" opacity="0"><rect x="255" y="54" width="50" height="96" rx="7" fill="#4F67E8"/><rect x="255" y="84" width="50" height="30" fill="#C9D2FA"/><rect x="259" y="49" width="42" height="7" rx="3" fill="#3B4FC4"/></g><g class="it" id="s02-problem-p4" opacity="1"><rect x="335" y="54" width="50" height="96" rx="7" fill="#4F67E8"/><rect x="335" y="84" width="50" height="30" fill="#C9D2FA"/><rect x="339" y="49" width="42" height="7" rx="3" fill="#3B4FC4"/></g><g class="it" id="s02-problem-p5" opacity="0"><rect x="415" y="54" width="50" height="96" rx="7" fill="#4F67E8"/><rect x="415" y="84" width="50" height="30" fill="#C9D2FA"/><rect x="419" y="49" width="42" height="7" rx="3" fill="#3B4FC4"/></g><g class="it" id="s02-problem-p6" opacity="1"><rect x="495" y="54" width="50" height="96" rx="7" fill="#4F67E8"/><rect x="495" y="84" width="50" height="30" fill="#C9D2FA"/><rect x="499" y="49" width="42" height="7" rx="3" fill="#3B4FC4"/></g><g class="it" id="s02-problem-p7" opacity="0"><rect x="575" y="54" width="50" height="96" rx="7" fill="#4F67E8"/><rect x="575" y="84" width="50" height="30" fill="#C9D2FA"/><rect x="579" y="49" width="42" height="7" rx="3" fill="#3B4FC4"/></g><g class="it" id="s02-problem-p8" opacity="1"><rect x="31" y="192" width="18" height="30" rx="4" fill="#3478F6"/><rect x="30" y="184" width="20" height="10" rx="3" fill="#202A3B"/><rect x="18" y="214" width="44" height="96" rx="12" fill="#3478F6"/><rect x="18" y="248" width="44" height="26" fill="#CFE0FD"/></g><g class="it" id="s02-problem-p9" opacity="0"><rect x="111" y="192" width="18" height="30" rx="4" fill="#3478F6"/><rect x="110" y="184" width="20" height="10" rx="3" fill="#202A3B"/><rect x="98" y="214" width="44" height="96" rx="12" fill="#3478F6"/><rect x="98" y="248" width="44" height="26" fill="#CFE0FD"/></g><g class="it" id="s02-problem-p10" opacity="0"><rect x="191" y="192" width="18" height="30" rx="4" fill="#3478F6"/><rect x="190" y="184" width="20" height="10" rx="3" fill="#202A3B"/><rect x="178" y="214" width="44" height="96" rx="12" fill="#3478F6"/><rect x="178" y="248" width="44" height="26" fill="#CFE0FD"/></g><g class="it" id="s02-problem-p11" opacity="0"><rect x="271" y="192" width="18" height="30" rx="4" fill="#3478F6"/><rect x="270" y="184" width="20" height="10" rx="3" fill="#202A3B"/><rect x="258" y="214" width="44" height="96" rx="12" fill="#3478F6"/><rect x="258" y="248" width="44" height="26" fill="#CFE0FD"/></g><g class="it" id="s02-problem-p12" opacity="1"><rect x="351" y="192" width="18" height="30" rx="4" fill="#3478F6"/><rect x="350" y="184" width="20" height="10" rx="3" fill="#202A3B"/><rect x="338" y="214" width="44" height="96" rx="12" fill="#3478F6"/><rect x="338" y="248" width="44" height="26" fill="#CFE0FD"/></g><g class="it" id="s02-problem-p13" opacity="0"><rect x="431" y="192" width="18" height="30" rx="4" fill="#3478F6"/><rect x="430" y="184" width="20" height="10" rx="3" fill="#202A3B"/><rect x="418" y="214" width="44" height="96" rx="12" fill="#3478F6"/><rect x="418" y="248" width="44" height="26" fill="#CFE0FD"/></g><g class="it" id="s02-problem-p14" opacity="0"><rect x="511" y="192" width="18" height="30" rx="4" fill="#3478F6"/><rect x="510" y="184" width="20" height="10" rx="3" fill="#202A3B"/><rect x="498" y="214" width="44" height="96" rx="12" fill="#3478F6"/><rect x="498" y="248" width="44" height="26" fill="#CFE0FD"/></g><g class="it" id="s02-problem-p15" opacity="1"><rect x="591" y="192" width="18" height="30" rx="4" fill="#3478F6"/><rect x="590" y="184" width="20" height="10" rx="3" fill="#202A3B"/><rect x="578" y="214" width="44" height="96" rx="12" fill="#3478F6"/><rect x="578" y="248" width="44" height="26" fill="#CFE0FD"/></g><g class="it" id="s02-problem-p16" opacity="0"><rect x="10" y="358" width="60" height="112" rx="4" fill="#2E3A55"/><rect x="10" y="392" width="60" height="30" fill="#4F67E8"/><circle cx="40" cy="442" r="7" fill="#F7F9FC"/></g><g class="it" id="s02-problem-p17" opacity="1"><rect x="90" y="358" width="60" height="112" rx="4" fill="#2E3A55"/><rect x="90" y="392" width="60" height="30" fill="#4F67E8"/><circle cx="120" cy="442" r="7" fill="#F7F9FC"/></g><g class="it" id="s02-problem-p18" opacity="0"><rect x="170" y="358" width="60" height="112" rx="4" fill="#2E3A55"/><rect x="170" y="392" width="60" height="30" fill="#4F67E8"/><circle cx="200" cy="442" r="7" fill="#F7F9FC"/></g><g class="it" id="s02-problem-p19" opacity="1"><rect x="250" y="358" width="60" height="112" rx="4" fill="#2E3A55"/><rect x="250" y="392" width="60" height="30" fill="#4F67E8"/><circle cx="280" cy="442" r="7" fill="#F7F9FC"/></g><g class="it" id="s02-problem-p20" opacity="0"><rect x="330" y="358" width="60" height="112" rx="4" fill="#2E3A55"/><rect x="330" y="392" width="60" height="30" fill="#4F67E8"/><circle cx="360" cy="442" r="7" fill="#F7F9FC"/></g><g class="it" id="s02-problem-p21" opacity="1"><rect x="410" y="358" width="60" height="112" rx="4" fill="#2E3A55"/><rect x="410" y="392" width="60" height="30" fill="#4F67E8"/><circle cx="440" cy="442" r="7" fill="#F7F9FC"/></g><g class="it" id="s02-problem-p22" opacity="0"><rect x="490" y="358" width="60" height="112" rx="4" fill="#2E3A55"/><rect x="490" y="392" width="60" height="30" fill="#4F67E8"/><circle cx="520" cy="442" r="7" fill="#F7F9FC"/></g><g class="it" id="s02-problem-p23" opacity="0"><rect x="570" y="358" width="60" height="112" rx="4" fill="#2E3A55"/><rect x="570" y="392" width="60" height="30" fill="#4F67E8"/><circle cx="600" cy="442" r="7" fill="#F7F9FC"/></g><rect x="-8" y="150" width="656" height="16" rx="3" fill="#202A3B"/><rect x="-8" y="150" width="656" height="4" fill="#3A4766"/><rect x="26" y="156" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="106" y="156" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="186" y="156" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="266" y="156" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="346" y="156" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="426" y="156" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="506" y="156" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="586" y="156" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="-8" y="310" width="656" height="16" rx="3" fill="#202A3B"/><rect x="-8" y="310" width="656" height="4" fill="#3A4766"/><rect x="26" y="316" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="106" y="316" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="186" y="316" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="266" y="316" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="346" y="316" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="426" y="316" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="506" y="316" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="586" y="316" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="-8" y="470" width="656" height="16" rx="3" fill="#202A3B"/><rect x="-8" y="470" width="656" height="4" fill="#3A4766"/><rect x="26" y="476" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="106" y="476" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="186" y="476" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="266" y="476" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="346" y="476" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="426" y="476" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="506" y="476" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="586" y="476" width="28" height="7" rx="1" fill="#F7F9FC"/><rect x="-22" y="-14" width="684" height="14" rx="3" fill="#202A3B"/><rect x="-22" y="-14" width="16" height="500" rx="3" fill="#202A3B"/><rect x="646" y="-14" width="16" height="500" rx="3" fill="#202A3B"/></g></g>
+  <g id="s02-problem-roomw"><g transform="translate(1080,300)"><rect x="0" y="0" width="640" height="486" rx="6" fill="#EDF0F6"/><rect x="0" y="0" width="640" height="64" rx="6" fill="#D9DFEA"/><line x1="0" y1="16" x2="640" y2="16" stroke="#C5CDDB" stroke-width="2"/><line x1="0" y1="32" x2="640" y2="32" stroke="#C5CDDB" stroke-width="2"/><line x1="0" y1="48" x2="640" y2="48" stroke="#C5CDDB" stroke-width="2"/><clipPath id="s02-problem-clip"><rect x="0" y="64" width="640" height="422"/></clipPath><g clip-path="url(#s02-problem-clip)"><g id="s02-problem-c00"><rect x="40" y="368" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="40,368 54,354 178,354 164,368" fill="#EEF1FD"/><polygon points="164,368 178,354 178,442 164,456" fill="#AFBAEC"/><rect x="94" y="369" width="16" height="30" fill="#B9C3F0"/><rect x="52" y="426" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c01"><rect x="182" y="368" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="182,368 196,354 320,354 306,368" fill="#EEF1FD"/><polygon points="306,368 320,354 320,442 306,456" fill="#AFBAEC"/><rect x="236" y="369" width="16" height="30" fill="#B9C3F0"/><rect x="194" y="426" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c02"><rect x="324" y="368" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="324,368 338,354 462,354 448,368" fill="#EEF1FD"/><polygon points="448,368 462,354 462,442 448,456" fill="#AFBAEC"/><rect x="378" y="369" width="16" height="30" fill="#B9C3F0"/><rect x="336" y="426" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c03"><rect x="466" y="368" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="466,368 480,354 604,354 590,368" fill="#EEF1FD"/><polygon points="590,368 604,354 604,442 590,456" fill="#AFBAEC"/><rect x="520" y="369" width="16" height="30" fill="#B9C3F0"/><rect x="478" y="426" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c10"><rect x="40" y="280" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="40,280 54,266 178,266 164,280" fill="#EEF1FD"/><polygon points="164,280 178,266 178,354 164,368" fill="#AFBAEC"/><rect x="94" y="281" width="16" height="30" fill="#B9C3F0"/><rect x="52" y="338" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c11"><rect x="182" y="280" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="182,280 196,266 320,266 306,280" fill="#EEF1FD"/><polygon points="306,280 320,266 320,354 306,368" fill="#AFBAEC"/><rect x="236" y="281" width="16" height="30" fill="#B9C3F0"/><rect x="194" y="338" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c12"><rect x="324" y="280" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="324,280 338,266 462,266 448,280" fill="#EEF1FD"/><polygon points="448,280 462,266 462,354 448,368" fill="#AFBAEC"/><rect x="378" y="281" width="16" height="30" fill="#B9C3F0"/><rect x="336" y="338" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c13"><rect x="466" y="280" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="466,280 480,266 604,266 590,280" fill="#EEF1FD"/><polygon points="590,280 604,266 604,354 590,368" fill="#AFBAEC"/><rect x="520" y="281" width="16" height="30" fill="#B9C3F0"/><rect x="478" y="338" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c20"><rect x="40" y="192" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="40,192 54,178 178,178 164,192" fill="#EEF1FD"/><polygon points="164,192 178,178 178,266 164,280" fill="#AFBAEC"/><rect x="94" y="193" width="16" height="30" fill="#B9C3F0"/><rect x="52" y="250" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c21"><rect x="182" y="192" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="182,192 196,178 320,178 306,192" fill="#EEF1FD"/><polygon points="306,192 320,178 320,266 306,280" fill="#AFBAEC"/><rect x="236" y="193" width="16" height="30" fill="#B9C3F0"/><rect x="194" y="250" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c22"><rect x="324" y="192" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="324,192 338,178 462,178 448,192" fill="#EEF1FD"/><polygon points="448,192 462,178 462,266 448,280" fill="#AFBAEC"/><rect x="378" y="193" width="16" height="30" fill="#B9C3F0"/><rect x="336" y="250" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c23"><rect x="466" y="192" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="466,192 480,178 604,178 590,192" fill="#EEF1FD"/><polygon points="590,192 604,178 604,266 590,280" fill="#AFBAEC"/><rect x="520" y="193" width="16" height="30" fill="#B9C3F0"/><rect x="478" y="250" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c30"><rect x="40" y="104" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="40,104 54,90 178,90 164,104" fill="#EEF1FD"/><polygon points="164,104 178,90 178,178 164,192" fill="#AFBAEC"/><rect x="94" y="105" width="16" height="30" fill="#B9C3F0"/><rect x="52" y="162" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c31"><rect x="182" y="104" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="182,104 196,90 320,90 306,104" fill="#EEF1FD"/><polygon points="306,104 320,90 320,178 306,192" fill="#AFBAEC"/><rect x="236" y="105" width="16" height="30" fill="#B9C3F0"/><rect x="194" y="162" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c32"><rect x="324" y="104" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="324,104 338,90 462,90 448,104" fill="#EEF1FD"/><polygon points="448,104 462,90 462,178 448,192" fill="#AFBAEC"/><rect x="378" y="105" width="16" height="30" fill="#B9C3F0"/><rect x="336" y="162" width="30" height="16" rx="2" fill="#FFFFFF"/></g><g id="s02-problem-c33"><rect x="466" y="104" width="124" height="88" fill="#D5DCF6" stroke="#9FACE4" stroke-width="2"/><polygon points="466,104 480,90 604,90 590,104" fill="#EEF1FD"/><polygon points="590,104 604,90 604,178 590,192" fill="#AFBAEC"/><rect x="520" y="105" width="16" height="30" fill="#B9C3F0"/><rect x="478" y="162" width="30" height="16" rx="2" fill="#FFFFFF"/></g></g><rect x="30" y="456" width="580" height="12" rx="2" fill="#202A3B"/><rect x="40" y="468" width="40" height="18" fill="#202A3B"/><rect x="300" y="468" width="40" height="18" fill="#202A3B"/><rect x="560" y="468" width="40" height="18" fill="#202A3B"/></g></g>
+</svg>
+<div class="eyebrow" id="s02-problem-eyl" style="position:absolute;left:186px;top:252px">Shelf</div>
+<div class="eyebrow" id="s02-problem-eyr" style="position:absolute;left:1066px;top:252px">Stockroom</div>
+<div id="s02-problem-cl" class="co-l"><div class="callout c-red">Too little</div><div class="sub">Empty shelves</div></div>
+<div id="s02-problem-cr" class="co-r"><div class="callout c-indigo">Too much</div><div class="sub">Cash in the stockroom</div></div>
+<div id="s02-problem-slip" class="card slip"><div class="eyebrow">This week’s order</div>
+  <div class="track"><div class="knob" id="s02-problem-knob" data-x="118"></div></div>
+  <div class="ends"><span id="s02-problem-less" style="color:var(--red-ink)">Less</span><span id="s02-problem-more" style="color:var(--indigo)">More</span></div></div>
+<div id="s02-problem-tag" class="pill red-pill"><i></i>Out of stock</div>
+<div id="s02-problem-cash" class="pill cash-pill"><b>$</b>Cash tied up</div>
+
+<svg id="s02-problem-net" class="full" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <g id="s02-problem-pos">
+    <rect x="180" y="150" width="350" height="226" rx="16" fill="#202A3B"/><rect x="196" y="166" width="318" height="182" rx="8" fill="#F7F9FC"/>
+    <text x="214" y="196" font-family="Geist" font-size="17" font-weight="500" fill="#667085">Cola 330ml · last 7 days</text><rect class="bar" x="216" y="223" width="30" height="107" rx="3" fill="#3478F6"/><rect class="bar" x="258" y="286" width="30" height="44" rx="3" fill="#3478F6"/><rect class="bar" x="300" y="229" width="30" height="101" rx="3" fill="#3478F6"/><rect class="bar" x="342" y="212" width="30" height="118" rx="3" fill="#3478F6"/><rect class="bar" x="384" y="245" width="30" height="85" rx="3" fill="#3478F6"/><rect class="bar" x="426" y="292" width="30" height="38" rx="3" fill="#3478F6"/><rect class="bar" x="468" y="299" width="30" height="31" rx="3" fill="#3478F6"/>
+    <rect x="335" y="376" width="40" height="40" fill="#2E3A55"/><rect x="250" y="414" width="210" height="22" rx="8" fill="#202A3B"/>
+  </g>
+  <g fill="none" stroke="#98A2B3" stroke-width="3" stroke-linecap="round">
+    <path class="cn" d="M540,262 C620,262 660,268 742,272"/><path class="cn" d="M1370,250 C1290,250 1250,262 1176,266"/><path class="cn" d="M1330,470 C1250,470 1240,380 1176,368"/>
+  </g>
+</svg>
+<div id="s02-problem-poslab" class="lab" style="left:180px;top:452px">POS · daily sales</div>
+<div id="s02-problem-sheet" class="card"><div class="eyebrow">Reorder sheet</div><div class="t">Cola 330ml</div>
+  <div class="row" id="s02-problem-ltrow"><span>Lead time</span><b id="s02-problem-lt">5 d</b></div><div class="row"><span>Unit cost</span><b>$1.28</b></div>
+  <div id="s02-problem-stale" class="stale">Not updated</div></div>
+<div id="s02-problem-pdf" class="card paper "><div class="eyebrow">PDF · Angkor Beverage Co</div><div class="t">Revised terms</div>
+  <div class="q">“Standard delivery is <span class="hl" id="s02-problem-hl1">8 days</span> from order.”</div>
+  <table><tr><td>Mineral Water 1.5L</td><td class="r">$0.57</td></tr>
+  <tr id="s02-problem-row"><td>Cola 330ml, tray of 24<div class="mini">MOQ 48</div></td><td class="r"><span class="hl" id="s02-problem-hl2">$1.36</span></td></tr>
+  <tr><td>Green Tea 500ml</td><td class="r">$0.92</td></tr></table></div>
+<div id="s02-problem-mail" class="card" data-layout-allow-overlap><div class="from">✉ Siam Snacks Import</div><div class="subj">Re: port congestion, revised delivery</div></div>
+<div id="s02-problem-new1" class="new" style="left:1720px;top:96px">New</div><div id="s02-problem-new2" class="new" style="left:1660px;top:462px">New</div>
+<div id="s02-problem-doclab" class="lab" style="left:1340px;top:590px">Supplier documents</div>
+
+<svg id="s02-problem-tl" class="full" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <rect id="s02-problem-tint" x="930" y="626" width="330" height="114" fill="#FCEDEF"/>
+  <rect id="s02-problem-redseg" x="930" y="736" width="330" height="8" fill="#D94F61"/>
+  <path id="s02-problem-axis" d="M380,740 L1480,740" stroke="#CDD5E0" stroke-width="3" fill="none"/>
+  <g id="s02-problem-ticks"><line x1="380" y1="740" x2="380" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="380" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">0d</text><line x1="490" y1="740" x2="490" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="490" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">1d</text><line x1="600" y1="740" x2="600" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="600" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">2d</text><line x1="710" y1="740" x2="710" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="710" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">3d</text><line x1="820" y1="740" x2="820" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="820" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">4d</text><line x1="930" y1="740" x2="930" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="930" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">5d</text><line x1="1040" y1="740" x2="1040" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="1040" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">6d</text><line x1="1150" y1="740" x2="1150" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="1150" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">7d</text><line x1="1260" y1="740" x2="1260" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="1260" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">8d</text><line x1="1370" y1="740" x2="1370" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="1370" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">9d</text><line x1="1480" y1="740" x2="1480" y2="752" stroke="#98A2B3" stroke-width="2"/><text x="1480" y="778" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">10d</text></g>
+  <g id="s02-problem-truck" transform="translate(930,734) scale(1.25)"><rect x="-40" y="-40" width="54" height="34" rx="3" fill="#4F67E8"/><rect x="12" y="-32" width="26" height="26" rx="5" fill="#202A3B"/><rect x="20" y="-28" width="12" height="9" rx="2" fill="#CFE0FD"/><circle cx="-26" cy="-5" r="7" fill="#202A3B"/><circle cx="-26" cy="-5" r="2.5" fill="#F7F9FC"/><circle cx="26" cy="-5" r="7" fill="#202A3B"/><circle cx="26" cy="-5" r="2.5" fill="#F7F9FC"/></g>
+</svg>
+<div class="eyebrow" id="s02-problem-tleb" style="position:absolute;left:380px;top:600px">Supplier delivery</div>
+<div id="s02-problem-tlab" class="tlab" style="left:810px"><span id="s02-problem-tl5">Delivery · day 5</span><span id="s02-problem-tl8">Delivery · day 8</span></div>
+<div id="s02-problem-plus" class="plus3" style="left:944px">+3 days</div>
+
+<div id="s02-problem-token" class="token">+3 days</div>
+
+</div>
+</div>
+<script>
+(() => {
+const tl = gsap.timeline({ paused: true });
+const T = {"exists": 1.506, "scattered": 4.296, "sales": 5.503, "pdfs": 10.232, "emails": 11.201, "three": 12.009, "rarely": 13.205, "sheet": 14.002, "tl": 10.532, "move": 12.009, "out": 14.25, "sfx_select": 10.132};
+const DUR = 15;
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => Array.from(document.querySelectorAll(s));
+const fadeIn = (sel, t, d = 0.5) => tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t);
+const fadeOut = (sel, t, d = 0.4) => tl.fromTo(sel, { opacity: 1 }, { opacity: 0, duration: d, ease: "power1.in", immediateRender: false }, t);
+// force3D keeps moved elements composited for their whole life: no end-of-move re-raster or pixel snap
+const rise = (sel, t, o = {}) => tl.fromTo(sel, { opacity: 0, y: o.y ?? 18 }, { opacity: 1, y: 0, duration: o.d ?? 0.6, ease: "power3.out", stagger: o.s ?? 0, force3D: true }, t);
+const pop = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: d, ease: "back.out(1.7)", force3D: true }, t);
+const count = (el, from, to, t, d, fmt) => {
+  const o = { v: from };
+  el.textContent = fmt(from);
+  tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(o.v); } }, t);
+};
+// SVG path reveal: draws `frac` of each matching path
+const draw = (sel, t, d = 0.8, frac = 1, ease = "power2.inOut") => $$(sel).forEach((p) => {
+  const L = p.getTotalLength();
+  p.style.strokeDasharray = L + " " + L;
+  tl.fromTo(p, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t);
+  tl.fromTo(p, { strokeDashoffset: L }, { strokeDashoffset: L * (1 - frac), duration: d, ease }, t);
+});
+// the one camera move: a single scale-and-position tween, then a complete hold
+const camTo = (sel, v, t, d = 1.3) => tl.to(sel, { ...v, duration: d, ease: "power2.inOut", force3D: true }, t);
+// Scripted cursor: travel to (x, y), press at t, optional ripple.
+const click = (cur, rip, x0, y0, x, y, t) => {
+  tl.fromTo(cur, { opacity: 0, x: x0, y: y0 }, { opacity: 1, duration: 0.25 }, t - 1.2);
+  tl.to(cur, { x, y, duration: 0.9, ease: "power2.inOut" }, t - 1.0);
+  tl.to(cur, { scale: 0.86, duration: 0.08, ease: "power1.in" }, t);
+  tl.to(cur, { scale: 1, duration: 0.18, ease: "power2.out" }, t + 0.08);
+  if (rip) tl.fromTo(rip, { opacity: 0.5, scale: 0.2, x: x - 30, y: y - 30 }, { opacity: 0, scale: 1.4, duration: 0.6, ease: "power2.out" }, t);
+};
+
+
+
+
+gsap.set("#s02-problem-knob", { x: 118 });
+// S01's last frame morphs: shelf → POS, stockroom → supplier documents, order slip → reorder sheet
+tl.to(["#s02-problem-cl", "#s02-problem-cr", "#s02-problem-tag", "#s02-problem-cash", "#s02-problem-eyl", "#s02-problem-eyr", "#s02-problem-floor"], { opacity: 0, duration: 0.35 }, 0);
+tl.to("#s02-problem-shelfw", { scale: 0.45, x: -165, y: -233, opacity: 0, duration: 0.9, ease: "power2.inOut", svgOrigin: "520 543" }, 0.1);
+tl.to("#s02-problem-roomw", { scale: 0.45, x: 160, y: -243, opacity: 0, duration: 0.9, ease: "power2.inOut", svgOrigin: "1400 543" }, 0.1);
+tl.to("#s02-problem-slip", { y: 90, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 0.1);
+tl.fromTo("#s02-problem-pos", { opacity: 0, scale: 0.85, svgOrigin: "355 300" }, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out", svgOrigin: "355 300" }, 0.55);
+tl.fromTo("#s02-problem-pos .bar", { scaleY: 0.15, svgOrigin: "0 330" }, { scaleY: 1, duration: 0.6, ease: "power2.out", svgOrigin: "0 330", stagger: 0.05 }, T.sales);
+fadeIn("#s02-problem-poslab", 0.9);
+tl.fromTo("#s02-problem-sheet", { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.35);
+gsap.set("#s02-problem-stale", { opacity: 0 });
+rise(["#s02-problem-pdf", "#s02-problem-mail"], 0.6, { y: 24, s: 0.12 });
+fadeIn("#s02-problem-doclab", 1.0);
+// scattered: every connection stops short of the sheet
+draw("#s02-problem-net .cn", T.scattered, 0.9, 0.62);
+// supplier changes arrive
+pop("#s02-problem-new1", T.pdfs - 0.1);
+tl.fromTo("#s02-problem-hl1", { backgroundColor: "rgba(252,237,239,0)", boxShadow: "inset 0 -2px 0 rgba(217,79,97,0)" }, { backgroundColor: "rgba(252,237,239,1)", boxShadow: "inset 0 -2px 0 rgba(217,79,97,1)", duration: 0.35 }, T.pdfs + 0.1);
+tl.fromTo("#s02-problem-hl2", { backgroundColor: "rgba(252,237,239,0)" }, { backgroundColor: "rgba(252,237,239,1)", duration: 0.35 }, T.pdfs + 0.4);
+pop("#s02-problem-new2", T.emails - 0.1);
+// the delivery timeline: the truck slips three days
+fadeIn("#s02-problem-tleb", T.tl);
+draw("#s02-problem-axis", T.tl, 0.6, 1, "power2.out");
+fadeIn("#s02-problem-ticks", T.tl + 0.2, 0.4);
+tl.fromTo("#s02-problem-truck", { opacity: 0, x: 930, y: 714 }, { opacity: 1, y: 734, duration: 0.4, ease: "power2.out" }, T.tl + 0.3);
+tl.fromTo("#s02-problem-tlab", { opacity: 0 }, { opacity: 1, duration: 0.3 }, T.tl + 0.5);
+gsap.set("#s02-problem-tl8", { opacity: 0 });
+tl.to("#s02-problem-truck", { x: 1260, duration: 1.0, ease: "power2.inOut" }, T.move);
+tl.to("#s02-problem-tlab", { x: 330, duration: 1.0, ease: "power2.inOut" }, T.move);
+tl.to("#s02-problem-tl5", { opacity: 0, duration: 0.2 }, T.move + 0.8);
+tl.to("#s02-problem-tl8", { opacity: 1, duration: 0.2 }, T.move + 0.8);
+tl.fromTo(["#s02-problem-tint", "#s02-problem-redseg"], { scaleX: 0, svgOrigin: "930 700" }, { scaleX: 1, duration: 1.0, ease: "power2.inOut", svgOrigin: "930 700" }, T.move);
+pop("#s02-problem-plus", T.move + 0.9);
+// the news heads for the reorder sheet and never arrives
+tl.fromTo("#s02-problem-token", { opacity: 0, x: 0, y: 0 }, { opacity: 1, duration: 0.25 }, T.rarely - 0.2);
+tl.to("#s02-problem-token", { x: 40, y: -170, duration: 0.9, ease: "power1.inOut" }, T.rarely);
+tl.to("#s02-problem-token", { opacity: 0, duration: 0.4 }, T.rarely + 0.6);
+tl.to("#s02-problem-ltrow", { boxShadow: "inset 0 0 0 2.5px #D94F61", backgroundColor: "#FCEDEF", duration: 0.35 }, T.sheet);
+tl.to("#s02-problem-stale", { opacity: 1, duration: 0.3 }, T.sheet + 0.2);
+// clear the stage: only the delivery timeline carries into S03
+tl.to(["#s02-problem-pos", "#s02-problem-net", "#s02-problem-poslab", "#s02-problem-sheet", "#s02-problem-pdf", "#s02-problem-mail", "#s02-problem-new1", "#s02-problem-new2", "#s02-problem-doclab"], { opacity: 0, duration: 0.45, ease: "power1.in" }, T.out);
+
+window.__timelines["s02-problem"] = tl;
+})();
+</script>
+</template></body></html>

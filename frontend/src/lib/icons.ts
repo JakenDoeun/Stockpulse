@@ -45,12 +45,4 @@ export type IconName = keyof typeof P;
 export const icon = (name: IconName, cls: string = "") =>
   raw(`<svg class="icon ${cls}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${P[name]}</svg>`);
 
-export const brandMark = () =>
-  raw(`<svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true" focusable="false">
-    <rect width="28" height="28" rx="7" fill="#202A3B"/>
-    <rect x="6" y="15" width="3" height="7" rx="1" fill="#475369"/>
-    <rect x="11" y="12" width="3" height="10" rx="1" fill="#475369"/>
-    <rect x="16" y="9" width="3" height="13" rx="1" fill="#475369"/>
-    <path d="M4.5 14.5h4l2.3-5.2 3.4 8.4 2.3-5.2H23" stroke="#fff" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="23" cy="12.5" r="1.9" fill="#8FA0FF"/>
-  </svg>`);
+export const brandMark = () => raw(`<img class="brand-mark" src="/static/img/logo-mark.png" alt="" width="28" height="28">`);

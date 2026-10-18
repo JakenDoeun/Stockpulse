@@ -1,0 +1,56 @@
+{
+ "output": "/home/k4k/Documents/AMD/agentic-replenish/solution_video/pitch-video/build/stockpulse_pitch_PREVIEW.mp4",
+ "mode": "PREVIEW",
+ "missing_voiceover": [
+  "VO_01_HOOK.mp3",
+  "VO_02_PROBLEM.mp3",
+  "VO_03_STAKES.mp3",
+  "VO_04_INTRO.mp3",
+  "VO_05_INTAKE.mp3",
+  "VO_06_FORECAST.mp3",
+  "VO_07_RISK.mp3",
+  "VO_08_OPTIMIZE.mp3",
+  "VO_09_AGENT.mp3",
+  "VO_10_FEATURES.mp3",
+  "VO_11_TECH.mp3",
+  "VO_12_CLOSE.mp3"
+ ],
+ "captions": 62,
+ "video": {
+  "codec_name": "h264",
+  "width": 1920,
+  "height": 1080,
+  "r_frame_rate": "60/1",
+  "avg_frame_rate": "60/1",
+  "nb_frames": "13320"
+ },
+ "audio": {
+  "codec_name": "aac",
+  "sample_rate": "48000",
+  "channels": 2,
+  "r_frame_rate": "0/0",
+  "avg_frame_rate": "0/0",
+  "nb_frames": "10408"
+ },
+ "duration": 222.0,
+ "loudness": {
+  "integrated_lufs": "-16.01",
+  "true_peak_dbtp": "-4.95",
+  "lra": "2.80"
+ }
+}
+
+PREVIEW ONLY. Missing voice-over clips (put them in assets/voiceover/):
+  VO_01_HOOK.mp3
+  VO_02_PROBLEM.mp3
+  VO_03_STAKES.mp3
+  VO_04_INTRO.mp3
+  VO_05_INTAKE.mp3
+  VO_06_FORECAST.mp3
+  VO_07_RISK.mp3
+  VO_08_OPTIMIZE.mp3
+  VO_09_AGENT.mp3
+  VO_10_FEATURES.mp3
+  VO_11_TECH.mp3
+  VO_12_CLOSE.mp3
+Then run: bash scripts/final.sh

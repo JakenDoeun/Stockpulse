@@ -12,6 +12,7 @@ import { toast } from "../ui/overlay.js";
 import { openImport } from "../ui/import-dialog.js";
 import { confirmState, enterBlock, highlight } from "../lib/motion.js";
 import { animate } from "animejs";
+import { sfx } from "../lib/sfx.js";
 
 /** Simulated extraction time for sample documents. The progress bar runs on the same clock. */
 const SIM_MS = 1400;
@@ -52,7 +53,7 @@ export function mountInbox(root: HTMLElement) {
 // ---- list + intake ----------------------------------------------------------------------------
 
 function mountList(root: HTMLElement) {
-  document.title = "Supplier Inbox · StockPulse AMD";
+  document.title = "Supplier Inbox · StockPulse";
   const f = { state: "all", supplier: store.get().routeParams.supplier || "all" };
   let feedback: {name: string, ok: boolean, msg: string}[] = [];
   let pasteOpen = false;
@@ -150,6 +151,10 @@ function mountList(root: HTMLElement) {
     }
     if (added.length) store.set({ docs: [...added, ...store.get().docs] });
     render();
+    // one cue for the whole drop: values to review > documents received > every file refused
+    if (added.some((x) => x.state === "needs_review")) sfx("review");
+    else if (added.length) sfx("select");
+    else if (!csv) sfx("error");
     enterBlock(root.querySelectorAll(".file-list .file-row"), { stagger: 40 });
     if (csv) openImport();
   }
@@ -169,6 +174,7 @@ function mountList(root: HTMLElement) {
       lines: parsed.lines.length ? parsed.lines : [blankLine("supplier")] }) as Doc);
     store.set({ docs: [doc, ...store.get().docs] });
     go(`inbox/${doc.id}`);
+    sfx("review");
   });
   on(root, "change", "[data-filter-select]", (_e, t) => { (f as Record<string, string>)[t.dataset.filterSelect as string] = (t as HTMLSelectElement).value; render(); });
   on(root, "click", "tr[data-doc]", (_e, t) => go(`inbox/${t.dataset.doc}`));
@@ -325,7 +331,7 @@ function mountReview(root: HTMLElement, id: string) {
     updateDoc(id, { state: "processing", method: "simulated", processing_started: Date.now() });
     window.setTimeout(() => {
       const doc = getDoc();
-      if (doc?.state === "processing") updateDoc(id, { state: "needs_review", lines: (doc.fixtureLines || []).map((l) => ({ ...l })) });
+      if (doc?.state === "processing") { updateDoc(id, { state: "needs_review", lines: (doc.fixtureLines || []).map((l) => ({ ...l })) }); sfx("review"); }
     }, SIM_MS);
   });
   on(root, "click", "[data-manual]", () => updateDoc(id, { state: "needs_review", method: "manual", lines: [blankLine(getDoc()?.type === "notice" ? "supplier" : "item")] }));
@@ -344,9 +350,11 @@ function mountReview(root: HTMLElement, id: string) {
       updateDoc(id, { state: "verified", verified_at: new Date().toISOString(), confirmed_ids: res.confirmed.map((u: {id: number}) => u.id) });
       await load();
       toast(`${plural(changes.length, "change")} applied. Forecast-driven orders and risks recalculated.`);
+      sfx("success");
       fetchConfirmed();
     } catch (e) {
       toast(`Not applied: ${e instanceof Error ? e.message : e}`);
+      sfx("error");
     }
     busy = false;
     render();

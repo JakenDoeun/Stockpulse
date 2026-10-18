@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 /**
- * StockPulse AMD tests.
+ * StockPulse tests.
  * - tests/e2e/logic.spec.ts: the frontend's deterministic calculations (no browser).
  * - tests/e2e/*.spec.ts: the full app in Chromium against a real engine.
  * The web server builds the TypeScript frontend and starts the FastAPI engine on its own port with a

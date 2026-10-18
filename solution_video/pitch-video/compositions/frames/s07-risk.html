@@ -1,0 +1,111 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body><template>
+<style>
+#root { position: absolute; inset: 0; }
+
+#s07-risk-scene .full { position:absolute; inset:0; }
+#s07-risk-eyebrow { position:absolute; left:120px; top:96px; }
+#s07-risk-head { position:absolute; left:120px; top:132px; }
+#s07-risk-scene .l { position:absolute; left:240px; font-size:28px; }
+#s07-risk-scene .l span { color: var(--ink-2); font-size:24px; }
+#s07-risk-l2 span { color: inherit !important; font-size:inherit !important; }
+#s07-risk-lt5, #s07-risk-lt8 { display:inline-block; }
+#s07-risk-gaplab { position:absolute; left:1310px; top:300px; }
+#s07-risk-gaplab .fig { font-size:56px; font-weight:600; letter-spacing:-0.02em; }
+#s07-risk-gaplab .sub { font-size:26px; color: var(--ink-2); }
+#s07-risk-rule { position:absolute; left:240px; top:618px; font-family: var(--mono); font-size:24px; white-space:pre; }
+
+</style>
+<div id="root" data-composition-id="s07-risk" data-width="1920" data-height="1080">
+<div class="scene" id="s07-risk-scene">
+
+<div id="s07-risk-eyebrow" class="eyebrow">Cola 330ml · Angkor’s new terms</div>
+<div id="s07-risk-head" class="headline">Stock vs. delivery</div>
+<svg id="s07-risk-viz" class="full" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <rect id="s07-risk-gap" x="981" y="300" width="299" height="260" fill="#FCEDEF" stroke="#D94F61" stroke-width="2"/>
+  <path id="s07-risk-axis" d="M240,560 L1540,560" stroke="#CDD5E0" stroke-width="3"/><g id="s07-risk-ticks"><line x1="240" y1="560" x2="240" y2="572" stroke="#98A2B3" stroke-width="2"/><text x="240" y="600" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">0d</text><line x1="370" y1="560" x2="370" y2="572" stroke="#98A2B3" stroke-width="2"/><text x="370" y="600" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">1d</text><line x1="500" y1="560" x2="500" y2="572" stroke="#98A2B3" stroke-width="2"/><text x="500" y="600" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">2d</text><line x1="630" y1="560" x2="630" y2="572" stroke="#98A2B3" stroke-width="2"/><text x="630" y="600" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">3d</text><line x1="760" y1="560" x2="760" y2="572" stroke="#98A2B3" stroke-width="2"/><text x="760" y="600" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">4d</text><line x1="890" y1="560" x2="890" y2="572" stroke="#98A2B3" stroke-width="2"/><text x="890" y="600" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">5d</text><line x1="1020" y1="560" x2="1020" y2="572" stroke="#98A2B3" stroke-width="2"/><text x="1020" y="600" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">6d</text><line x1="1150" y1="560" x2="1150" y2="572" stroke="#98A2B3" stroke-width="2"/><text x="1150" y="600" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">7d</text><line x1="1280" y1="560" x2="1280" y2="572" stroke="#98A2B3" stroke-width="2"/><text x="1280" y="600" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">8d</text><line x1="1410" y1="560" x2="1410" y2="572" stroke="#98A2B3" stroke-width="2"/><text x="1410" y="600" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">9d</text><line x1="1540" y1="560" x2="1540" y2="572" stroke="#98A2B3" stroke-width="2"/><text x="1540" y="600" font-family="Geist Mono" font-size="19" fill="#667085" text-anchor="middle">10d</text></g>
+  <rect id="s07-risk-supply" x="240" y="330" width="741" height="46" rx="8" fill="#3478F6"/>
+  <rect id="s07-risk-lead" x="240" y="452" width="1040" height="46" rx="8" fill="#202A3B"/>
+  <g id="s07-risk-was"><line x1="890" y1="444" x2="890" y2="506" stroke="#F7F9FC" stroke-width="3"/></g>
+  <g id="s07-risk-truck" transform="translate(890,554) scale(1.25)"><rect x="-40" y="-40" width="54" height="34" rx="3" fill="#4F67E8"/><rect x="12" y="-32" width="26" height="26" rx="5" fill="#202A3B"/><rect x="20" y="-28" width="12" height="9" rx="2" fill="#CFE0FD"/><circle cx="-26" cy="-5" r="7" fill="#202A3B"/><circle cx="-26" cy="-5" r="2.5" fill="#F7F9FC"/><circle cx="26" cy="-5" r="7" fill="#202A3B"/><circle cx="26" cy="-5" r="2.5" fill="#F7F9FC"/></g>
+</svg>
+<div class="l" id="s07-risk-l1" style="top:282px"><b class="c-blue">Stock lasts 5.7 days</b><span> · 110 on hand + 240 on order ÷ 61.3 a day</span></div>
+<div class="l" id="s07-risk-l2" style="top:404px"><b>Lead time <span id="s07-risk-lt5">5</span><span id="s07-risk-lt8">8</span> days</b></div>
+<div id="s07-risk-gaplab"><div class="fig c-red">2.3 days</div><div class="sub">shelf empty before delivery</div></div>
+<div id="s07-risk-rule">stock + on order  &lt;  daily demand × lead time   →   <b class="c-red">critical</b></div>
+<div class="browser" id="s07-risk-br" style="left:231px;top:692px;width:1458px;height:162px">
+  <div class="bar"><i></i><i></i><i></i><span class="url">stockpulse.app/#/risk?sku=SKU008</span></div>
+  <div class="view"><div class="cam" id="s07-risk-br-cam"><img id="s07-risk-img" src="../../capture/v2/c04-risk.png" style="width:1920.0px;opacity:1" alt=""><div id="s07-risk-ring" class="ring red" style="left:390px;top:474px;width:528px;height:86px"></div></div></div>
+</div>
+
+</div>
+</div>
+<script>
+(() => {
+const tl = gsap.timeline({ paused: true });
+const T = {"head": 0.3, "eight": 3.735, "stock": 5.041, "lasts": 6.182, "rules": 9.236, "critical": 11.899, "sfx_review": 12.098999999999998};
+const DUR = 18;
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => Array.from(document.querySelectorAll(s));
+const fadeIn = (sel, t, d = 0.5) => tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t);
+const fadeOut = (sel, t, d = 0.4) => tl.fromTo(sel, { opacity: 1 }, { opacity: 0, duration: d, ease: "power1.in", immediateRender: false }, t);
+// force3D keeps moved elements composited for their whole life: no end-of-move re-raster or pixel snap
+const rise = (sel, t, o = {}) => tl.fromTo(sel, { opacity: 0, y: o.y ?? 18 }, { opacity: 1, y: 0, duration: o.d ?? 0.6, ease: "power3.out", stagger: o.s ?? 0, force3D: true }, t);
+const pop = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: d, ease: "back.out(1.7)", force3D: true }, t);
+const count = (el, from, to, t, d, fmt) => {
+  const o = { v: from };
+  el.textContent = fmt(from);
+  tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(o.v); } }, t);
+};
+// SVG path reveal: draws `frac` of each matching path
+const draw = (sel, t, d = 0.8, frac = 1, ease = "power2.inOut") => $$(sel).forEach((p) => {
+  const L = p.getTotalLength();
+  p.style.strokeDasharray = L + " " + L;
+  tl.fromTo(p, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t);
+  tl.fromTo(p, { strokeDashoffset: L }, { strokeDashoffset: L * (1 - frac), duration: d, ease }, t);
+});
+// the one camera move: a single scale-and-position tween, then a complete hold
+const camTo = (sel, v, t, d = 1.3) => tl.to(sel, { ...v, duration: d, ease: "power2.inOut", force3D: true }, t);
+// Scripted cursor: travel to (x, y), press at t, optional ripple.
+const click = (cur, rip, x0, y0, x, y, t) => {
+  tl.fromTo(cur, { opacity: 0, x: x0, y: y0 }, { opacity: 1, duration: 0.25 }, t - 1.2);
+  tl.to(cur, { x, y, duration: 0.9, ease: "power2.inOut" }, t - 1.0);
+  tl.to(cur, { scale: 0.86, duration: 0.08, ease: "power1.in" }, t);
+  tl.to(cur, { scale: 1, duration: 0.18, ease: "power2.out" }, t + 0.08);
+  if (rip) tl.fromTo(rip, { opacity: 0.5, scale: 0.2, x: x - 30, y: y - 30 }, { opacity: 0, scale: 1.4, duration: 0.6, ease: "power2.out" }, t);
+};
+
+fadeIn("#s07-risk-scene", 0, 0.5);
+fadeOut("#s07-risk-scene", DUR - 0.4, 0.4);
+
+gsap.set("#s07-risk-br-cam", { x: -374.40, y: -456.00, scale: 1.0000 });
+fadeIn("#s07-risk-eyebrow", 0.2);
+rise("#s07-risk-head", T.head);
+draw("#s07-risk-axis", 0.6, 0.6, 1, "power2.out");
+fadeIn("#s07-risk-ticks", 0.8, 0.4);
+fadeIn("#s07-risk-l2", 0.9);
+tl.fromTo("#s07-risk-lead", { scaleX: 0, svgOrigin: "240 475" }, { scaleX: 5 / 8, duration: 0.8, ease: "power2.out", svgOrigin: "240 475" }, 1.0);
+tl.fromTo("#s07-risk-truck", { opacity: 0, y: 534 }, { opacity: 1, y: 554, duration: 0.4, ease: "power2.out" }, 1.4);
+gsap.set("#s07-risk-truck", { x: 890 });
+// eight days: the truck and the lead-time bar move together
+gsap.set("#s07-risk-lt8", { opacity: 0, display: "none" });
+tl.set("#s07-risk-lt5", { display: "none" }, T.eight + 0.5);
+tl.set("#s07-risk-lt8", { display: "inline-block", opacity: 1 }, T.eight + 0.5);
+fadeIn("#s07-risk-was", T.eight);
+tl.to("#s07-risk-lead", { scaleX: 1, duration: 1.0, ease: "power2.inOut", svgOrigin: "240 475" }, T.eight + 0.1);
+tl.to("#s07-risk-truck", { x: 1280, duration: 1.0, ease: "power2.inOut" }, T.eight + 0.1);
+// stock on hand and on order
+rise("#s07-risk-l1", T.stock - 0.3);
+tl.fromTo("#s07-risk-supply", { scaleX: 0, svgOrigin: "240 353" }, { scaleX: 1, duration: 1.1, ease: "power2.out", svgOrigin: "240 353" }, T.stock);
+// the gap
+tl.fromTo("#s07-risk-gap", { opacity: 0, scaleX: 0, svgOrigin: "981 430" }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "power2.out", svgOrigin: "981 430" }, T.lasts);
+rise("#s07-risk-gaplab", T.lasts + 0.2);
+rise("#s07-risk-rule", T.rules - 0.1);
+tl.fromTo("#s07-risk-br", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, T.critical - 0.6);
+tl.fromTo("#s07-risk-ring", { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 0.4 }, T.critical + 0.2);
+
+window.__timelines["s07-risk"] = tl;
+})();
+</script>
+</template></body></html>

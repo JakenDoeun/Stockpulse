@@ -1,0 +1,119 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body><template>
+<style>
+#root { position: absolute; inset: 0; }
+
+#s11-architecture-scene .full { position:absolute; inset:0; }
+#s11-architecture-head { position:absolute; left:120px; top:96px; }
+#s11-architecture-scene .ch { position:absolute; top:210px; }
+#s11-architecture-scene .blk { position:absolute; padding:24px 28px; border-radius:16px; background:#fff; }
+#s11-architecture-scene .bt { font-size:30px; font-weight:600; }
+#s11-architecture-scene .bs { font-size:22px; color: var(--ink-2); margin-top:6px; }
+#s11-architecture-scene .k { font-family: var(--mono); font-size:19px; letter-spacing:.06em; text-transform:uppercase; font-weight:500; }
+#s11-architecture-scene .row { display:flex; gap:14px; margin-top:18px; flex-wrap:wrap; }
+#s11-architecture-scene .it { font-size:28px; font-weight:600; padding:10px 18px; border-radius:10px; }
+#s11-architecture-scene .it.b { background: var(--blue-tint); color: var(--blue-ink); }
+#s11-architecture-scene .it.e { background: var(--ember-tint); color: var(--ember-ink); }
+#s11-architecture-det { left:640px; top:262px; width:660px; height:212px; border:2.5px solid var(--blue); }
+#s11-architecture-ai { left:640px; top:540px; width:660px; height:250px; border:2.5px dashed var(--ember); }
+#s11-architecture-ai .amd { position:absolute; left:28px; bottom:26px; font-size:17px; color: var(--ink-2); }
+#s11-architecture-ai .priv { position:absolute; right:28px; bottom:22px; display:flex; align-items:center; gap:10px; font-size:20px; font-weight:500; }
+#s11-architecture-scene .alab { position:absolute; font-size:20px; font-weight:500; }
+#s11-architecture-foot { position:absolute; left:120px; top:830px; font-size:20px; color: var(--ink-2); }
+
+</style>
+<div id="root" data-composition-id="s11-architecture" data-width="1920" data-height="1080">
+<div class="scene" id="s11-architecture-scene">
+
+<div id="s11-architecture-head" class="headline">The line is strict.</div>
+<div class="eyebrow ch" id="s11-architecture-h1" style="left:120px">Operational data</div>
+<div class="eyebrow ch" id="s11-architecture-h2" style="left:640px">Intelligence &amp; optimization</div>
+<div class="eyebrow ch" id="s11-architecture-h3" style="left:1420px">Procurement decisions</div>
+<svg id="s11-architecture-ar" class="full" viewBox="0 0 1920 1080" width="1920" height="1080" fill="none" stroke-width="3" stroke-linecap="round">
+  <defs><marker id="s11-architecture-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke" stroke="none"/></marker></defs>
+  <path id="s11-architecture-a1" d="M500,330 L626,340" stroke="#3478F6" marker-end="url(#s11-architecture-ah)"/>
+  <path id="s11-architecture-a2" d="M500,630 L626,630" stroke="#E86A4A" marker-end="url(#s11-architecture-ah)"/>
+  <path id="s11-architecture-a3" d="M960,540 L960,474" stroke="#E86A4A" marker-end="url(#s11-architecture-ah)"/>
+  <path id="s11-architecture-a4" d="M1300,330 L1414,320" stroke="#3478F6" marker-end="url(#s11-architecture-ah)"/>
+  <path id="s11-architecture-a5" d="M1300,620 C1360,620 1380,400 1414,370" stroke="#E86A4A" stroke-dasharray="2 9" marker-end="url(#s11-architecture-ah)"/>
+  <path id="s11-architecture-a6" d="M1610,386 L1610,466" stroke="#289879" marker-end="url(#s11-architecture-ah)"/>
+</svg>
+<div class="blk card" id="s11-architecture-pos" style="left:120px;top:262px;width:380px"><div class="bt">POS &amp; inventory</div><div class="bs">sales · stock · suppliers</div></div>
+<div class="blk card" id="s11-architecture-docs" style="left:120px;top:560px;width:380px"><div class="bt">Supplier documents</div><div class="bs">PDFs · invoices · emails</div></div>
+<div class="blk" id="s11-architecture-det"><div class="k c-blue">Deterministic, auditable code</div>
+  <div class="row"><span class="it b" id="s11-architecture-d1">Forecasts</span><span class="it b" id="s11-architecture-d2">Risk rules</span><span class="it b" id="s11-architecture-d3">Order quantities</span></div></div>
+<div class="alab c-ember" id="s11-architecture-l3" style="left:976px;top:490px">confirmed fields</div>
+<div class="blk" id="s11-architecture-ai"><div class="k c-ember">AI · AMD Developer Cloud</div>
+  <div class="row"><span class="it e" id="s11-architecture-e1">Reads documents</span><span class="it e" id="s11-architecture-e2">Explains results</span></div>
+  <div class="amd mono">AMD Instinct GPUs · ROCm</div>
+  <div class="priv" id="s11-architecture-priv"><svg width="18" height="20" viewBox="0 0 18 20" fill="none" stroke="#202A3B" stroke-width="2"><rect x="2" y="9" width="14" height="10" rx="2"/><path d="M5 9V6a4 4 0 0 1 8 0v3"/></svg>Pricing and margin data stay private</div></div>
+<div class="blk card" id="s11-architecture-po" style="left:1420px;top:262px;width:380px"><div class="bt">Purchase order draft</div><div class="bs">calculated quantities, explained</div></div>
+<div class="blk card" id="s11-architecture-appr" style="left:1420px;top:474px;width:380px;border:2px solid var(--green)"><div class="bt c-green">Human approval</div><div class="bs">a person signs off</div></div>
+<div id="s11-architecture-foot">Prototype shown on sample data · AI layer on AMD Developer Cloud rolling out per the implementation plan.</div>
+<div class="legend" id="s11-architecture-legend"><span class="l-calc">Calculated</span><span class="l-ai">AI</span></div>
+
+</div>
+</div>
+<script>
+(() => {
+const tl = gsap.timeline({ paused: true });
+const T = {"head": 0.3, "forecasts": 2.62, "lm": 4.489, "read": 5.417, "explain": 6.809, "private": 17.833, "dec": 18.732999999999997, "foot": 19.633};
+const DUR = 23;
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => Array.from(document.querySelectorAll(s));
+const fadeIn = (sel, t, d = 0.5) => tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "power1.out" }, t);
+const fadeOut = (sel, t, d = 0.4) => tl.fromTo(sel, { opacity: 1 }, { opacity: 0, duration: d, ease: "power1.in", immediateRender: false }, t);
+// force3D keeps moved elements composited for their whole life: no end-of-move re-raster or pixel snap
+const rise = (sel, t, o = {}) => tl.fromTo(sel, { opacity: 0, y: o.y ?? 18 }, { opacity: 1, y: 0, duration: o.d ?? 0.6, ease: "power3.out", stagger: o.s ?? 0, force3D: true }, t);
+const pop = (sel, t, d = 0.45) => tl.fromTo(sel, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: d, ease: "back.out(1.7)", force3D: true }, t);
+const count = (el, from, to, t, d, fmt) => {
+  const o = { v: from };
+  el.textContent = fmt(from);
+  tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(o.v); } }, t);
+};
+// SVG path reveal: draws `frac` of each matching path
+const draw = (sel, t, d = 0.8, frac = 1, ease = "power2.inOut") => $$(sel).forEach((p) => {
+  const L = p.getTotalLength();
+  p.style.strokeDasharray = L + " " + L;
+  tl.fromTo(p, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t);
+  tl.fromTo(p, { strokeDashoffset: L }, { strokeDashoffset: L * (1 - frac), duration: d, ease }, t);
+});
+// the one camera move: a single scale-and-position tween, then a complete hold
+const camTo = (sel, v, t, d = 1.3) => tl.to(sel, { ...v, duration: d, ease: "power2.inOut", force3D: true }, t);
+// Scripted cursor: travel to (x, y), press at t, optional ripple.
+const click = (cur, rip, x0, y0, x, y, t) => {
+  tl.fromTo(cur, { opacity: 0, x: x0, y: y0 }, { opacity: 1, duration: 0.25 }, t - 1.2);
+  tl.to(cur, { x, y, duration: 0.9, ease: "power2.inOut" }, t - 1.0);
+  tl.to(cur, { scale: 0.86, duration: 0.08, ease: "power1.in" }, t);
+  tl.to(cur, { scale: 1, duration: 0.18, ease: "power2.out" }, t + 0.08);
+  if (rip) tl.fromTo(rip, { opacity: 0.5, scale: 0.2, x: x - 30, y: y - 30 }, { opacity: 0, scale: 1.4, duration: 0.6, ease: "power2.out" }, t);
+};
+
+fadeIn("#s11-architecture-scene", 0, 0.5);
+fadeOut("#s11-architecture-scene", DUR - 0.4, 0.4);
+
+rise("#s11-architecture-head", T.head);
+fadeIn("#s11-architecture-legend", 0.6);
+fadeIn(["#s11-architecture-h1", "#s11-architecture-h2", "#s11-architecture-h3"], 0.7);
+rise(["#s11-architecture-pos", "#s11-architecture-docs"], 0.9, { s: 0.15 });
+// deterministic layer (blue)
+rise("#s11-architecture-det", T.forecasts - 0.3, { y: 20 });
+rise(["#s11-architecture-d1", "#s11-architecture-d2", "#s11-architecture-d3"], T.forecasts, { s: 0.35, y: 10 });
+draw("#s11-architecture-a1", T.forecasts + 0.6, 0.5);
+// AI services (coral) on AMD Developer Cloud
+rise("#s11-architecture-ai", T.lm - 0.2, { y: 20 });
+rise("#s11-architecture-e1", T.read - 0.1, { y: 10 });
+draw("#s11-architecture-a2", T.read, 0.5);
+draw("#s11-architecture-a3", T.read + 0.5, 0.4); fadeIn("#s11-architecture-l3", T.read + 0.6);
+rise("#s11-architecture-e2", T.explain - 0.1, { y: 10 });
+pop("#s11-architecture-priv", T.private);
+// decisions: calculated quantities into a draft, a person approves
+rise("#s11-architecture-po", T.dec, { y: 16 }); draw("#s11-architecture-a4", T.dec, 0.5); draw("#s11-architecture-a5", T.dec + 0.3, 0.7);
+rise("#s11-architecture-appr", T.dec + 0.7, { y: 16 }); draw("#s11-architecture-a6", T.dec + 0.6, 0.4);
+fadeIn("#s11-architecture-foot", T.foot);
+
+window.__timelines["s11-architecture"] = tl;
+})();
+</script>
+</template></body></html>
